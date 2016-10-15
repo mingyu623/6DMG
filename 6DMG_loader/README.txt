@@ -24,7 +24,7 @@
    > sudo apt-get install libsqlite3-dev
 
 
-
+# TODO(mingyu): mkdir htk, matL, matR for now...
 
 # TODO(mingyu): update info below...
 1. The compiled executable is in bin\
