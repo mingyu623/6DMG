@@ -9,16 +9,10 @@
 #ifndef _6DMG_UTIL_H_
 #define _6DMG_UTIL_H_
 
-#pragma comment(lib, "libmat.lib")
-#pragma comment(lib, "libmx.lib")
-
 #include <6DMG/GestureDef.h>
 #include <6DMG/Config.h>
-#include <mat.h>
-#include <math.h>  // for M_PI
 
 using namespace GestureDef;
-using namespace std;
 
 #define N_ELEM 14      // total elements per sample (for Matlab exporter)
 #define SAMP_PERIOD 1  // show the sample number instead of the true time stamp
@@ -57,7 +51,11 @@ class Converter {
    * Preprocess a gesture recording (i.e., normalization)
    */
   int preprocessHTK(Gesture& g, unsigned short nElem, float* buff);
-  // TODO(mingyu): remove this...
+
+  /**
+   * Preprocess a gesture recording (i.e., normalization) used in ICASSP12
+   * and the journal "Feature Processing and Modeling for 6D Motion Gesture Recognition"
+   */
   int preprocessHTK_Legacy(Gesture& g, unsigned short nElem, float* buff);
 
  private:
