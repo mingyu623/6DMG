@@ -1,5 +1,5 @@
 /*******************************************************************
- * Copyright (C) 2016 Mingyu Chen (mingyu623@gmail.com) 
+ * Copyright (C) 2016 Mingyu Chen (mingyu623@gmail.com)
  * You may use, distribute and modify this code under the terms of
  * the BSD license
  *
