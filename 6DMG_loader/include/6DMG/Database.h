@@ -1,8 +1,8 @@
 #ifndef _6DMG_DATABASE_H_
 #define _6DMG_DATABASE_H_
 
-#include "sqlite3.h"
-#include "GestureDef.h"
+#include <6DMG/GestureDef.h>
+#include <sqlite3.h>
 
 using namespace std;
 

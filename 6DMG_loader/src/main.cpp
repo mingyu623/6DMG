@@ -6,22 +6,16 @@
  * This is a re-write of my work 6DMG_loader_2.0 that can be
  * downloaded at http://www2.ece.gatech.edu/6DMG/Download.html
  *******************************************************************/
-//
-// 6DMG_loader_2.0
-// Mingyu Chen @ Oct. 2. 2012
 // Use "Config.h" to configure the running examples
 // & the EXPORT configuration
-// ----------------------------------------------------
+
+#include <6DMG/examples.h>
+#include <6DMG/Config.h>
 
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE, EXIT_SUCCESS
-#include <vector>   // For STL
-#include "GestureDef.h"
-#include "Database.h"
-#include "util.h"
-#include "examples.h"
-#include "Config.h"
+#include <vector>
 
 using namespace std;
 using namespace GestureDef;
@@ -44,7 +38,7 @@ int main() {
     gest_example3(pDatabaseGest, 2, V_SHAPE, 1);
 
     // Example 4: MATLAB exporter for all motion gests
-    gest_example4(pDatabaseGest);
+// gest_example4(pDatabaseGest);
 #endif
 
 #ifdef EXPORT_GEST_HTK

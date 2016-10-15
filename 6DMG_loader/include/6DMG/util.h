@@ -12,7 +12,12 @@
 #include <6DMG/GestureDef.h>
 #include <6DMG/Config.h>
 
-using namespace GestureDef;
+using GestureDef::XYZ;
+using GestureDef::ORI;
+using GestureDef::Gesture;
+using GestureDef::Euler;
+using GestureDef::YPR;
+using GestureDef::Sample;
 
 #define N_ELEM 14      // total elements per sample (for Matlab exporter)
 #define SAMP_PERIOD 1  // show the sample number instead of the true time stamp
@@ -58,6 +63,18 @@ class Converter {
    */
   int preprocessHTK_Legacy(Gesture& g, unsigned short nElem, float* buff);
 
+  /**
+   * The implementation of normalization of various types of motion data
+   */
+  float normalizePOS(Gesture& g);
+  float normalizeVEL(Gesture& g);
+  float normalizeACC(Gesture& g);
+  float normalizeW(Gesture& g);
+  float normalizeORI(Gesture& g);
+  float normalizePitch(std::vector<float> pitch);
+  float normalizeORI_Legacy(Gesture& g);
+  float normalizePOS_univar(Gesture& g, XYZ& avgPOS);
+
  private:
   // Header for HTKWrite()
   struct htk_header_t {
@@ -68,29 +85,23 @@ class Converter {
   };
 
   /**
-   * The implementation of normalization of various types of motion data
-   */
-  float normalizePOS(Gesture& g);
-  float normalizeVEL(Gesture& g);
-  float normalizeACC(Gesture& g);
-  float normalizeW(Gesture& g);
-  float normalizeORI(Gesture& g);
-  float normalizePitch(vector<float> pitch);
-  float normalizeORI_Legacy(Gesture& g);
-  float normalizePOS_univar(Gesture& g, XYZ& avgPOS);
-
-  /**
    * Other internal utility functions
    */
    XYZ   convertGACC(XYZ acc, ORI q);
    XYZ   boundingBoxCenter(Gesture& g);
    ORI   quatScale(ORI q, float s);
    ORI   averageOri(Gesture& g);
-   void  leastSquaresFit(vector<float>& y, float& a, float& b); // y = ax + b
+   void  leastSquaresFit(std::vector<float>& y, float& a, float& b); // y = ax + b
    Euler quatToEulerZXY(ORI q);
    ORI   eulerZXYToQuat(Euler e);
-   float centerPitch(vector<float> pitch);
+   float centerPitch(std::vector<float> pitch);
 };
+
+// Utility functions for quaternion
+ORI quatMul(const ORI& q1, const ORI& q2);
+ORI quatConj(const ORI& q);
+// TODO(mingyu): write two versions: ORI = quatNormalized(ORI) and quatNormalize()
+ORI quatNorm(const ORI& q);
 
 }  // namespace Util
 #endif  // _6DMG_UTIL_H_

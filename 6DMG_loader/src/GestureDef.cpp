@@ -13,33 +13,6 @@
 using namespace std;
 
 namespace GestureDef {
-// utility functions for quaternion
-ORI quatMul(ORI q1, ORI q2) {
-  ORI res;
-  res.x =  q1.x * q2.w + q1.y * q2.z - q1.z * q2.y + q1.w * q2.x;
-  res.y = -q1.x * q2.z + q1.y * q2.w + q1.z * q2.x + q1.w * q2.y;
-  res.z =  q1.x * q2.y - q1.y * q2.x + q1.z * q2.w + q1.w * q2.z;
-  res.w = -q1.x * q2.x - q1.y * q2.y - q1.z * q2.z + q1.w * q2.w;
-  return res;
-}
-
-ORI quatConj(ORI q) {
-  ORI res;
-  res.w =  q.w;
-  res.x = -q.x;
-  res.y = -q.y;
-  res.z = -q.z;
-  return res;
-}
-
-ORI quatNorm(ORI q) {
-  float norm = sqrt(q.w*q.w + q.x*q.x + q.y*q.y + q.z*q.z);
-  q.w /= norm;
-  q.x /= norm;
-  q.y /= norm;
-  q.z /= norm;
-  return q;
-}
 
 // Global function to get the gesture name
 string getGestureName(int gestureIdx) {

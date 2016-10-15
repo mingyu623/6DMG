@@ -23,21 +23,28 @@ endif()
 # The 6DMG library
 add_library(6DMG
  src/GestureDef.cpp
+ src/Database.cpp
+ src/util.cpp
 )
-
-# Handle include directories and linking path
 target_include_directories(6DMG PUBLIC
  ${CMAKE_CURRENT_SOURCE_DIR}/include
  ${SQLITE_INCLUDE_DIR}
+ ${MATLAB_INCLUDE_DIR}
 )
 target_link_libraries(6DMG
  ${SQLITE_LIB}
+ ${MATLAB_MX_LIB}
+ ${MATLAB_MAT_LIB}
 )
 
 # The 6DMG_loader executable
-#add_executable(6DMG_loader
-# src/Database.cpp
-# src/examples.cpp
-# src/main.cpp
-# src/util.cpp
-#)
+add_executable(6DMG_loader
+ src/examples.cpp
+ src/main.cpp
+)
+target_include_directories(6DMG_loader PUBLIC
+ ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+target_link_libraries(6DMG_loader
+ 6DMG
+)

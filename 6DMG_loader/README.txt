@@ -1,26 +1,32 @@
+# =============================================================
 # 6DMG_loader_2.2
 # Mingyu Chen (mingyu623@gmail.com) @ Oct. 14. 2016
-
-
+# =============================================================
+***** To compile and run 6DMG_loader *****
 1. If there's no Matlab installed on the machine, you can install only
    the MCR (Matlab Compiler) to compile and run 6DMG_loader.
    http://www.mathworks.com/products/compiler/mcr/
 
-2. Install SQLite
+2. Depending on the version of Matlab MCR and the installed gcc, the compilation may
+   fail at the linking stage with error message like this:
+   undefined reference to `std::__throw_out_of_range_fmt(char const*, ...)@GLIBCXX_3.4.20'
+
+ 1) Check the libstdc++.so version and see if there is the required GLIBCXX_3.4.xx
+   > strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+ 2) If not, we can use the libstdc++.so.6 shipped together with Matlab MRC
+     For example, the matlab installed path is /usr/local/MATLAB/MATLAB_Runtime/v91
+   > cd /usr/lib/x86_64-linux-gnu
+   > sudo cp /usr/loca/MATLAB/MATLAB_Runtime/v91/sys/os/glnxa64/libstdc++.so.6.0.20 .
+   > sudo mv libstdc++.so.6 libstdc++.so.6.backup
+   > sudo ln -s libstdc++.so.6.0.20 libstdc++.so.6
+
+3. Install SQLite
    > sudo apt-get install libsqlite3-dev
 
-# TODO(mingyu): Update the README...
 
 
 
-
-
----------------------------------------------------
-change log:
-The normalization scheme is modified for left-to-right writing
-
----------------------------------------------------
-
+# TODO(mingyu): update info below...
 1. The compiled executable is in bin\
 
 2. !!!IMPORTANT!!!

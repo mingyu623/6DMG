@@ -8,20 +8,23 @@
  *******************************************************************/
 
 // TODO(mingyu): fix this in cmake maybe
-#pragma comment(lib, "libmat.lib")
+#pragma comment(lib, "libmat.lib")g
 #pragma comment(lib, "libmx.lib")
 
 #include <6DMG/util.h>
 #include <math.h>  // for M_PI
 #include <mat.h>
 #include <iostream>
+#include <cstring>  // for memcpy
 
 using std::cout;
 using std::endl;
+using std::memcpy;
+using std::max;
 
 namespace Util {
 
-int GestToMat(char* file, Gesture& g) {
+int Converter::GestToMat(char* file, Gesture& g) {
   MATFile *pmat;
   mxArray *pa, *pa2, *pa3;
 
@@ -89,7 +92,7 @@ inline void endian_swap(unsigned int& x) {
       (x << 24);
 }
 
-int GestToHTK(char* fname, Gesture& g) {
+int Converter::GestToHTK(char* fname, Gesture& g) {
   unsigned short nElem = 0;  // the # of elems we want to export (not ALL!)
   if (HTK_EXP & HTK_ACC) nElem += 3;
   if (HTK_EXP & HTK_POS) nElem += 3;
@@ -147,7 +150,7 @@ int GestToHTK(char* fname, Gesture& g) {
 }
 
 // Have to pre-process the data (normalization)
-int preprocessHTK(Gesture& g, unsigned short nElem, float* buff) {
+int Converter::preprocessHTK(Gesture& g, unsigned short nElem, float* buff) {
   float scale_acc = (HTK_EXP & (HTK_ACC)) ? normalizeACC(g) : 1;
   float scale_pos = (HTK_EXP & (HTK_POS | HTK_P2D | HTK_POS_LR)) ? normalizePOS(g) : 50;
   float scale_vel = (HTK_EXP & (HTK_VEL | HTK_V2D)) ? normalizeVEL(g) : 100;
@@ -332,7 +335,7 @@ float normalizePOS_univar(Gesture& g, XYZ& avgPOS) {
 
 // calculate the scaling factor for normalization
 // normalize based on the bounding box
-float normalizePOS(Gesture& g) {
+float Converter::normalizePOS(Gesture& g) {
   XYZ startPos = g.data.at(0).pos;
   XYZ posMin = g.data.at(0).pos;
   XYZ posMax = posMin;
@@ -361,7 +364,7 @@ float normalizePOS(Gesture& g) {
 }
 
 // compute the center of the bounding box
-XYZ boundingBoxCenter(Gesture& g) {
+XYZ Converter::boundingBoxCenter(Gesture& g) {
   XYZ startPos = g.data.at(0).pos;
   XYZ posMin = g.data.at(0).pos;
   XYZ posMax = posMin;
@@ -382,7 +385,7 @@ XYZ boundingBoxCenter(Gesture& g) {
 }
 
 // normalize based on the amplitude of the velocity
-float normalizeVEL(Gesture& g) {
+float Converter::normalizeVEL(Gesture& g) {
   float velMax = 0;
   for (unsigned int i = 1; i < g.data.size(); i++) {
     XYZ p = g.data.at(i).pos;
@@ -402,7 +405,7 @@ float normalizeVEL(Gesture& g) {
 }
 
 // convert to GAcc and then normalize
-float normalizeACC(Gesture& g) {
+float Converter::normalizeACC(Gesture& g) {
   float accMax = 0;
   for (unsigned int i = 0; i < g.data.size(); i++) {
     XYZ gacc = convertGACC(g.data.at(i).acc, g.data.at(i).ori);
@@ -412,7 +415,7 @@ float normalizeACC(Gesture& g) {
   return 2 / accMax;
 }
 
-float normalizeW(Gesture& g) {
+float Converter::normalizeW(Gesture& g) {
   float speedY = 0;
   float speedP = 0;
   float speedR = 0;
@@ -428,7 +431,7 @@ float normalizeW(Gesture& g) {
 
 // q = w + ai + bj + ck
 //   = cos(a/2) + sin(a/2)(xi + yj + zk)
-float normalizeORI(Gesture& g) {
+float Converter::normalizeORI(Gesture& g) {
   ORI avgOriInv  = quatConj(averageOri(g));
   float angleMax = 0;
   for (unsigned int i = 1; i < g.data.size(); i++) {
@@ -442,7 +445,7 @@ float normalizeORI(Gesture& g) {
 
 // calculate the normalization scale
 // scale the (max - min) to 1 (in radian)
-float normalizePitch(vector<float> thetas) {
+float Converter::normalizePitch(std::vector<float> thetas) {
   float t_max = thetas.at(0);
   float t_min = t_max;
   for (unsigned int i = 1; i < thetas.size(); i++) {
@@ -454,7 +457,7 @@ float normalizePitch(vector<float> thetas) {
 }
 
 // calculate the center of the bounding thetas
-float centerPitch(vector<float> thetas) {
+float Converter::centerPitch(std::vector<float> thetas) {
   float t_max = thetas.at(0);
   float t_min = t_max;
   for (unsigned int i = 1; i < thetas.size(); i++) {
@@ -467,7 +470,7 @@ float centerPitch(vector<float> thetas) {
 
 // convert local acc to global acc w/o gravity
 // p' = q p q^-1,  where p = (0, x, y, z)
-XYZ convertGACC(XYZ acc, ORI q) {
+XYZ Converter::convertGACC(XYZ acc, ORI q) {
   XYZ gacc;
   ORI quat, res;
   quat.w = 0;
@@ -482,7 +485,7 @@ XYZ convertGACC(XYZ acc, ORI q) {
 }
 
 // scale the "angle" of quaternion in axis-angle form
-ORI quatScale(ORI q, float scale) {
+ORI Converter::quatScale(ORI q, float scale) {
   float angle = 2 * acos(q.w);
   // if (angle > M_PI) angle -= 2*M_PI; // range: [0 2pi] -> [-pi pi], ICASSP12
   if (abs(angle) < EPSILON) {  // q.w ~ 1, the axis may not be stable
@@ -503,7 +506,7 @@ ORI quatScale(ORI q, float scale) {
 }
 
 // compute the approximate *average* of a set of orientation
-ORI averageOri(Gesture& g) {
+ORI Converter::averageOri(Gesture& g) {
   ORI accOri;
   accOri.w = accOri.x = accOri.y = accOri.z = 0;
   for (unsigned int i = 0; i < g.data.size(); i++) {
@@ -518,7 +521,7 @@ ORI averageOri(Gesture& g) {
 
 // least squares fitting: y=ax + b
 // x is the index (0 to N-1)
-void leastSquaresFit(std::vector<float>& y, float& a, float& b) {
+void Converter::leastSquaresFit(std::vector<float>& y, float& a, float& b) {
   float sum_x = 0;
   float sum_y = 0;
   float sum_x_sq = 0;
@@ -536,7 +539,7 @@ void leastSquaresFit(std::vector<float>& y, float& a, float& b) {
   return;
 }
 
-Euler quatToEulerZXY(ORI q) {
+Euler Converter::quatToEulerZXY(ORI q) {
   Euler e;
   e.psi   = atan2(2 * (q.w * q.z - q.x * q.y),
                   q.w * q.w - q.x * q.x + q.y * q.y - q.z * q.z);
@@ -546,7 +549,7 @@ Euler quatToEulerZXY(ORI q) {
   return e;
 }
 
-ORI eulerZXYToQuat(Euler e) {
+ORI Converter::eulerZXYToQuat(Euler e) {
   ORI q;
   float c1 = cos(e.psi/2);
   float c2 = cos(e.theta/2);
@@ -565,7 +568,7 @@ ORI eulerZXYToQuat(Euler e) {
 
 // The normalization scheme used in ICASSP12 and the journal
 // "Feature processing and modeling for 6D motion gesture recognition"
-int preprocessHTK_Legacy(Gesture& g, unsigned short nElem, float* buff) {
+int Converter::preprocessHTK_Legacy(Gesture& g, unsigned short nElem, float* buff) {
   float scale_acc = (HTK_ACC) ? normalizeACC(g) : 1;
   float scale_pos = (HTK_POS | HTK_P2D) ? normalizePOS(g) : 50;
   float scale_vel = (HTK_VEL | HTK_V2D) ? normalizeVEL(g) : 100;
@@ -648,7 +651,7 @@ int preprocessHTK_Legacy(Gesture& g, unsigned short nElem, float* buff) {
 // the normalization used for ICASSP12 the journal
 // "Feature processing and modeling for 6D motion gesture recognition"
 // !!! SLIGHTLY DIFFERENT !!!
-float normalizeORI_Legacy(Gesture& g) {
+float Converter::normalizeORI_Legacy(Gesture& g) {
   ORI startOriInv = quatConj(g.data.at(0).ori);
   float angleMax = 0;
   for (unsigned int i = 1; i < g.data.size(); i++) {
@@ -672,6 +675,35 @@ float normalizeORI_Legacy(Gesture& g) {
   }
   // return M_PI / angleMax;  // stretch to pi (NOs)
   return 0.5 * M_PI / angleMax;  // stretch to pi/2 (NOs2)
+}
+
+// Utility functions for quaternion
+ORI quatMul(const ORI& q1, const ORI& q2) {
+  ORI res;
+  res.x =  q1.x * q2.w + q1.y * q2.z - q1.z * q2.y + q1.w * q2.x;
+  res.y = -q1.x * q2.z + q1.y * q2.w + q1.z * q2.x + q1.w * q2.y;
+  res.z =  q1.x * q2.y - q1.y * q2.x + q1.z * q2.w + q1.w * q2.z;
+  res.w = -q1.x * q2.x - q1.y * q2.y - q1.z * q2.z + q1.w * q2.w;
+  return res;
+}
+
+ORI quatConj(const ORI& q) {
+  ORI res;
+  res.w =  q.w;
+  res.x = -q.x;
+  res.y = -q.y;
+  res.z = -q.z;
+  return res;
+}
+
+ORI quatNorm(const ORI& q) {
+  ORI res;
+  float norm = sqrt(q.w*q.w + q.x*q.x + q.y*q.y + q.z*q.z);
+  res.w = q.w / norm;
+  res.x = q.x / norm;
+  res.y = q.y / norm;
+  res.z = q.z / norm;
+  return q;
 }
 
 }  // namespace Util

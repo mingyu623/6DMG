@@ -1,5 +1,15 @@
-#include "Database.h"
+/*******************************************************************
+ * Copyright (C) 2016 Mingyu Chen (mingyu623@gmail.com)
+ * You may use, distribute and modify this code under the terms of
+ * the BSD license
+ *
+ * This is a re-write of my work 6DMG_loader_2.0 that can be
+ * downloaded at http://www2.ece.gatech.edu/6DMG/Download.html
+ *******************************************************************/
+
+#include <6DMG/Database.h>
 #include <iostream>
+
 using namespace GestureDef;
 using namespace std;
 
@@ -195,7 +205,8 @@ bool Database::DeleteOneGesture(const string name, const string tester, int tria
   bool ok = true;
 
   // binding values
-  // SQL:deleteOneGestureSQL = "DELETE FROM GestureTable WHERE name=?1 AND tester=?2 AND trial=?3;";"
+  // SQL:deleteOneGestureSQL = "DELETE FROM GestureTable WHERE name=?1 AND "
+  //                           "tester=?2 AND trial=?3;";"
   rc = sqlite3_bind_text(deleteOneGestureStmt, 1, name.c_str(), -1, SQLITE_TRANSIENT);
   if (rc != SQLITE_OK) {
     msg.assign(sqlite3_errmsg(db));
@@ -228,7 +239,7 @@ bool Database::DeleteOneGesture(const string name, const string tester, int tria
   sqlite3_reset(deleteOneGestureStmt);
   sqlite3_clear_bindings(deleteOneGestureStmt);
   if (ok) {
-    cout << "DeleteOneGesture() success: " << name << " by " << testers
+    cout << "DeleteOneGesture() success: " << name << " by " << tester
          << " no. " << trial << " is deleted\n";
   }
   return ok;
@@ -259,3 +270,4 @@ std::vector<TesterInfo> Database::LoadTesters() {
   sqlite3_reset(loadTestersStmt);
   return testers;
 }
+

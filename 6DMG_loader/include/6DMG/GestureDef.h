@@ -69,11 +69,6 @@ struct TesterInfo {
   int rightHand;
 };
 
-// Utility functions for quaternion
-ORI quatMul(const ORI& q1, const ORI& q2);
-ORI quatConj(const ORI& q);
-ORI quatNorm(const ORI& q);
-
 // Utility function to get the gesture/char/word name
 // [Mingyu]: a stupid implementation
 std::string getGestureName(int gestureIdx);

@@ -1,7 +1,15 @@
-#include <iostream>
+/*******************************************************************
+ * Copyright (C) 2016 Mingyu Chen (mingyu623@gmail.com)
+ * You may use, distribute and modify this code under the terms of
+ * the BSD license
+ *
+ * This is a re-write of my work 6DMG_loader_2.0 that can be
+ * downloaded at http://www2.ece.gatech.edu/6DMG/Download.html
+ *******************************************************************/
+#include <6DMG/examples.h>
+#include <6DMG/util.h>
 #include <stdio.h>
-#include "examples.h"
-#include "util.h"
+#include <iostream>
 using namespace std;
 
 //==================================================
@@ -25,7 +33,7 @@ Gesture gest_example2(Database* pDatabase, int tester_idx, int gesture_enum, int
   TesterInfo tester = pDatabase->LoadTesters().at(tester_idx);
   if (pDatabase->LoadOneGesture(getGestureName(gesture_enum), tester.name, trial, g)) {
     cout << g.name << " by " << g.tester << ": trial No. " << g.trial << endl;
-    printf("time(ms) pos.x\t pos.y\ tpos.z\n");
+    printf("time(ms) pos.x\t pos.y\t pos.z\n");
     for (int i = 0; i < g.data.size(); i++) {
       Sample s = g.data.at(i);
       printf("%6.2f\t %4.3f %4.3f %4.3f\n", s.timestamp, s.pos.x, s.pos.y, s.pos.z);
@@ -38,17 +46,19 @@ Gesture gest_example2(Database* pDatabase, int tester_idx, int gesture_enum, int
 // Example 3: MATLAB exporter for one specific motion gest
 void gest_example3(Database* pDatabase, int tester_idx, int gesture_enum, int trial) {
   Gesture g;
+  Util::Converter converter;
   TesterInfo tester = pDatabase->LoadTesters().at(tester_idx);
   if (pDatabase->LoadOneGesture(getGestureName(gesture_enum), tester.name, trial, g)) {
     char filename[20];
     sprintf(filename, "g%02d_%s_t%02d.mat", gesture_enum, tester.name.c_str(), trial);
-    GestToMat(filename, g);
+    converter.GestToMat(filename, g);
   }
 }
 
 
 // Example 4: MATLAB exporter for all motion gests
 void gest_example4(Database* pDatabase) {
+  Util::Converter converter;
   vector<TesterInfo> testersList = pDatabase->LoadTesters();
   for (int i = 0; i < TOTAL_GESTURES; i++) {  // gesture idx
     for (int j = 0; j < testersList.size(); j++) {  // tester idx
@@ -63,7 +73,7 @@ void gest_example4(Database* pDatabase) {
             sprintf(filename, "../matR/g%02d_%s_t%02d.mat", i, tester.c_str(), k);
           else
             sprintf(filename, "../matL/g%02d_%s_t%02d.mat", i, tester.c_str(), k);
-          GestToMat(filename, gest);
+          converter.GestToMat(filename, gest);
         }
       }
     }
@@ -74,16 +84,18 @@ void gest_example4(Database* pDatabase) {
 // Example 5: HTK exporter for motion gest
 void gest_example5(Database* pDatabase, int tester_idx, int gesture_enum, int trial) {
   Gesture g;
+  Util::Converter converter;
   TesterInfo tester = pDatabase->LoadTesters().at(tester_idx);
   if (pDatabase->LoadOneGesture(getGestureName(gesture_enum), tester.name, trial, g)) {
     char filename[20];
     sprintf(filename, "g%02d_%s_t%02d.htk", gesture_enum, tester.name.c_str(), trial);
-    GestToHTK(filename, g);
+    converter.GestToHTK(filename, g);
   }
 }
 
 // Example 6: HTK exporter for all
 void gest_example6(Database* pDatabase) {
+  Util::Converter converter;
   vector<TesterInfo> testersList = pDatabase->LoadTesters();
   for (int i = 0; i < TOTAL_GESTURES; i++) {  // gesture idx
     for (int j = 0; j < testersList.size(); j++) {  // tester  idx
@@ -95,7 +107,7 @@ void gest_example6(Database* pDatabase) {
         if (pDatabase->LoadOneGesture(name, tester, k, gest)) {
           char filename[30];
           sprintf(filename, "../htk/g%02d_%s_t%02d.htk", i, tester.c_str(), k);
-          GestToHTK(filename, gest);
+          converter.GestToHTK(filename, gest);
         }
       }
     }
@@ -104,6 +116,7 @@ void gest_example6(Database* pDatabase) {
 
 // Example 7: Get a summary of the scaling factors
 void gest_example7(Database* pDatabase) {
+  Util::Converter converter;
   vector<TesterInfo> testersList = pDatabase->LoadTesters();
   for (int i = 0; i < TOTAL_GESTURES; i++) {  // gesture idx
     for (int j = 0; j < testersList.size(); j++) {  // tester idx
@@ -125,11 +138,11 @@ void gest_example7(Database* pDatabase) {
       for (int k = 1; k < trialNum; k++) {
         Gesture g;
         if (pDatabase->LoadOneGesture(name, tester, k, g)) {
-          float scale_acc = normalizeACC(g);
-          float scale_pos = normalizePOS(g);
-          float scale_vel = normalizeVEL(g);
-          float scale_w   = normalizeW(g);
-          float scale_ori = normalizeORI(g);
+          float scale_acc = converter.normalizeACC(g);
+          float scale_pos = converter.normalizePOS(g);
+          float scale_vel = converter.normalizeVEL(g);
+          float scale_w   = converter.normalizeW(g);
+          float scale_ori = converter.normalizeORI(g);
           if (scale_acc < min_scale_acc) min_scale_acc = scale_acc;
           if (scale_pos < min_scale_pos) min_scale_pos = scale_pos;
           if (scale_vel < min_scale_vel) min_scale_vel = scale_vel;
@@ -164,6 +177,7 @@ void gest_example7(Database* pDatabase) {
 //==================================================
 // Example 1: HTK exporter for motion char
 void char_example1(Database* pDatabase) {
+  Util::Converter converter;
   vector<TesterInfo> testersList = pDatabase->LoadTesters();
   for (int i = 0; i < TOTAL_CHARS; i++) {  // char idx
     for (int j = 0; j < testersList.size(); j++) {  // tester  idx
@@ -175,7 +189,7 @@ void char_example1(Database* pDatabase) {
         if (pDatabase->LoadOneGesture(name, tester, k, gest)) {
           char filename[40];
           sprintf(filename, "../htk/%s_%s_t%02d.htk", name.c_str(), tester.c_str(), k);
-          GestToHTK(filename, gest);
+          converter.GestToHTK(filename, gest);
         }
       }
     }
@@ -184,6 +198,7 @@ void char_example1(Database* pDatabase) {
 
 // Example 2: MATLAB exporter for motion character
 void char_example2(Database* pDatabase) {
+  Util::Converter converter;
   vector<TesterInfo> testersList = pDatabase->LoadTesters();
   for (int i = 0; i < TOTAL_CHARS; i++) {  // char idx
     for (int j = 0; j < testersList.size(); j++) {  // tester  idx
@@ -199,7 +214,7 @@ void char_example2(Database* pDatabase) {
           } else {
             sprintf(filename, "../matL/%s_%s_t%02d.mat", name.c_str(), tester.c_str(), k);
           }
-          GestToMat(filename, gest);
+          converter.GestToMat(filename, gest);
         }
       }
     }
@@ -209,12 +224,13 @@ void char_example2(Database* pDatabase) {
 // Example 3: HTK exporter for one specific motion char
 void char_example3(Database* pDatabase, int tester_idx, int char_enum, int trial) {
   Gesture g;
+  Util::Converter converter;
   TesterInfo tester = pDatabase->LoadTesters().at(tester_idx);
   string name = getCharName(char_enum);
   if (pDatabase->LoadOneGesture(name, tester.name, trial, g)) {
     char filename[20];
     sprintf(filename, "%s_%s_t%02d.htk", name.c_str(), tester.name.c_str(), trial);
-    GestToHTK(filename, g);
+    converter.GestToHTK(filename, g);
   }
 }
 
@@ -224,6 +240,7 @@ void char_example3(Database* pDatabase, int tester_idx, int char_enum, int trial
 //==================================================
 // Example 1: HTK exporter for motion word
 void word_example1(Database* pDatabase) {
+  Util::Converter converter;
   vector<TesterInfo> testersList = pDatabase->LoadTesters();
   for (int i = 0; i < TOTAL_WORDS; i++) {  // word idx
     for (int j = 0; j < testersList.size(); j++) {  // tester idx
@@ -235,7 +252,7 @@ void word_example1(Database* pDatabase) {
         if (pDatabase->LoadOneGesture(name, tester, k, gest)) {
           char filename[40];
           sprintf(filename, "../htk/%s_%s_t%02d.htk", name.c_str(), tester.c_str(), k);
-          GestToHTK(filename, gest);
+          converter.GestToHTK(filename, gest);
         }
       }
     }
@@ -245,6 +262,7 @@ void word_example1(Database* pDatabase) {
 
 // Example 2: MATLAB exporter for motion word
 void word_example2(Database* pDatabase) {
+  Util::Converter converter;
   vector<TesterInfo> testersList = pDatabase->LoadTesters();
   for (int i = 0; i < TOTAL_WORDS; i++) {  // word idx
     for (int j = 0; j < testersList.size(); j++) {  // tester idx
@@ -260,7 +278,7 @@ void word_example2(Database* pDatabase) {
           } else {
             sprintf(filename, "../matL/%s_%s_t%02d.mat", name.c_str(), tester.c_str(), k);
           }
-          GestToMat(filename, gest);
+          converter.GestToMat(filename, gest);
         }
       }
     }
@@ -269,6 +287,7 @@ void word_example2(Database* pDatabase) {
 
 // Example 3: MATLAB exporter for motion word from a specific tester
 void word_example3(Database* pDatabase, string tester) {
+  Util::Converter converter;
   for (int i = 0; i < TOTAL_WORDS; i++) {  // word idx
     string name = getWordName(i);
     int trialNum = pDatabase->GetCurrentTrial(name, tester);
@@ -277,7 +296,7 @@ void word_example3(Database* pDatabase, string tester) {
       if (pDatabase->LoadOneGesture(name, tester, k, gest)) {
         char filename[40];
         sprintf(filename, "../matR/%s_%s_t%02d.mat", name.c_str(), tester.c_str(), k);
-        GestToMat(filename, gest);
+        converter.GestToMat(filename, gest);
       }
     }
   }
@@ -286,15 +305,17 @@ void word_example3(Database* pDatabase, string tester) {
 // Example 4: HTK exporter for a motion word from a specific trial and tester
 void word_example4(Database* pDatabase, string tester, string word, int trial) {
   Gesture gest;
+  Util::Converter converter;
   if (pDatabase->LoadOneGesture(word, tester, trial, gest)) {
     char filename[40];
     sprintf(filename, "../htk/%s_%s_t%02d.htk", word.c_str(), tester.c_str(), trial);
-    GestToHTK(filename, gest);
+    converter.GestToHTK(filename, gest);
   }
 }
 
 // Example 5: HTK exporter for motion words from a specific tester
 void word_example5(Database* pDatabase, string tester) {
+  Util::Converter converter;
   for (int i = 0; i < TOTAL_WORDS; i++) {
     string name = getWordName(i);
     int trialNum = pDatabase->GetCurrentTrial(name, tester);
@@ -303,7 +324,7 @@ void word_example5(Database* pDatabase, string tester) {
       if (pDatabase->LoadOneGesture(name, tester, k, gest)) {
         char filename[40];
         sprintf(filename, "../htk/%s_%s_t%02d.htk", name.c_str(), tester.c_str(), k);
-        GestToHTK(filename, gest);
+        converter.GestToHTK(filename, gest);
       }
     }
   }
