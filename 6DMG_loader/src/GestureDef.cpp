@@ -1,6 +1,15 @@
-#include "GestureDef.h"
-#include <fstream>
+/*******************************************************************
+ * Copyright (C) 2016 Mingyu Chen (mingyu623@gmail.com)
+ * You may use, distribute and modify this code under the terms of
+ * the BSD license
+ *
+ * This is a re-write of my work 6DMG_loader_2.0 that can be
+ * downloaded at http://www2.ece.gatech.edu/6DMG/Download.html
+ *******************************************************************/
+
+#include <6DMG/GestureDef.h>
 #include <math.h>
+#include <string>
 using namespace std;
 
 namespace GestureDef {

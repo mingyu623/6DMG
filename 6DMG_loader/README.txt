@@ -6,7 +6,8 @@
    the MCR (Matlab Compiler) to compile and run 6DMG_loader.
    http://www.mathworks.com/products/compiler/mcr/
 
-
+2. Install SQLite
+   > sudo apt-get install libsqlite3-dev
 
 # TODO(mingyu): Update the README...
 
