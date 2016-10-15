@@ -12,10 +12,13 @@
 #include <6DMG/examples.h>
 #include <6DMG/Config.h>
 
-#include <iostream>
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE, EXIT_SUCCESS
+#include <iostream>
 #include <vector>
+
+// TODO(mingyu): add gflags and make 6dmg_loader a more generic executable
+// TODO(mingyu): move all the *examples* into a script that runs the 6dmg_loader?
 
 using namespace std;
 using namespace GestureDef;

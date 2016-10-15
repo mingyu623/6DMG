@@ -1,6 +1,9 @@
 #ifndef _6DMG_CONFIG_H_
 #define _6DMG_CONFIG_H_
 
+// TODO(mingyu): Add gflags
+// TODO(mingyu): Replace compile time config with runtime command line flags
+
 /* --------------------------------------------------
  * -----   Defines for export example options   -----
  * --------------------------------------------------
