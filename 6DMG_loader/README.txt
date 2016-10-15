@@ -1,6 +1,19 @@
 # 6DMG_loader_2.2
 # Mingyu Chen (mingyu623@gmail.com) @ Oct. 14. 2016
 
+
+1. If there's no Matlab installed on the machine, you can install only
+   the MCR (Matlab Compiler) to compile and run 6DMG_loader.
+   http://www.mathworks.com/products/compiler/mcr/
+
+
+
+# TODO(mingyu): Update the README...
+
+
+
+
+
 ---------------------------------------------------
 change log:
 The normalization scheme is modified for left-to-right writing
@@ -102,7 +115,7 @@ The normalization scheme is modified for left-to-right writing
 [YY]: tester ID
 [ZZ]: trial index
 
-2. Use "HList -h g[xx]_[YY]_t[ZZ].htk to view the content  
+2. Use "HList -h g[xx]_[YY]_t[ZZ].htk to view the content
 3. Use #define HTK_EXP  to select the datatype(s) to export
 4. Use #define HTK_NORM to select the datatype(s) to normalize
 
