@@ -1,12 +1,20 @@
-#ifndef UTIL_H
-#define UTIL_H
-
+/*******************************************************************
+ * Copyright (C) 2016 Mingyu Chen (mingyu623@gmail.com) 
+ * You may use, distribute and modify this code under the terms of
+ * the BSD license
+ *
+ * This is a re-write of my work 6DMG_loader_2.0 that can be
+ * downloaded at http://www2.ece.gatech.edu/6DMG/Download.html
+ *******************************************************************/
+#ifndef _6DMG_UTIL_H_
+#define _6DMG_UTIL_H_
 
 #pragma comment(lib, "libmat.lib")
 #pragma comment(lib, "libmx.lib")
-#include "mat.h"
-#include "GestureDef.h"
-#include "Config.h"
+
+#include <mat.h>
+#include <GestureDef.h>
+#include <Config.h>
 
 using namespace GestureDef;
 using namespace std;
@@ -65,4 +73,4 @@ Euler quatToEulerZXY(ORI q);
 ORI   eulerZXYToQuat(Euler e);
 float centerPitch(vector<float> pitch);
 
-#endif
+#endif  // _6DMG_UTIL_H_

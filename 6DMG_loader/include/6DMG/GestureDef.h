@@ -6,8 +6,8 @@
  * This is a re-write of my work 6DMG_loader_2.0 that can be
  * downloaded at http://www2.ece.gatech.edu/6DMG/Download.html
  *******************************************************************/
-#ifndef _GESTURE_DEF_H_
-#define _GESTURE_DEF_H_
+#ifndef _6DMG_GESTURE_DEF_H_
+#define _6DMG_GESTURE_DEF_H_
 
 #include <string>
 #include <vector>
@@ -335,4 +335,4 @@ enum WordName{
 };
 
 }  // namespace GestureDef
-#endif  // _GESTURE_DEF_H_
+#endif  // _6DMG_GESTURE_DEF_H_
