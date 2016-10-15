@@ -12,29 +12,17 @@
 #pragma comment(lib, "libmat.lib")
 #pragma comment(lib, "libmx.lib")
 
+#include <6DMG/GestureDef.h>
+#include <6DMG/Config.h>
 #include <mat.h>
-#include <GestureDef.h>
-#include <Config.h>
+#include <math.h>  // for M_PI
 
 using namespace GestureDef;
 using namespace std;
 
-#define N_ELEM 14           // total elements per sample (for Matlab exporter)
-#define SAMP_PERIOD	1			// show the sample number instead of the true time stamp
-//#define SAMP_PERIOD 166666	// 60 Hz
-
-#define M_PI		3.14159265358979323846	// pi
-#define EPSILON		0.01 // threshold or quaternion conversion
-
-/* -------------------------------------------------- */
-/* ----- Private type definition for HTKWrite() ----- */
-/* -------------------------------------------------- */
-typedef struct {
-  unsigned int nSamples;	// sizeof(int) = 4 = sizeof(float)
-  unsigned int sampPeriod;  // in 100ns units
-  unsigned short sampSize;  // sizeof(short)= 2
-  unsigned short parmKind;
-} htk_header_t;
+#define N_ELEM 14      // total elements per sample (for Matlab exporter)
+#define SAMP_PERIOD 1  // show the sample number instead of the true time stamp
+// #define SAMP_PERIOD 166666  // 60 Hz
 
 #define H_LPC       1
 #define H_LPREFC    2
@@ -48,29 +36,67 @@ typedef struct {
 #define HASDELTA    0x0100
 #define HASZMEAN    0x0800
 
-int GestToMat(char* fname, Gesture& g);
-int GestToHTK(char* fname, Gesture& g);
-int preprocessHTK(Gesture& g, unsigned short nElem, float* buff);
-int preprocessHTK_Legacy(Gesture& g, unsigned short nElem, float* buff);
 
-// compute the normalization "scale"
-float normalizePOS(Gesture& g);
-float normalizeVEL(Gesture& g);
-float normalizeACC(Gesture& g);
-float normalizeW(Gesture& g);
-float normalizeORI(Gesture& g);
-float normalizePitch(vector<float> pitch);
-float normalizeORI_Legacy(Gesture& g);
-float normalizePOS_univar(Gesture& g, XYZ& avgPOS);
+#define EPSILON 0.01  // threshold for quaternion conversion
+
+namespace Util {
+
+class Converter {
+ public:
+  /**
+   * Utility functions to convert a gesture recording to a Mat file
+   */
+  int GestToMat(char* fname, Gesture& g);
+
+  /**
+   * Utility functions to convert a gesture recording to a HTK file
+   */
+  int GestToHTK(char* fname, Gesture& g);
+
+  /**
+   * Preprocess a gesture recording (i.e., normalization)
+   */
+  int preprocessHTK(Gesture& g, unsigned short nElem, float* buff);
+  // TODO(mingyu): remove this...
+  int preprocessHTK_Legacy(Gesture& g, unsigned short nElem, float* buff);
+
+ private:
+  // Header for HTKWrite()
+  struct htk_header_t {
+    unsigned int nSamples;    // sizeof(int) = 4 = sizeof(float)
+    unsigned int sampPeriod;  // in 100ns units
+    unsigned short sampSize;  // sizeof(short)= 2
+    unsigned short parmKind;
+  };
+
+  /**
+   * The implementation of normalization of various types of motion data
+   */
+  float normalizePOS(Gesture& g);
+  float normalizeVEL(Gesture& g);
+  float normalizeACC(Gesture& g);
+  float normalizeW(Gesture& g);
+  float normalizeORI(Gesture& g);
+  float normalizePitch(vector<float> pitch);
+  float normalizeORI_Legacy(Gesture& g);
+  float normalizePOS_univar(Gesture& g, XYZ& avgPOS);
+
+  /**
+   * Other internal utility functions
+   */
+   XYZ   convertGACC(XYZ acc, ORI q);
+   XYZ   boundingBoxCenter(Gesture& g);
+   ORI   quatScale(ORI q, float s);
+   ORI   averageOri(Gesture& g);
+   void  leastSquaresFit(vector<float>& y, float& a, float& b); // y = ax + b
+   Euler quatToEulerZXY(ORI q);
+   ORI   eulerZXYToQuat(Euler e);
+   float centerPitch(vector<float> pitch);
+};
 
 
-XYZ   convertGACC(XYZ acc, ORI q);
-XYZ   boundingBoxCenter(Gesture& g);
-ORI   quatScale(ORI q, float s);
-ORI   averageOri(Gesture& g);
-void  leastSquaresFit(vector<float>& y, float& a, float& b); // y = ax + b
-Euler quatToEulerZXY(ORI q);
-ORI   eulerZXYToQuat(Euler e);
-float centerPitch(vector<float> pitch);
 
+
+
+}  // namespace Util
 #endif  // _6DMG_UTIL_H_
