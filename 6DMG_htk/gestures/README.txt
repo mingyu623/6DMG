@@ -41,4 +41,12 @@ Train with random 5 trials of a SINGLE right-handed user and test with the rest 
   Example output:
    - exp1/err_rep.txt (Contain the total number of errors after redo)
 
+1.3. exp1_res.pl [datatype_1] .. [datatype_n]
+  This script collects the results rom exp1.pl and computes the recognition
+  accuracy and confusion matrix for the training/testing sets.
+  Example:
+  > perl exp1_res.pl NPNVNOs2
+  Example output:
+   - exp1/B1/NPNVNOs2_trn.txt
+   - exp1/B1/NPNVNOs2_tst.txt
 ***** Exp 2 ( User independent case): *****
