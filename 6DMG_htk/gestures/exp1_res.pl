@@ -11,7 +11,9 @@ if ($#ARGV <0)
 }
 
 my @myDataTypes = @ARGV;
-my @users = grep {-d "exp1" && ! /^\.{1,2}$/} readdir("exp1");
+
+opendir($dh, "exp1") || die "exp1 doesn't exist!";
+my @users = grep(-d "exp1/$_" && ! /^\.{1,2}$/, readdir($dh));
 
 #-------------------------------------------------------------------------
 # 1. Collect the MLF files and prepare the script

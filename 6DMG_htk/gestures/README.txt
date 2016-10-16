@@ -49,4 +49,14 @@ Train with random 5 trials of a SINGLE right-handed user and test with the rest 
   Example output:
    - exp1/B1/NPNVNOs2_trn.txt
    - exp1/B1/NPNVNOs2_tst.txt
+
+1.4 exp1_avg_res.pl [datatype_1] .. [datatype_n]
+  This script collects the results of each user and do the average
+  Example:
+  > perl exp1_avg_res.pl NPNVNOs2
+  Example output:
+   - exp1/trn_res.txt
+   - exp1/tst_res.txt
+
+
 ***** Exp 2 ( User independent case): *****
