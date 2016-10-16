@@ -15,23 +15,23 @@ if ($#ARGV < 1)
 
 # TODO(mingyu): Check if the data_dir is valid
 $data_dir = $ARGV[0];
+@myDataTypes = @ARGV[1..$#ARGV];
 
 # check if the data types are valid
-@dataTypes = ("A", "AW", "P", "PO", "V", "VO");
-@myDataTypes = @ARGV[1..$#ARGV];
-foreach my $my_dtype (@myDataTypes)
-{
-    my $valid = 0;
-    foreach my $dtype (@dataTypes)
-    {
-	if ($my_dtype eq $dtype) { $valid = 1; }
-    }
-    if ($valid==0)
-    {
-	print "invalid datatype $my_dtype\n";
+#@dataTypes = ("A", "AW", "P", "PO", "V", "VO");
+#foreach my $my_dtype (@myDataTypes)
+#{
+#    my $valid = 0;
+#    foreach my $dtype (@dataTypes)
+#    {
+#	if ($my_dtype eq $dtype) { $valid = 1; }
+#    }
+#    if ($valid==0)
+#    {
+#	print "invalid datatype $my_dtype\n";
 #	exit;
-    }
-}
+#    }
+#}
 
 @userR = ("B1", "B2");
 #@userR = ("B1", "B2", "C1", "C2", "D1", "J1", "J2", "J3", "J5", "M1",
