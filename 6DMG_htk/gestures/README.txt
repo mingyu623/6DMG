@@ -60,3 +60,22 @@ Train with random 5 trials of a SINGLE right-handed user and test with the rest 
 
 
 ***** Exp 2 ( User independent case): *****
+Train with random 5 right-handed users and test with 1) the rest 16 right-handers,
+and 2) all 7 left-handers
+
+2.1. exp2_single.pl [datatype] [run#] [data_dir]
+  Single run of one random instance of UI training/testing
+  Example:
+  > perl exp2_single.pl NPNVNOs2 1 ~/Development/6DMG/data_htk/gestures
+  Example output:
+  - results at exp2/NPNVNOs2/run001
+  - exp2/NPNVNOs2/log001.txt
+  - exp2/NPNVNOs2/err001.txt (if something goes WRONG!)
+
+2.2. exp2.pl
+
+2.3. exp2_err_rep.pl
+
+2.4. exp2_res.pl
+
+2.5. exp2_all_res.pl
