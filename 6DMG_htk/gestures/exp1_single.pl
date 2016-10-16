@@ -9,7 +9,7 @@ use File::stat;
 if ($#ARGV !=3)
 {
     print "usage: exp1_single [user] [datatype] [run#] [data_dir]\n";
-    print " [data_dir]: the base path to the $datatype folder\n";
+    print " [data_dir]: the base path to the \$datatype folder\n";
     exit;
 }
 else
@@ -18,7 +18,7 @@ else
     $dtype = $ARGV[1]; # "AW", "PO", etc.
     $run   = $ARGV[2]; # specify the combination of trials for training
     $runStr= sprintf("%03d", $run);
-    $data_dir = $ARGV[3]; # data dir to the .htk files
+    $data_dir = $ARGV[3]; # base path to the data folder of .htk files
 }
 
 #-------------------------------------------------------------------------

@@ -23,3 +23,7 @@ case "$host" in
   > make all
   > sudo make install
 
+4. Through the training/testing process, Perl Parallel::ForkManager module is used
+   for parallel processing. Make sure to install Parallel::ForkManager first
+  > cpan Parallel::ForkManager
+
