@@ -17,23 +17,8 @@ if ($#ARGV < 1)
 $data_dir = $ARGV[0];
 @myDataTypes = @ARGV[1..$#ARGV];
 
-# check if the data types are valid
-#@dataTypes = ("A", "AW", "P", "PO", "V", "VO");
-#foreach my $my_dtype (@myDataTypes)
-#{
-#    my $valid = 0;
-#    foreach my $dtype (@dataTypes)
-#    {
-#	if ($my_dtype eq $dtype) { $valid = 1; }
-#    }
-#    if ($valid==0)
-#    {
-#	print "invalid datatype $my_dtype\n";
-#	exit;
-#    }
-#}
-
 @userR = ("B1", "B2");
+## [Mingyu]: Uncomment to use the full sets of users
 #@userR = ("B1", "B2", "C1", "C2", "D1", "J1", "J2", "J3", "J5", "M1",
 #          "M2", "M3", "R2", "S1", "S2", "T1", "T2", "U1", "W1", "Y1",
 #          "Y3");

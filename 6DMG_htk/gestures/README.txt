@@ -73,6 +73,10 @@ and 2) all 7 left-handers
   - exp2/NPNVNOs2/err001.txt (if something goes WRONG!)
 
 2.2. exp2.pl
+  Top level launcher for training/testing of given datatype(s).  Will generate
+  $totalRuns of exp2_single instances with parallel processing.
+  Example:
+  > perl exp2.pl ~/Development/6DMG/data_htk/gestures NPNVNOs2
 
 2.3. exp2_err_rep.pl
 
