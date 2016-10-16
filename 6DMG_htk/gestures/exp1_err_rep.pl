@@ -7,28 +7,15 @@
 
 use File::stat;
 
-if ($#ARGV <0)
+if ($#ARGV < 1)
 { 
-    print "usage: exp1_err_rep [datatype1] .. [datatypen]\n";
+    print "usage: exp1_err_rep [data_dir] [datatype1] .. [datatypen]\n";
+    print " [data_dir]: the base path to the \$datatype folder(s)\n";
     exit;
 }
-@myDataTypes = @ARGV;
 
-# check if the data types are valid
-#@dataTypes = ("A", "AW", "P", "PO", "V", "VO");
-#foreach my $my_dtype (@myDataTypes)
-#{
-#    my $valid = 0;
-#    foreach my $dtype (@dataTypes)
-#    {
-#	if ($my_dtype eq $dtype) { $valid = 1; }
-#    }
-#    if ($valid==0)
-#    {
-#	print "invalid datatype $my_dtype\n";
-#	exit;
-#    }
-#}
+$data_dir = $ARGV[0];
+@myDataTypes = @ARGV[1..$#ARGV];
 
 @userR = ("B1", "B2", "C1", "C2", "D1", "J1", "J2", "J3", "J5", "M1",
           "M2", "M3", "R2", "S1", "S2", "T1", "T2", "U1", "W1", "Y1",
@@ -53,8 +40,8 @@ foreach my $usr (@userR)
 		if (stat("$run")->size==0) # abnormal early termination
 		{
 		    $run =~ /err(.*).txt/;
-		    print ("REDO exp1_single.pl $usr $dtype $1\n");
-		    system("perl exp1_single.pl $usr $dtype $1");
+		    print ("REDO exp1_single.pl $usr $dtype $1 $data_dir\n");
+		    system("perl exp1_single.pl $usr $dtype $1 $data_dir");
 		}
 		else # a real Error occurs at exp1_single.pl
 		{
@@ -62,7 +49,7 @@ foreach my $usr (@userR)
 		    $err_cnt += 1;
 		    print F_err "$run\n";
 		}
-	    }while(-e $run && $true_err==0);
+	    } while(-e $run && $true_err==0);
 	}
     }
 }
