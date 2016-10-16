@@ -42,8 +42,8 @@ Train with random 5 trials of a SINGLE right-handed user and test with the rest 
    - exp1/err_rep.txt (Contain the total number of errors after redo)
 
 1.3. exp1_res.pl [datatype_1] .. [datatype_n]
-  This script collects the results rom exp1.pl and computes the recognition
-  accuracy and confusion matrix for the training/testing sets.
+  This script collects the results from exp1.pl and computes the recognition
+  accuracy and confusion matrices for the training/testing sets.
   Example:
   > perl exp1_res.pl NPNVNOs2
   Example output:
@@ -87,6 +87,21 @@ and 2) all 7 left-handers
   Example output:
    - exp2/err_rep.txt (Contain the total number of errors after redo)
 
-2.4. exp2_res.pl
+2.4. exp2_res.pl [datatype_1] .. [datatype_n]
+  This script collects the results from exp2.pl and computes the recognition
+  accuracy and confusion matrices for the trainging/testing-R/testing-L sets.
+  Example:
+  > perl exp2_res.pl NPNVNOs2
+  Example output:
+  - exp2/NPNVNOs2_trn.txt
+  - exp2/NPNVNOs2_tstR.txt
+  - exp2/NPNVNOs2_tstL.txt
 
-2.5. exp2_all_res.pl
+2.5. exp2_all_res.pl [datatype_1] .. [datatype_n]
+  This script collects the results for all datatypes and generates a summary.
+  Example:
+  > perl exp2_all_res.pl
+  Example output:
+  - exp2/trn_res.txt
+  - exp2/tstR_res.txt
+  - exp2/tstL_res.txt
