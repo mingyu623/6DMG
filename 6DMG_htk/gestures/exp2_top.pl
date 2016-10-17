@@ -13,7 +13,7 @@
 # from 6DMG_loader and refer to a specific folder of the exported .htk files:
 # $dtypes_str = "A AW P PO V W O NP NV NO NGA NW".
 #               "NPNVNOs2 NGANW NPNVNOs2NGANW";
-$dtypes_str = "NPNVNOs2 NOs2NWNGA NP";
+$dtypes_str = "NPNVNOs2 NOs2NWNGA";
 $data_dir = "../../data_htk/gestures";
 
 #-------------------------------------------------------------------------
@@ -42,4 +42,4 @@ system("perl exp2_err_rep.pl $data_dir $dtypes_str");
 
 # Collect results > exp2_res
 system("perl exp2_res.pl $dtypes_str");
-system("perl exp2_all_res.pl $dtypes_str");
+system("perl exp2_all_res.pl);

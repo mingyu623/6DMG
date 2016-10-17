@@ -128,7 +128,7 @@ and 2) all 7 left-handers
   - exp2/NPNVNOs2_tstR.txt
   - exp2/NPNVNOs2_tstL.txt
 
-2.5. exp2_all_res.pl [datatype_1] .. [datatype_n]
+2.5. exp2_all_res.pl
   This script collects the results for all datatypes and generates a summary.
   Example:
   > perl exp2_all_res.pl
