@@ -20,6 +20,13 @@ if (NOT (MATLAB_MX_LIB AND MATLAB_MAT_LIB AND MATLAB_INCLUDE_DIR))
  message(FATAL_ERROR "Cannot find Matlab lib at ${MATLAB_ROOT_DIR}")
 endif()
 
+# Find the endian-ness of the OS
+include(TestBigEndian)
+test_big_endian(IsBigEndian)
+if (${IsBigEndian})
+ add_definitions(-DIS_BIGENDIAN)
+endif()
+
 # The 6DMG library
 add_library(6DMG
  src/GestureDef.cpp

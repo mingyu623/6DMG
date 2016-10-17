@@ -115,11 +115,13 @@ int Converter::GestToHTK(char* fname, Gesture& g) {
   header.sampSize = nElem * sizeof(float);
   header.parmKind = H_USER;  // user defined data w/o flags (HASENERGY, HASDELTA, etc)
 
-  // Swap from little endian (Windows) to big endian (required by HTK)
+#ifndef IS_BIGENDIAN
+  // Swap from little endian to big endian (required by HTK)
   endian_swap(header.nSamples);
   endian_swap(header.sampPeriod);
   endian_swap(header.sampSize);
   endian_swap(header.parmKind);
+#endif  // IS_BIGENDIAN
 
   // Write HTK header
   if (fwrite(&header, sizeof(htk_header_t), 1, f) != 1) {
@@ -133,11 +135,14 @@ int Converter::GestToHTK(char* fname, Gesture& g) {
   preprocessHTK(g, nElem, buff);
 
   // Write HTK data
-  // Mingyu: swap from little endian (Windows) to big endian (required by HTK)
   unsigned int* uint_buff = (unsigned int*)buff;
+#ifndef IS_BIGENDIAN
+  // Swap from little endian to big endian (required by HTK)
   for (int j = 0; j < nElem * g.data.size(); j++) {
     endian_swap(uint_buff[j]);
   }
+#endif  // IS_BIGENDIAN
+
   if (fwrite(uint_buff, sizeof(unsigned int), nElem*g.data.size(), f) != nElem*g.data.size()) {
     cout << "Error: write HTK data at " << fname << endl;
     return -1;

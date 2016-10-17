@@ -41,7 +41,7 @@ int main() {
     gest_example3(pDatabaseGest, 2, V_SHAPE, 1);
 
     // Example 4: MATLAB exporter for all motion gests
-// gest_example4(pDatabaseGest);
+    // gest_example4(pDatabaseGest);
 #endif
 
 #ifdef EXPORT_GEST_HTK
@@ -49,7 +49,7 @@ int main() {
     gest_example5(pDatabaseGest, 2, V_SHAPE, 1);
 
     // Example 6: HTK exporter for all
-    gest_example6(pDatabaseGest);
+    // gest_example6(pDatabaseGest);
 #endif
 
 #ifdef GEST_NORM_STAT

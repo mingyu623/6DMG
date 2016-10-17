@@ -8,7 +8,7 @@
  * -----   Defines for export example options   -----
  * --------------------------------------------------
  */
-// #define EXPORT_GEST_HTK   // export 6DMG (motion gest) to HTK
+#define EXPORT_GEST_HTK   // export 6DMG (motion gest) to HTK
 #define EXPORT_GEST_MAT   // export 6DMG (motion gest) to Matlab
 // #define GEST_NORM_STAT    // print the stats on the normalization scales of 6DMG (motion gest)
 // #define EXPORT_CHAR_HTK   // export 6DMG (motion char) to HTK
