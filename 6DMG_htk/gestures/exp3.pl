@@ -14,8 +14,6 @@ if ($#ARGV < 1)
     exit;
 }
 
-# check if the data types are valid
-
 $data_dir = $ARGV[0];
 @myDataTypes = @ARGV[1..$#ARGV];
 

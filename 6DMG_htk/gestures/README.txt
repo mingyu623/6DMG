@@ -15,7 +15,7 @@
 #             |
 #             |                   (dtype run)
 #             |----> exp3.pl -------------------> exp3_single.pl
-#
+#             |----> exp3_err_rep.pl
 #
 #
 #
@@ -49,7 +49,8 @@ Train with random 5 trials of a SINGLE right-handed user and test with the rest 
 
 1.3. exp1_res.pl [datatype_1] .. [datatype_n]
   This script collects the results from exp1.pl and computes the recognition
-  accuracy and confusion matrices for the training/testing sets.
+  accuracy and confusion matrices for the training/testing sets of specified
+  datatype(s)
   Example:
   > perl exp1_res.pl NPNVNOs2
   Example output:
@@ -95,7 +96,8 @@ and 2) all 7 left-handers
 
 2.4. exp2_res.pl [datatype_1] .. [datatype_n]
   This script collects the results from exp2.pl and computes the recognition
-  accuracy and confusion matrices for the trainging/testing-R/testing-L sets.
+  accuracy and confusion matrices for the trainging/testing-R/testing-L sets
+  of specified datatype(s).
   Example:
   > perl exp2_res.pl NPNVNOs2
   Example output:
@@ -131,3 +133,29 @@ and 2) all 7 left-handers
   Example:
   > perl exp3.pl NPNVNOs2
 
+3.3. exp3_err_rep.pl [data_dir] [datatype_1] .. [datatype_n]
+  This script reports the runs that fails to complete (errXXX.txt exists).
+  It also attempts to fix the "abnormal early termination problem".
+  Run exp3_err_rep before collecting the results (exp2_res & exp2_all_res, etc).
+  Example:
+  > perl exp3_err_rep.pl ~/Development/6DMG/data_htk NPNVNOs2
+  Example output:
+   - exp3/err_rep.txt (Contain the total number of errors after redo)
+
+3.4. exp3_res.pl [datatype_1] .. [datatype_n]
+  This script collects the results from exp3.pl and computes the recognition
+  accuracy and confusion matrices for the trainging/testing sets of specified
+  datatype(s)
+  Example:
+  > perl exp3_res.pl NPNVNOs2
+  Example output:
+  - exp3/NPNVNOs2_trn.txt
+  - exp3/NPNVNOs2_tst.txt
+
+3.5. exp3_all_res.pl
+  This script collects the results for all datatypes and generates a summary.
+  Example:
+  > perl exp3_all_res.pl
+  Example output:
+  - exp3/trn_res.txt
+  - exp3/tst_res.txt
