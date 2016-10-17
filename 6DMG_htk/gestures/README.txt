@@ -1,26 +1,47 @@
 # Mingyu @ Sep 03 2011
-# The toppest script to control every exp with different datatypes
+# The toppest scripts to control every exp with different datatypes
 #
-#          (dtype)             (dtype usr run)
-# exp.pl ----------> exp1.pl -------------------> exp1_single.pl             
+#             (dtype)          (dtype usr run)
+# exp1_top.pl -----> exp1.pl -------------------> exp1_single.pl
 #             |----> exp1_err_rep.pl
 #             |----> exp1_res.pl
 #             |----> exp1_avg_res.pl
-#             |             
-#             |                   (dtype run)
-#             |----> exp2.pl -------------------> exp2_single.pl
+#
+#
+#             (dtype)             (dtype run)
+# exp2_top.pl |----> exp2.pl -------------------> exp2_single.pl
 #             |----> exp2_err_rep.pl
 #             |----> exp2_res.pl
 #             |----> exp2_all_res.pl
-#             |
-#             |                   (dtype run)
-#             |----> exp3.pl -------------------> exp3_single.pl
-#             |----> exp3_err_rep.pl
-#             |----> exp3_res.pl
-#             |----> exp3_all_res.pl
-#             |----> exp3_stats.pl
 #
 #
+#             (dtype)             (dtype run)
+# exp3_top.pl ----> exp3.pl -------------------> exp3_single.pl
+#             |---> exp3_err_rep.pl
+#             |---> exp3_res.pl
+#             |---> exp3_all_res.pl
+#             |---> exp3_stats.pl
+#
+#
+
+***** Generate the HTK data *****
+The HTK requires certain format of data for training/testing, which can be exported
+from 6DMG_loader. Currently, we need to manually move the exported HTK data (.htk)
+to a desired location with a unique/meaningful folder name ($dtype).
+Here's my naming convention for example:
+- NPNVNOs2: normalized position, normalized velocity, and normalized orientation (scaled ver2)
+- NGANW: normalized gravity-removal acceleration, normalized angular velocity
+
+$data_dir refers to the base path of those $dtype folders.
+For example:
+ ~/Development/6DMG/data_htk/gestures/     <-- data_dir
+                                       NPNVNOs2/    <-- datatype1
+                                                gXX_YY_tZZ.htk
+                                                ...
+                                       NGANW/       <-- datatype2
+                                                gXX_YY_tZZ.htk
+                                                ...
+
 
 ***** Exp 1 (User depedent case): *****
 Train with random 5 trials of a SINGLE right-handed user and test with the rest trials
