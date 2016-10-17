@@ -2,7 +2,7 @@
 # The toppest script to control every exp with different datatypes
 #
 #          (dtype)             (dtype usr run)
-# exp.pl ----------> exp1.pl -------------------> exp1_single.pl#             
+# exp.pl ----------> exp1.pl -------------------> exp1_single.pl             
 #             |----> exp1_err_rep.pl
 #             |----> exp1_res.pl
 #             |----> exp1_avg_res.pl
@@ -12,8 +12,14 @@
 #             |----> exp2_err_rep.pl
 #             |----> exp2_res.pl
 #             |----> exp2_all_res.pl
+#             |
+#             |                   (dtype run)
+#             |----> exp3.pl -------------------> exp3_single.pl
 #
-
+#
+#
+#
+#
 ***** Exp 1 (User depedent case): *****
 Train with random 5 trials of a SINGLE right-handed user and test with the rest trials
 
@@ -105,3 +111,23 @@ and 2) all 7 left-handers
   - exp2/trn_res.txt
   - exp2/tstR_res.txt
   - exp2/tstL_res.txt
+
+
+***** Exp 3 ( User independent case, Leave-one-out): *****
+3.1. exp3_single.pl [datatype] [run#] [data_dir]
+  Single run of leave-one-out training/testing process.  The run# specifies
+  which user is left out.
+  Example:
+  > perl exp3_single.pl NPNVNOs2 1 ~/Development/6DMG/data_htk/gestures
+  Example output:
+  - results at exp3/NPNVNOs2/run001
+  - exp3/NPNVNOs2/log001.txt
+  - exp3/NPNVNOs2/err001.txt (if something goes WRONG!)
+
+3.2. exp3.pl [data_dir] [datatype_1] .. [datatype_n]
+  Top level launcher for training/testing of given datatype(s).  Will generate
+  $totalRuns of exp3_single instance with parallel processing. $totalRuns should
+  be equal to the total number of users for a complete leave-one-out evaluation.
+  Example:
+  > perl exp3.pl NPNVNOs2
+

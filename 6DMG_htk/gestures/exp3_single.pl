@@ -1,17 +1,15 @@
 #!/usr/bin/perl
-# Mingyu @ Aug 30 2011
-# User Independent case
-# Train with random 5 right-handed users and test with:
-# Exp 2.1: the rest 16 right-handers
-# Exp 2.2: all 7 left-handers
-# Run exp2.pl on top of exp2_single.pl (single run only)
+# Mingyu @ Jul 01 2012
+# User Independent case (Leave-one-out)
+# Exp 3
+# Run exp3.pl on top of exp3_single.pl (single run only)
 
 use File::Path qw(make_path remove_tree);
 use File::stat;
 
 if ($#ARGV != 2)
 {
-    print "usage: exp2_single [datatype] [run#] [data_dir]\n";
+    print "usage: exp3_single [datatype] [run#] [data_dir]\n";
     print " [data_dir]: the base path to the \$datatype folder\n";
     exit;
 }
@@ -36,6 +34,15 @@ for (my $i=0; $i<20; $i++)
 @userR = ("B1", "B2", "C1", "C2", "D1", "J1", "J2", "J3", "J5", "M1",
           "M2", "M3", "R2", "S1", "S2", "T1", "T2", "U1", "W1", "Y1",
           "Y3");
+@userAll = @userR;
+push(@userAll, @userL);
+
+if ($run > $#userAll)
+{
+    print "run# exceeds the total number of users!\n";
+    exit;
+}
+$userTest = $userAll[$run-1]; # perl array starts with index 0
 
 #-------------------------------------------------------------------------
 # Set some common parameters
@@ -43,16 +50,14 @@ for (my $i=0; $i<20; $i++)
 # Prepare the log and err files (Redirect STDOUT & STDERR)
 #-------------------------------------------------------------------------
 $gMLF  = "mlf/gest.mlf";  # global def of gest MLF
-$path  = "exp2/$dtype";
+$path  = "exp3/$dtype";
 $trn_script  = "$path/run$runStr/train.scp";
-$tstR_script = "$path/run$runStr/testR.scp";
-$tstL_script = "$path/run$runStr/testL.scp";
+$tst_script  = "$path/run$runStr/test.scp";
 $hmm0  = "$path/run$runStr/hmm0";
 $hmm1  = "$path/run$runStr/hmm1";
 $proto = "proto/template_$dtype"; # the HMM proto
 $trnMLF  = "$path/run$runStr/trn.mlf";
-$tstRMLF = "$path/run$runStr/tstR.mlf";
-$tstLMLF = "$path/run$runStr/tstL.mlf";
+$tstMLF  = "$path/run$runStr/tst.mlf";
 $opt    = "-A -T 1";
 $minVar = "-v 0.001";
 
@@ -62,52 +67,34 @@ unless ((-d $hmm0) and (-d $hmm1))
     make_path "$hmm1";
 }
 
-
-my $line = &extract("UI.idx", $run);
-chomp($line);
-@idx = split("\t", $line); # idx is in Matlab fashion (1st is 1)
-my @trnIdx = @idx[0..4];
-my @tstIdx = @idx[5..20];
-
-open FILE_trn,  ">$trn_script"  or die $!;
-open FILE_tstR, ">$tstR_script" or die $!;
-open FILE_tstL, ">$tstL_script" or die $!;
+open FILE_trn,  ">$trn_script" or die $!;
+open FILE_tst,  ">$tst_script" or die $!;
 
 foreach my $g (@gests)
 {        
-    foreach my $i (@trnIdx)  # Training set
+    foreach my $U (@userAll)
     {
-	my $R = $userR[$i-1];
-	foreach my $j (1..10)
+	if ($U eq $userTest) # Testing set (only one)
 	{
-	    my $trn_name = sprintf("%s_%s_t%02d.htk", $g, $R, $j);
-	    print FILE_trn "$data_dir/$dtype/$trn_name\n";
+	    foreach my $j (1..10)
+	    {
+		my $tst_name = sprintf("%s_%s_t%02d.htk", $g, $U, $j);
+		print FILE_tst "$data_dir/$dtype/$tst_name\n";
+	    }
 	}
-    }
-
-    foreach my $i (@tstIdx)  # R-Testing set
-    {
-	my $R = $userR[$i-1];
-	foreach my $j (1..10)
+	else  # Training set
 	{
-	    my $tst_name = sprintf("%s_%s_t%02d.htk", $g, $R, $j);	
-	    print FILE_tstR "$data_dir/$dtype/$tst_name\n";
+	    foreach my $j (1..10)
+	    {
+		my $trn_name = sprintf("%s_%s_t%02d.htk", $g, $U, $j);
+		print FILE_trn "$data_dir/$dtype/$trn_name\n";
+	    }
 	}
-    }
-
-    foreach my $L (@userL)   # L-Testing set
-    {
-	foreach my $j (1..10)
-	{
-	    my $tst_name = sprintf("%s_%s_t%02d.htk", $g, $L, $j);
-	    print FILE_tstL "$data_dir/$dtype/$tst_name\n";
-	}	
     }
 }
 
 close FILE_trn;
-close FILE_tstR;
-close FILE_tstL;
+close FILE_tst;
 
 open (REGOUT, ">&STDOUT")    or die "Can't open REGOUT: $!\n";
 open (STDOUT, ">$path/log$runStr.txt") or die $!;
@@ -164,17 +151,12 @@ foreach my $gest (@gests)
 # Test with the training set
 &systemE("HVite $opt -d $hmm1 -S $trn_script -i $trnMLF -w $wnet $dic $hmmlist", "Error: HVite()");
 
-# Test with the R-testing set
-#&systemE("HVite $opt -n 5 5 -d $hmm1 -S $tstR_script -i $tstRMLF -w $wnet $dic $hmmlist", "Error: HVite()"); # N-best
-&systemE("HVite $opt -d $hmm1 -S $tstR_script -i $tstRMLF -w $wnet $dic $hmmlist", "Error: HVite()");
-
-# Test with the L-testing set
-&systemE("HVite $opt -d $hmm1 -S $tstL_script -i $tstLMLF -w $wnet $dic $hmmlist", "Error: HVite()");
+# Test with the testing set
+&systemE("HVite $opt -d $hmm1 -S $tst_script -i $tstMLF -w $wnet $dic $hmmlist", "Error: HVite()");
 
 # Collect recognition results
-&systemE("HResults $opt -I $gMLF $hmmlist $trnMLF",  "Error: HResults()");
-&systemE("HResults $opt -I $gMLF $hmmlist $tstRMLF", "Error: HResults()");
-&systemE("HResults $opt -I $gMLF $hmmlist $tstLMLF", "Error: HResults()");
+&systemE("HResults $opt -I $gMLF $hmmlist $trnMLF", "Error: HResults()");
+&systemE("HResults $opt -I $gMLF $hmmlist $tstMLF", "Error: HResults()");
 
 #-------------------------------------------------------------------------
 # Finish: clean up
