@@ -16,10 +16,12 @@
 #             |                   (dtype run)
 #             |----> exp3.pl -------------------> exp3_single.pl
 #             |----> exp3_err_rep.pl
+#             |----> exp3_res.pl
+#             |----> exp3_all_res.pl
+#             |----> exp3_stats.pl
 #
 #
-#
-#
+
 ***** Exp 1 (User depedent case): *****
 Train with random 5 trials of a SINGLE right-handed user and test with the rest trials
 
@@ -159,3 +161,11 @@ and 2) all 7 left-handers
   Example output:
   - exp3/trn_res.txt
   - exp3/tst_res.txt
+
+3.6. exp3_stats.pl
+  This script compute the mean and standard deviation of leave-one-out testing results
+  for each datatype done in exp3.
+  Example:
+  > perl exp3_stats.pl
+  Example output:
+  - exp3/tst_stats.txt
