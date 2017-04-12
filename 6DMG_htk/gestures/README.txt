@@ -59,14 +59,14 @@ Train with random 5 trials of a SINGLE right-handed user and test with the rest 
   Top level launcher for training/testing of given datatype(s).  Will go through
   all right-handed users and generate $totalRuns of random trials per user per datatype.
   Example:
-  > perl exp1.pl ~/Development/6DMG/data_htk NPNVNOs2
+  > perl exp1.pl ~/Development/6DMG/data_htk/gestures NPNVNOs2
 
 1.2. exp1_err_rep.pl [data_dir] [datatype_1] .. [datatype_n]
   This script reports the runs that fails to complete (errXXX.txt exists).
   It also attempts to fix the "abnormal early termination problem".
   Run exp1_err_rep before collecting the results (exp1_res & exp1_avg_res).
   Example:
-  > perl exp1_err_rep.pl ~/Development/6DMG/data_htk NPNVNOs2
+  > perl exp1_err_rep.pl ~/Development/6DMG/data_htk/gestures NPNVNOs2
   Example output:
    - exp1/err_rep.txt (Contain the total number of errors after redo)
 
@@ -113,7 +113,7 @@ and 2) all 7 left-handers
   It also attempts to fix the "abnormal early termination problem".
   Run exp2_err_rep before collecting the results (exp2_res & exp2_all_res).
   Example:
-  > perl exp2_err_rep.pl ~/Development/6DMG/data_htk NPNVNOs2
+  > perl exp2_err_rep.pl ~/Development/6DMG/data_htk/gestures NPNVNOs2
   Example output:
    - exp2/err_rep.txt (Contain the total number of errors after redo)
 
@@ -161,7 +161,7 @@ and 2) all 7 left-handers
   It also attempts to fix the "abnormal early termination problem".
   Run exp3_err_rep before collecting the results (exp2_res & exp2_all_res, etc).
   Example:
-  > perl exp3_err_rep.pl ~/Development/6DMG/data_htk NPNVNOs2
+  > perl exp3_err_rep.pl ~/Development/6DMG/data_htk/gestures NPNVNOs2
   Example output:
    - exp3/err_rep.txt (Contain the total number of errors after redo)
 

@@ -122,11 +122,15 @@ close FILE_gram  or die $!;
 #-------------------------------------------------------------------------
 foreach my $gest (@gests)
 {
-    # Mingyu: after proper linear scaling, HCompV seems to work worse than HInit directly.
-    #&systemE("HCompV $opt -I $gMLF -l $gest -S $trn_script -M $hmm0 -o $gest $proto", "Error: HCompV()");
-    #&systemE("HInit  $opt $minVar -I $gMLF -l $gest -S $trn_script -M $hmm1 -n $hmm0/$gest", "Error: HInit()"); # -n use the var from
-    &systemE("HInit  $opt $minVar -I $gMLF -l $gest -S $trn_script -M $hmm1 -o $gest $proto", "Error: HInit()");
-    &systemE("HRest  $opt -I $gMLF -l $gest -S $trn_script -M $hmm2 $hmm1/$gest", "Error: HRest()");
+    ## Mingyu: after proper linear scaling, HCompV seems to work worse than HInit directly.
+    #&systemE("HCompV $opt -I $gMLF -l $gest -S $trn_script -M $hmm0 -o $gest $proto",
+    #         "Error: HCompV()");
+    #&systemE("HInit  $opt $minVar -I $gMLF -l $gest -S $trn_script -M $hmm1 -n $hmm0/$gest",
+    #         "Error: HInit()"); # -n use the var from
+    &systemE("HInit  $opt $minVar -I $gMLF -l $gest -S $trn_script -M $hmm1 -o $gest $proto",
+             "Error: HInit()");
+    &systemE("HRest  $opt -I $gMLF -l $gest -S $trn_script -M $hmm2 $hmm1/$gest",
+             "Error: HRest()");
 }
 
 #-------------------------------------------------------------------------

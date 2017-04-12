@@ -24,7 +24,7 @@ case "$host" in
   > sudo make install
 
 4. Through the training/testing process, we need extra perl packages.  Make sure
-   to install them first.
+   to install them first. (May need sudo)
   1) Parallel::ForkManager module
    > cpan Parallel::ForkManager
   2) Math::NumberCruncher

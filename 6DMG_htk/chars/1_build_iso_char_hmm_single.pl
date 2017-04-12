@@ -8,15 +8,18 @@ use File::stat;
 
 my $tstUsr;
 my $dtype;
-if ($#ARGV !=1)
+my $data_dir;
+if ($#ARGV != 2)
 {
-    print "usage: build_char_hmm [user] [datatype]\n";
+    print "usage: build_iso_char_hmm_single [user] [data_dir] [datatype]\n";
+    print " [data_dir]: the base path to the \$datatype folder(s)\n";
     exit;
 }
 else
 {
-    $tstUsr = $ARGV[0]; # "B1", "C1", etc. 
-    $dtype  = $ARGV[1]; # "AW", "PO", etc.
+    $tstUsr   = $ARGV[0];  # "B1", "C1", etc.
+    $data_dir = $ARGV[1];  # the base path to the \$datatype folder
+    $dtype    = $ARGV[2];  # "AW", "PO", etc.
 }
 
 #-------------------------------------------------------------------------
@@ -152,7 +155,7 @@ foreach my $g (@gest4files)
 	foreach my $j (1..10)
 	{
 	    my $trn_name = sprintf("%s_%s_t%02d.htk", $g, $u, $j);
-	    print FILE_trn "C:/Mingyu/6DMG_htk_char/data_$dtype/$trn_name\n";	    
+	    print FILE_trn "$data_dir/data_$dtype/$trn_name\n";
 	}
     }
 
@@ -161,7 +164,7 @@ foreach my $g (@gest4files)
 	foreach my $k (1..10)
 	{
 	    my $tst_name = sprintf("%s_%s_t%02d.htk", $g, $tstUsr, $k);
-	    print FILE_tst "C:/Mingyu/6DMG_htk_char/data_$dtype/$tst_name\n";
+	    print FILE_tst "$data_dir/data_$dtype/$tst_name\n";
 	}
     }
     else
@@ -169,7 +172,7 @@ foreach my $g (@gest4files)
 	foreach my $u (@usrs)
 	{
 	    my $tst_name = sprintf("%s_%s_t%02d.htk", $g, $u, 10);
-	    print FILE_tst "C:/Mingyu/6DMG_htk_char/data_$dtype/$tst_name\n";
+	    print FILE_tst "$data_dir/data_$dtype/$tst_name\n";
 	}
     }
 }
@@ -206,11 +209,15 @@ foreach my $gest (@gests)
     my $proto = "proto/$dtype/template_$states";
     unless(-e $proto){ system("perl 0_gen_single_proto.pl $dtype $states"); }
 
-    # Mingyu: after proper linear scaling, HCompV seems to work worse than HInit directly.
-    #&systemE("HCompV $opt -I $gMLF -l $gest -S $trn_script -M $hmm0 -o $gest $proto", "Error: HCompV()");
-    #&systemE("HInit  $opt $minVar -I $gMLF -l $gest -S $trn_script -M $hmm1 -n $hmm0/$gest", "Error: HInit()"); # -n use the var from    
-    &systemE("HInit  $opt $minVar -I $gMLF -l $gest -S $trn_script -M $hmm1 -o $gest $proto", "Error: HInit()");
-    &systemE("HRest  $opt -I $gMLF -l $gest -S $trn_script -M $hmm2 $hmm1/$gest", "Error: HRest()");
+    ## Mingyu: after proper linear scaling, HCompV seems to work worse than HInit directly.
+    #&systemE("HCompV $opt -I $gMLF -l $gest -S $trn_script -M $hmm0 -o $gest $proto",
+    #         "Error: HCompV()");
+    #&systemE("HInit  $opt $minVar -I $gMLF -l $gest -S $trn_script -M $hmm1 -n $hmm0/$gest",
+    #         "Error: HInit()"); # -n use the var from
+    &systemE("HInit  $opt $minVar -I $gMLF -l $gest -S $trn_script -M $hmm1 -o $gest $proto",
+             "Error: HInit()");
+    &systemE("HRest  $opt -I $gMLF -l $gest -S $trn_script -M $hmm2 $hmm1/$gest",
+             "Error: HRest()");
 }
 
 #-------------------------------------------------------------------------
@@ -218,16 +225,13 @@ foreach my $gest (@gests)
 # HVite & HResults
 # Mingyu: HRestuls in upper layer after 50 trials
 #-------------------------------------------------------------------------
-# Test with the training set
+# Test with the training set and collect recognition results
 #&systemE("HVite $opt -d $hmm2 -S $trn_script -i $trnMLF -w $wnet $dic $hmmlist", "Error: HVite()");
-
-# Test with the testing set
-&systemE("HVite $opt -d $hmm2 -S $tst_script -i $tstMLF -w $wnet $dic $hmmlist", "Error: HVite()");
-
-# Collect recognition results
 #&systemE("HResults $opt -p -I $gMLF $hmmlist $trnMLF", "Error: HResults()");
-&systemE("HResults $opt -p -I $gMLF $hmmlist $tstMLF", "Error: HResults()");
 
+# Test with the testing set and collect recognition results
+&systemE("HVite $opt -d $hmm2 -S $tst_script -i $tstMLF -w $wnet $dic $hmmlist", "Error: HVite()");
+&systemE("HResults $opt -p -I $gMLF $hmmlist $tstMLF", "Error: HResults()");
 
 #-------------------------------------------------------------------------
 # Finish: clean up
