@@ -32,7 +32,7 @@
   Output:
    - iso_char/NPNV/M1/hmm0
    - iso_char/NPNV/M1/hmm1
-   - iso_char/NPNV/M1/hmm2     (final HMM models)
+   - iso_char/NPNV/M1/hmm2     (final char HMMs)
    - iso_char/NPNV/M1/train.scp
    - iso_char/NPNV/M1/test.scp
    - iso_char/NPNV/M1/log.txt

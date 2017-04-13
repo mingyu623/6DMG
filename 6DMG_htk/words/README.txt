@@ -12,33 +12,55 @@
   Output:
    - proto/NPNV/template_10
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-1.1. 1_build_iso_char_hmm_single.pl [tstUsr] [data_dir] [datatype]
-  This script will train/test the char HMM with speicified test user and datatype.
-  The training set contains all users excluding the test user.  If tstUsr is "all",
-  we will use all users for training.
+1.1. 1_build_iso_char_hmm.pl [data_dir] [datatype]
+  This script trains the isolated character HMMs with all right-handed users for
+  preparation of word HMMs.
   Example:
-  > perl 1_build_iso_char_hmm_single.pl M1 ~/Development/6DMG/data_htk/chars NPNV
+  > perl 1_build_iso_char_hmm.pl ~/Development/6DMG/data_htk/chars NPNV
   Output:
-   - iso_char/NPNV/M1/hmm0
-   - iso_char/NPNV/M1/hmm1
-   - iso_char/NPNV/M1/hmm2     (final HMM models)
-   - iso_char/NPNV/M1/train.scp
-   - iso_char/NPNV/M1/test.scp
-   - iso_char/NPNV/M1/log.txt
-   - iso_char/NPNV/M1/err.txt  (only exists when something goes wrong)
+   - iso_char/NPNV/all/gestDic
+   - iso_char/NPNV/all/gestGram
+   - iso_char/NPNV/all/gestList
+   - iso_char/NPNV/all/gestNet
+   - iso_char/NPNV/all/hmm0
+   - iso_char/NPNV/all/hmm1
+   - iso_char/NPNV/all/hmm2  (final iso char HMMs)
+   - iso_char/NPNV/all/train.scp
+   - iso_char/NPNV/all/test.scp
+   - iso_char/NPNV/all/trn.mlf
+   - iso_char/NPNV/all/tst.mlf
+   - iso_char/NPNV/all/log.txt
+   - iso_char/NPNV/all/err.txt  (only exists when something goes wrong)
+
+1.2. 1_build_iso_lig_hmm.pl [data_dir] [datatype]
+  This script trains the isolated ligature HMMs with all trials of M1 with
+  manually segmented ligature labels.  There are 21 types of ligatures, but
+  some of them *DO NOT* have labels in the samples.  For details, please see
+  “Air-writing Recognition, Part1: Modeling and Recognition of Characters,
+  Words and Connecting Motions.”
+  Example:
+  > perl 1_build_iso_lig_hmm.pl ~/Development/6DMG/data_htk/words NPNV
+  Output:
+   - iso_lig/NPNV/gestDic
+   - iso_lig/NPNV/gestGram
+   - iso_lig/NPNV/gestList
+   - iso_lig/NPNV/gestNet
+   - iso_lig/NPNV/hmm0
+   - iso_lig/NPNV/hmm1
+   - iso_lig/NPNV/hmm2  (final iso lig HMMs)
+   - iso_lig/NPNV/train.scp
+   - iso_lig/NPNV/test.scp
+   - iso_lig/NPNV/log.txt
+   - iso_lig/NPNV/err.txt  (only exists when something goes wrong)
+
+
+
+
+
+
+
+
+
 
 1.2. 1_batch.pl [data_dir]
   This script runs a top level leave-one-out validation using 1_build_iso_char_hmm_single.pl

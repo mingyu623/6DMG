@@ -1,0 +1,2186 @@
+#!MLF!#
+"*/ABC_M1_t01.lab"
+0	120	upp_A
+120	149	lig_E5S1
+149	260	upp_B
+260	286	lig_E1S3
+286	339	upp_C
+.
+"*/ABC_M1_t02.lab"
+0	121	upp_A
+121	148	lig_E5S1
+148	272	upp_B
+272	295	lig_E1S3
+295	356	upp_C
+.
+"*/ABC_M1_t03.lab"
+0	128	upp_A
+128	157	lig_E5S1
+157	286	upp_B
+286	311	lig_E1S3
+311	371	upp_C
+.
+"*/ABC_M1_t04.lab"
+0	139	upp_A
+139	165	lig_E5S1
+165	289	upp_B
+289	315	lig_E1S3
+315	375	upp_C
+.
+"*/ABC_M1_t05.lab"
+0	130	upp_A
+130	157	lig_E5S1
+157	289	upp_B
+289	312	lig_E1S3
+312	376	upp_C
+.
+"*/AC_M1_t01.lab"
+0	120	upp_A
+120	137	lig_E5S3
+137	190	upp_C
+.
+"*/ACA_M1_t01.lab"
+0	109	upp_A
+109	124	lig_E5S3
+124	164	upp_C
+164	182	lig_E3S2
+182	296	upp_A
+.
+"*/ACC_M1_t01.lab"
+0	122	upp_A
+122	137	lig_E5S3
+137	199	upp_C
+199	213	lig_E3S3
+213	281	upp_C
+.
+"*/ACH_M1_t01.lab"
+0	109	upp_A
+109	121	lig_E5S3
+121	173	upp_C
+173	199	lig_E3S1
+199	311	upp_H
+.
+"*/ACR_M1_t01.lab"
+0	98	upp_A
+98	110	lig_E5S3
+110	154	upp_C
+154	178	lig_E3S1
+178	274	upp_R
+.
+"*/ACT_M1_t01.lab"
+0	119	upp_A
+119	132	lig_E5S3
+132	186	upp_C
+186	219	lig_E3S1
+219	297	upp_T
+.
+"*/AGA_M1_t01.lab"
+0	126	upp_A
+126	144	lig_E5S3
+144	265	upp_G
+265	293	lig_E3S2
+293	420	upp_A
+.
+"*/AGE_M1_t01.lab"
+0	129	upp_A
+129	143	lig_E5S3
+143	268	upp_G
+268	298	lig_E3S1
+298	443	upp_E
+.
+"*/AGO_M1_t01.lab"
+0	112	upp_A
+112	127	lig_E5S3
+127	233	upp_G
+233	258	lig_E3S2
+258	327	upp_O
+.
+"*/AGR_M1_t01.lab"
+0	113	upp_A
+113	126	lig_E5S3
+126	240	upp_G
+240	268	lig_E3S1
+268	386	upp_R
+.
+"*/AS_M1_t01.lab"
+0	119	upp_A
+119	135	lig_E5S3
+135	216	upp_S
+.
+"*/ASI_M1_t01.lab"
+0	117	upp_A
+117	133	lig_E5S3
+133	200	upp_S
+200	224	lig_E1S2
+224	252	upp_I
+.
+"*/ASK_M1_t01.lab"
+0	118	upp_A
+118	135	lig_E5S3
+135	196	upp_S
+196	217	lig_E1S1
+217	332	upp_K
+.
+"*/ASP_M1_t01.lab"
+0	110	upp_A
+110	127	lig_E5S3
+127	186	upp_S
+186	205	lig_E1S1
+205	288	upp_P
+.
+"*/ASS_M1_t01.lab"
+0	116	upp_A
+116	130	lig_E5S3
+130	208	upp_S
+208	235	lig_E1S3
+235	317	upp_S
+.
+"*/BAC_M1_t01.lab"
+0	118	upp_B
+118	146	lig_E1S2
+146	271	upp_A
+271	286	lig_E5S3
+286	349	upp_C
+.
+"*/BAS_M1_t01.lab"
+0	109	upp_B
+109	133	lig_E1S2
+133	247	upp_A
+247	261	lig_E5S3
+261	337	upp_S
+.
+"*/BBC_M1_t01.lab"
+0	136	upp_B
+136	159	lig_E1S1
+159	282	upp_B
+282	306	lig_E1S3
+306	369	upp_C
+.
+"*/BBC_M1_t02.lab"
+0	127	upp_B
+127	152	lig_E1S1
+152	271	upp_B
+271	295	lig_E1S3
+295	362	upp_C
+.
+"*/BBC_M1_t03.lab"
+0	137	upp_B
+137	165	lig_E1S1
+165	294	upp_B
+294	321	lig_E1S3
+321	381	upp_C
+.
+"*/BBC_M1_t04.lab"
+0	141	upp_B
+141	170	lig_E1S1
+170	303	upp_B
+303	327	lig_E1S3
+327	389	upp_C
+.
+"*/BBC_M1_t05.lab"
+0	138	upp_B
+138	169	lig_E1S1
+169	294	upp_B
+294	316	lig_E1S3
+316	380	upp_C
+.
+"*/CALL_M1_t01.lab"
+0	65	upp_C
+65	89	lig_E3S2
+89	223	upp_A
+223	253	lig_E5S1
+253	311	upp_L
+311	345	lig_E3S1
+345	411	upp_L
+.
+"*/CALL_M1_t02.lab"
+0	68	upp_C
+68	94	lig_E3S2
+94	227	upp_A
+227	255	lig_E5S1
+255	315	upp_L
+315	347	lig_E3S1
+347	412	upp_L
+.
+"*/CALL_M1_t03.lab"
+0	53	upp_C
+53	72	lig_E3S2
+72	186	upp_A
+186	210	lig_E5S1
+210	263	upp_L
+263	294	lig_E3S1
+294	347	upp_L
+.
+"*/CALL_M1_t04.lab"
+0	57	upp_C
+57	82	lig_E3S2
+82	199	upp_A
+199	227	lig_E5S1
+227	285	upp_L
+285	315	lig_E3S1
+315	370	upp_L
+.
+"*/CALL_M1_t05.lab"
+0	54	upp_C
+54	80	lig_E3S2
+80	195	upp_A
+195	224	lig_E5S1
+224	280	upp_L
+280	309	lig_E3S1
+309	367	upp_L
+.
+"*/CAS_M1_t01.lab"
+0	53	upp_C
+53	78	lig_E3S2
+78	198	upp_A
+198	211	lig_E5S3
+211	288	upp_S
+.
+"*/CBS_M1_t01.lab"
+0	60	upp_C
+60	88	lig_E3S1
+88	188	upp_B
+188	210	lig_E1S3
+210	273	upp_S
+.
+"*/CBS_M1_t02.lab"
+0	52	upp_C
+52	80	lig_E3S1
+80	187	upp_B
+187	212	lig_E1S3
+212	282	upp_S
+.
+"*/CBS_M1_t03.lab"
+0	55	upp_C
+55	82	lig_E3S1
+82	196	upp_B
+196	221	lig_E1S3
+221	292	upp_S
+.
+"*/CBS_M1_t04.lab"
+0	58	upp_C
+58	83	lig_E3S1
+83	192	upp_B
+192	216	lig_E1S3
+216	288	upp_S
+.
+"*/CBS_M1_t05.lab"
+0	56	upp_C
+56	83	lig_E3S1
+83	190	upp_B
+190	214	lig_E1S3
+214	282	upp_S
+.
+"*/CNN_M1_t01.lab"
+0	58	upp_C
+58	85	lig_E3S1
+85	163	upp_N
+163	181	lig_E7S1
+181	276	upp_N
+.
+"*/CNN_M1_t02.lab"
+0	57	upp_C
+57	79	lig_E3S1
+79	153	upp_N
+153	173	lig_E7S1
+173	259	upp_N
+.
+"*/CNN_M1_t03.lab"
+0	46	upp_C
+46	70	lig_E3S1
+70	140	upp_N
+140	160	lig_E7S1
+160	242	upp_N
+.
+"*/CNN_M1_t04.lab"
+0	54	upp_C
+54	78	lig_E3S1
+78	162	upp_N
+162	182	lig_E7S1
+182	283	upp_N
+.
+"*/CNN_M1_t05.lab"
+0	57	upp_C
+57	83	lig_E3S1
+83	170	upp_N
+170	191	lig_E7S1
+191	291	upp_N
+.
+"*/DISCOVERY_M1_t01.lab"
+0	101	upp_D
+101	130	lig_E1S2
+130	159	upp_I
+159	187	lig_E2S3
+187	252	upp_S
+252	278	lig_E1S3
+278	328	upp_C
+328	347	lig_E3S2
+347	410	upp_O
+410	424	lig_E6S1
+424	476	upp_V
+476	501	lig_E7S1
+501	623	upp_E
+623	649	lig_E3S1
+649	759	upp_R
+759	787	lig_E3S1
+787	866	upp_Y
+.
+"*/DISCOVERY_M1_t02.lab"
+0	101	upp_D
+101	130	lig_E1S2
+130	161	upp_I
+161	187	lig_E2S3
+187	246	upp_S
+246	271	lig_E1S3
+271	325	upp_C
+325	349	lig_E3S2
+349	414	upp_O
+414	428	lig_E6S1
+428	492	upp_V
+492	524	lig_E7S1
+524	669	upp_E
+669	701	lig_E3S1
+701	817	upp_R
+817	851	lig_E3S1
+851	942	upp_Y
+.
+"*/DISCOVERY_M1_t03.lab"
+0	96	upp_D
+96	124	lig_E1S2
+124	153	upp_I
+153	174	lig_E2S3
+174	233	upp_S
+233	257	lig_E1S3
+257	302	upp_C
+302	324	lig_E3S2
+324	377	upp_O
+377	392	lig_E6S1
+392	441	upp_V
+441	474	lig_E7S1
+474	609	upp_E
+609	640	lig_E3S1
+640	744	upp_R
+744	777	lig_E3S1
+777	854	upp_Y
+.
+"*/DISCOVERY_M1_t04.lab"
+0	86	upp_D
+86	114	lig_E1S2
+114	135	upp_I
+135	154	lig_E2S3
+154	210	upp_S
+210	234	lig_E1S3
+234	285	upp_C
+285	304	lig_E3S2
+304	361	upp_O
+361	380	lig_E6S1
+380	434	upp_V
+434	468	lig_E7S1
+468	588	upp_E
+588	617	lig_E3S1
+617	723	upp_R
+723	752	lig_E3S1
+752	828	upp_Y
+.
+"*/DISCOVERY_M1_t05.lab"
+0	88	upp_D
+88	114	lig_E1S2
+114	139	upp_I
+139	162	lig_E2S3
+162	221	upp_S
+221	240	lig_E1S3
+240	286	upp_C
+286	311	lig_E3S2
+311	369	upp_O
+369	386	lig_E6S1
+386	434	upp_V
+434	456	lig_E7S1
+456	581	upp_E
+581	612	lig_E3S1
+612	711	upp_R
+711	741	lig_E3S1
+741	811	upp_Y
+.
+"*/DISNEY_M1_t01.lab"
+0	82	upp_D
+82	110	lig_E1S2
+110	134	upp_I
+134	155	lig_E2S3
+155	205	upp_S
+205	224	lig_E1S1
+224	309	upp_N
+309	332	lig_E7S1
+332	448	upp_E
+448	476	lig_E3S1
+476	553	upp_Y
+.
+"*/DISNEY_M1_t02.lab"
+0	87	upp_D
+87	117	lig_E1S2
+117	145	upp_I
+145	172	lig_E2S3
+172	230	upp_S
+230	251	lig_E1S1
+251	338	upp_N
+338	365	lig_E7S1
+365	494	upp_E
+494	525	lig_E3S1
+525	616	upp_Y
+.
+"*/DISNEY_M1_t03.lab"
+0	92	upp_D
+92	118	lig_E1S2
+118	143	upp_I
+143	170	lig_E2S3
+170	227	upp_S
+227	251	lig_E1S1
+251	344	upp_N
+344	368	lig_E7S1
+368	504	upp_E
+504	535	lig_E3S1
+535	624	upp_Y
+.
+"*/DISNEY_M1_t04.lab"
+0	89	upp_D
+89	114	lig_E1S2
+114	139	upp_I
+139	158	lig_E2S3
+158	213	upp_S
+213	233	lig_E1S1
+233	323	upp_N
+323	345	lig_E7S1
+345	467	upp_E
+467	496	lig_E3S1
+496	573	upp_Y
+.
+"*/DISNEY_M1_t05.lab"
+0	80	upp_D
+80	105	lig_E1S2
+105	128	upp_I
+128	147	lig_E2S3
+147	205	upp_S
+205	224	lig_E1S1
+224	302	upp_N
+302	324	lig_E7S1
+324	438	upp_E
+438	466	lig_E3S1
+466	541	upp_Y
+.
+"*/DRAMA_M1_t01.lab"
+0	111	upp_D
+111	138	lig_E1S1
+138	264	upp_R
+264	290	lig_E3S2
+290	406	upp_A
+406	430	lig_E5S1
+430	552	upp_M
+552	580	lig_E3S2
+580	713	upp_A
+.
+"*/DRAMA_M1_t02.lab"
+0	99	upp_D
+99	126	lig_E1S1
+126	246	upp_R
+246	270	lig_E3S2
+270	395	upp_A
+395	425	lig_E5S1
+425	539	upp_M
+539	566	lig_E3S2
+566	703	upp_A
+.
+"*/DRAMA_M1_t03.lab"
+0	94	upp_D
+94	120	lig_E1S1
+120	239	upp_R
+239	270	lig_E3S2
+270	397	upp_A
+397	424	lig_E5S1
+424	547	upp_M
+547	579	lig_E3S2
+579	731	upp_A
+.
+"*/DRAMA_M1_t04.lab"
+0	94	upp_D
+94	116	lig_E1S1
+116	222	upp_R
+222	249	lig_E3S2
+249	373	upp_A
+373	400	lig_E5S1
+400	516	upp_M
+516	543	lig_E3S2
+543	678	upp_A
+.
+"*/DRAMA_M1_t05.lab"
+0	91	upp_D
+91	117	lig_E1S1
+117	227	upp_R
+227	254	lig_E3S2
+254	377	upp_A
+377	398	lig_E5S1
+398	501	upp_M
+501	527	lig_E3S2
+527	656	upp_A
+.
+"*/EAC_M1_t01.lab"
+0	149	upp_E
+149	173	lig_E3S2
+173	287	upp_A
+287	301	lig_E5S3
+301	359	upp_C
+.
+"*/EAS_M1_t01.lab"
+0	149	upp_E
+149	176	lig_E3S2
+176	303	upp_A
+303	324	lig_E5S3
+324	408	upp_S
+.
+"*/ESPN_M1_t01.lab"
+0	119	upp_E
+119	140	lig_E3S3
+140	203	upp_S
+203	226	lig_E1S1
+226	304	upp_P
+304	320	lig_E4S1
+320	410	upp_N
+.
+"*/ESPN_M1_t02.lab"
+0	120	upp_E
+120	137	lig_E3S3
+137	193	upp_S
+193	206	lig_E1S1
+206	281	upp_P
+281	298	lig_E4S1
+298	383	upp_N
+.
+"*/ESPN_M1_t03.lab"
+0	118	upp_E
+118	138	lig_E3S3
+138	198	upp_S
+198	218	lig_E1S1
+218	294	upp_P
+294	312	lig_E4S1
+312	407	upp_N
+.
+"*/ESPN_M1_t04.lab"
+0	112	upp_E
+112	131	lig_E3S3
+131	192	upp_S
+192	216	lig_E1S1
+216	290	upp_P
+290	308	lig_E4S1
+309	403	upp_N
+.
+"*/ESPN_M1_t05.lab"
+0	133	upp_E
+133	152	lig_E3S3
+152	216	upp_S
+216	237	lig_E1S1
+237	320	upp_P
+320	343	lig_E4S1
+343	443	upp_N
+.
+"*/FAC_M1_t01.lab"
+0	107	upp_F
+107	131	lig_E5S2
+131	250	upp_A
+250	266	lig_E5S3
+266	327	upp_C
+.
+"*/FAS_M1_t01.lab"
+0	103	upp_F
+103	129	lig_E5S2
+129	236	upp_A
+236	251	lig_E5S3
+251	320	upp_S
+.
+"*/FB_M1_t01.lab"
+0	107	upp_F
+107	131	lig_E5S1
+131	251	upp_B
+.
+"*/FB_M1_t02.lab"
+0	107	upp_F
+107	129	lig_E5S1
+129	251	upp_B
+.
+"*/FB_M1_t03.lab"
+0	112	upp_F
+112	138	lig_E5S1
+138	263	upp_B
+.
+"*/FB_M1_t04.lab"
+0	112	upp_F
+112	139	lig_E5S1
+139	265	upp_B
+.
+"*/FB_M1_t05.lab"
+0	111	upp_F
+111	136	lig_E5S1
+136	261	upp_B
+.
+"*/FOOD_M1_t01.lab"
+0	111	upp_F
+111	130	lig_E5S2
+130	197	upp_O
+197	197	lig_E6S2
+197	264	upp_O
+264	274	lig_E6S1
+274	381	upp_D
+.
+"*/FOOD_M1_t02.lab"
+0	108	upp_F
+108	128	lig_E5S2
+128	194	upp_O
+194	194	lig_E6S2
+194	267	upp_O
+267	280	lig_E6S1
+280	388	upp_D
+.
+"*/FOOD_M1_t03.lab"
+0	115	upp_F
+115	133	lig_E5S2
+133	205	upp_O
+205	206	lig_E6S2
+206	271	upp_O
+271	287	lig_E6S1
+287	399	upp_D
+.
+"*/FOOD_M1_t04.lab"
+0	115	upp_F
+115	135	lig_E5S2
+135	203	upp_O
+203	203	lig_E6S2
+203	271	upp_O
+271	284	lig_E6S1
+284	387	upp_D
+.
+"*/FOOD_M1_t05.lab"
+0	126	upp_F
+126	147	lig_E5S2
+147	222	upp_O
+222	222	lig_E6S2
+222	286	upp_O
+286	305	lig_E6S1
+305	419	upp_D
+.
+"*/FOX_M1_t01.lab"
+0	103	upp_F
+103	139	lig_E5S2
+139	203	upp_O
+203	222	lig_E6S1
+222	299	upp_X
+.
+"*/FOX_M1_t02.lab"
+0	116	upp_F
+116	130	lig_E5S2
+130	189	upp_O
+189	210	lig_E6S1
+210	291	upp_X
+.
+"*/FOX_M1_t03.lab"
+0	109	upp_F
+109	131	lig_E5S2
+131	191	upp_O
+191	207	lig_E6S1
+207	301	upp_X
+.
+"*/FOX_M1_t04.lab"
+0	113	upp_F
+113	138	lig_E5S2
+138	201	upp_O
+201	216	lig_E6S1
+216	300	upp_X
+.
+"*/FOX_M1_t05.lab"
+0	110	upp_F
+110	137	lig_E5S2
+137	197	upp_O
+197	215	lig_E6S1
+215	308	upp_X
+.
+"*/FX_M1_t01.lab"
+0	122	upp_F
+122	150	lig_E5S1
+150	250	upp_X
+.
+"*/FX_M1_t02.lab"
+0	123	upp_F
+123	155	lig_E5S1
+155	255	upp_X
+.
+"*/FX_M1_t03.lab"
+0	140	upp_F
+140	172	lig_E5S1
+172	257	upp_X
+.
+"*/FX_M1_t04.lab"
+0	140	upp_F
+140	167	lig_E5S1
+167	271	upp_X
+.
+"*/FX_M1_t05.lab"
+0	124	upp_F
+124	158	lig_E5S1
+158	249	upp_X
+.
+"*/GAME_M1_t01.lab"
+0	130	upp_G
+130	159	lig_E3S2
+159	275	upp_A
+275	301	lig_E5S1
+301	407	upp_M
+407	434	lig_E3S1
+434	581	upp_E
+.
+"*/GAME_M1_t02.lab"
+0	118	upp_G
+118	146	lig_E3S2
+146	266	upp_A
+266	292	lig_E5S1
+292	403	upp_M
+403	432	lig_E3S1
+432	600	upp_E
+.
+"*/GAME_M1_t03.lab"
+0	126	upp_G
+126	152	lig_E3S2
+152	281	upp_A
+281	310	lig_E5S1
+310	424	upp_M
+424	458	lig_E3S1
+458	626	upp_E
+.
+"*/GAME_M1_t04.lab"
+0	117	upp_G
+117	145	lig_E3S2
+145	255	upp_A
+255	277	lig_E5S1
+277	378	upp_M
+378	405	lig_E3S1
+405	559	upp_E
+.
+"*/GAME_M1_t05.lab"
+0	117	upp_G
+117	147	lig_E3S2
+147	262	upp_A
+262	285	lig_E5S1
+285	390	upp_M
+390	421	lig_E3S1
+421	569	upp_E
+.
+"*/GAS_M1_t01.lab"
+0	102	upp_G
+102	127	lig_E3S2
+127	238	upp_A
+238	253	lig_E5S3
+253	320	upp_S
+.
+"*/GOOGLE_M1_t01.lab"
+0	110	upp_G
+110	132	lig_E3S2
+132	193	upp_O
+193	193	lig_E6S2
+193	255	upp_O
+255	255	lig_E6S3
+255	370	upp_G
+370	400	lig_E3S1
+400	449	upp_L
+449	476	lig_E3S1
+476	626	upp_E
+.
+"*/GOOGLE_M1_t02.lab"
+0	109	upp_G
+109	135	lig_E3S2
+135	198	upp_O
+198	198	lig_E6S2
+198	270	upp_O
+270	270	lig_E6S3
+270	385	upp_G
+385	415	lig_E3S1
+415	469	upp_L
+469	494	lig_E3S1
+494	634	upp_E
+.
+"*/GOOGLE_M1_t03.lab"
+0	116	upp_G
+116	144	lig_E3S2
+144	215	upp_O
+215	215	lig_E6S2
+215	290	upp_O
+290	290	lig_E6S3
+290	401	upp_G
+401	431	lig_E3S1
+431	486	upp_L
+486	517	lig_E3S1
+517	667	upp_E
+.
+"*/GOOGLE_M1_t04.lab"
+0	110	upp_G
+110	137	lig_E3S2
+137	204	upp_O
+204	204	lig_E6S2
+204	283	upp_O
+283	283	lig_E6S3
+283	397	upp_G
+397	423	lig_E3S1
+423	477	upp_L
+477	505	lig_E3S1
+505	646	upp_E
+.
+"*/GOOGLE_M1_t05.lab"
+0	106	upp_G
+106	132	lig_E3S2
+132	195	upp_O
+195	195	lig_E6S2
+195	263	upp_O
+263	263	lig_E6S3
+263	373	upp_G
+373	400	lig_E3S1
+400	453	upp_L
+453	482	lig_E3S1
+482	624	upp_E
+.
+"*/GPS_M1_t01.lab"
+0	114	upp_G
+114	139	lig_E3S1
+139	223	upp_P
+223	251	lig_E4S3
+251	326	upp_S
+.
+"*/GPS_M1_t02.lab"
+0	108	upp_G
+108	138	lig_E3S1
+138	223	upp_P
+223	245	lig_E4S3
+245	319	upp_S
+.
+"*/GPS_M1_t03.lab"
+0	112	upp_G
+112	135	lig_E3S1
+135	218	upp_P
+218	241	lig_E4S3
+241	314	upp_S
+.
+"*/GPS_M1_t04.lab"
+0	112	upp_G
+112	136	lig_E3S1
+136	217	upp_P
+217	240	lig_E4S3
+240	309	upp_S
+.
+"*/GPS_M1_t05.lab"
+0	110	upp_G
+110	137	lig_E3S1
+137	220	upp_P
+220	244	lig_E4S3
+244	319	upp_S
+.
+"*/HAS_M1_t01.lab"
+0	118	upp_H
+118	142	lig_E3S2
+142	263	upp_A
+263	279	lig_E5S3
+279	347	upp_S
+.
+"*/HBO_M1_t01.lab"
+0	111	upp_H
+111	136	lig_E3S1
+136	257	upp_B
+257	289	lig_E1S2
+289	361	upp_O
+.
+"*/HBO_M1_t02.lab"
+0	107	upp_H
+107	133	lig_E3S1
+133	251	upp_B
+251	280	lig_E1S2
+280	347	upp_O
+.
+"*/HBO_M1_t03.lab"
+0	106	upp_H
+106	133	lig_E3S1
+133	257	upp_B
+257	285	lig_E1S2
+285	353	upp_O
+.
+"*/HBO_M1_t04.lab"
+0	111	upp_H
+111	140	lig_E3S1
+140	260	upp_B
+260	287	lig_E1S2
+287	358	upp_O
+.
+"*/HBO_M1_t05.lab"
+0	116	upp_H
+116	151	lig_E3S1
+151	271	upp_B
+271	302	lig_E1S2
+302	366	upp_O
+.
+"*/HULU_M1_t01.lab"
+0	143	upp_H
+143	183	lig_E3S1
+183	268	upp_U
+268	306	lig_E7S1
+306	369	upp_L
+369	413	lig_E3S1
+413	500	upp_U
+.
+"*/HULU_M1_t02.lab"
+0	139	upp_H
+139	170	lig_E3S1
+170	249	upp_U
+249	272	lig_E7S1
+272	332	upp_L
+332	370	lig_E3S1
+370	451	upp_U
+.
+"*/HULU_M1_t03.lab"
+0	140	upp_H
+140	175	lig_E3S1
+175	253	upp_U
+253	280	lig_E7S1
+280	343	upp_L
+343	382	lig_E3S1
+382	468	upp_U
+.
+"*/HULU_M1_t04.lab"
+0	131	upp_H
+131	162	lig_E3S1
+162	248	upp_U
+248	273	lig_E7S1
+273	332	upp_L
+332	367	lig_E3S1
+367	444	upp_U
+.
+"*/HULU_M1_t05.lab"
+0	132	upp_H
+132	161	lig_E3S1
+161	232	upp_U
+232	255	lig_E7S1
+255	314	upp_L
+314	349	lig_E3S1
+349	427	upp_U
+.
+"*/JAC_M1_t01.lab"
+0	36	upp_J
+36	56	lig_E4S2
+56	163	upp_A
+163	178	lig_E5S3
+178	227	upp_C
+.
+"*/JAZZ_M1_t01.lab"
+0	56	upp_J
+56	81	lig_E4S2
+81	215	upp_A
+215	247	lig_E5S1
+247	337	upp_Z
+337	378	lig_E3S1
+378	466	upp_Z
+.
+"*/JAZZ_M1_t02.lab"
+0	50	upp_J
+50	73	lig_E4S2
+73	208	upp_A
+208	237	lig_E5S1
+237	321	upp_Z
+321	358	lig_E3S1
+358	447	upp_Z
+.
+"*/JAZZ_M1_t03.lab"
+0	51	upp_J
+51	73	lig_E4S2
+73	207	upp_A
+207	237	lig_E5S1
+237	325	upp_Z
+325	360	lig_E3S1
+360	438	upp_Z
+.
+"*/JAZZ_M1_t04.lab"
+0	51	upp_J
+51	78	lig_E4S2
+78	207	upp_A
+207	236	lig_E5S1
+236	308	upp_Z
+308	344	lig_E3S1
+344	433	upp_Z
+.
+"*/JAZZ_M1_t05.lab"
+0	47	upp_J
+47	71	lig_E4S2
+71	202	upp_A
+202	228	lig_E5S1
+228	307	upp_Z
+307	341	lig_E3S1
+341	426	upp_Z
+.
+"*/KID_M1_t01.lab"
+0	126	upp_K
+126	156	lig_E3S2
+156	186	upp_I
+186	213	lig_E2S1
+213	319	upp_D
+.
+"*/KID_M1_t02.lab"
+0	121	upp_K
+121	152	lig_E3S2
+152	178	upp_I
+178	205	lig_E2S1
+205	304	upp_D
+.
+"*/KID_M1_t03.lab"
+0	123	upp_K
+123	153	lig_E3S2
+153	180	upp_I
+180	206	lig_E2S1
+206	305	upp_D
+.
+"*/KID_M1_t04.lab"
+0	121	upp_K
+121	151	lig_E3S2
+151	177	upp_I
+177	201	lig_E2S1
+201	308	upp_D
+.
+"*/KID_M1_t05.lab"
+0	129	upp_K
+129	159	lig_E3S2
+159	187	upp_I
+187	213	lig_E2S1
+213	320	upp_D
+.
+"*/LAC_M1_t01.lab"
+0	50	upp_L
+50	73	lig_E3S2
+73	176	upp_A
+176	191	lig_E5S3
+191	244	upp_C
+.
+"*/LAS_M1_t01.lab"
+0	57	upp_L
+57	82	lig_E3S2
+82	200	upp_A
+200	215	lig_E5S3
+215	295	upp_S
+.
+"*/MAC_M1_t01.lab"
+0	97	upp_M
+97	122	lig_E3S2
+122	236	upp_A
+236	250	lig_E5S3
+250	311	upp_C
+.
+"*/MAG_M1_t01.lab"
+0	96	upp_M
+96	119	lig_E3S2
+119	230	upp_A
+230	245	lig_E5S3
+245	371	upp_G
+.
+"*/MAIL_M1_t01.lab"
+0	111	upp_M
+111	137	lig_E3S2
+137	263	upp_A
+263	292	lig_E5S2
+292	327	upp_I
+327	358	lig_E2S1
+358	430	upp_L
+.
+"*/MAIL_M1_t02.lab"
+0	110	upp_M
+110	137	lig_E3S2
+137	253	upp_A
+253	279	lig_E5S2
+279	310	upp_I
+310	339	lig_E2S1
+339	407	upp_L
+.
+"*/MAIL_M1_t03.lab"
+0	100	upp_M
+100	125	lig_E3S2
+125	239	upp_A
+239	263	lig_E5S2
+263	291	upp_I
+291	318	lig_E2S1
+318	386	upp_L
+.
+"*/MAIL_M1_t04.lab"
+0	109	upp_M
+109	136	lig_E3S2
+136	260	upp_A
+260	287	lig_E5S2
+287	315	upp_I
+315	342	lig_E2S1
+342	401	upp_L
+.
+"*/MAIL_M1_t05.lab"
+0	125	upp_M
+125	150	lig_E3S2
+150	277	upp_A
+277	300	lig_E5S2
+300	327	upp_I
+327	354	lig_E2S1
+354	421	upp_L
+.
+"*/MAP_M1_t01.lab"
+0	121	upp_M
+121	150	lig_E3S2
+150	274	upp_A
+274	298	lig_E5S1
+298	387	upp_P
+.
+"*/MAP_M1_t02.lab"
+0	104	upp_M
+104	129	lig_E3S2
+129	245	upp_A
+245	268	lig_E5S1
+268	358	upp_P
+.
+"*/MAP_M1_t03.lab"
+0	110	upp_M
+110	135	lig_E3S2
+135	248	upp_A
+248	275	lig_E5S1
+275	365	upp_P
+.
+"*/MAP_M1_t04.lab"
+0	115	upp_M
+115	142	lig_E3S2
+142	259	upp_A
+259	283	lig_E5S1
+283	375	upp_P
+.
+"*/MAP_M1_t05.lab"
+0	111	upp_M
+111	136	lig_E3S2
+136	247	upp_A
+247	270	lig_E5S1
+270	356	upp_P
+.
+"*/MAS_M1_t01.lab"
+0	104	upp_M
+104	129	lig_E3S2
+129	245	upp_A
+245	261	lig_E5S3
+261	334	upp_S
+.
+"*/MLB_M1_t01.lab"
+0	127	upp_M
+127	158	lig_E3S1
+158	216	upp_L
+216	246	lig_E3S1
+246	374	upp_B
+.
+"*/MLB_M1_t02.lab"
+0	116	upp_M
+116	144	lig_E3S1
+144	201	upp_L
+201	232	lig_E3S1
+232	372	upp_B
+.
+"*/MLB_M1_t03.lab"
+0	119	upp_M
+119	149	lig_E3S1
+149	198	upp_L
+198	227	lig_E3S1
+227	353	upp_B
+.
+"*/MLB_M1_t04.lab"
+0	113	upp_M
+113	141	lig_E3S1
+141	194	upp_L
+194	221	lig_E3S1
+221	346	upp_B
+.
+"*/MLB_M1_t05.lab"
+0	110	upp_M
+110	140	lig_E3S1
+140	189	upp_L
+189	217	lig_E3S1
+217	339	upp_B
+.
+"*/MOVIE_M1_t01.lab"
+0	116	upp_M
+116	142	lig_E3S2
+142	210	upp_O
+210	227	lig_E6S1
+227	286	upp_V
+286	310	lig_E7S2
+310	342	upp_I
+342	373	lig_E2S1
+373	551	upp_E
+.
+"*/MOVIE_M1_t02.lab"
+0	123	upp_M
+123	150	lig_E3S2
+150	221	upp_O
+221	238	lig_E6S1
+238	295	upp_V
+295	318	lig_E7S2
+318	352	upp_I
+352	382	lig_E2S1
+382	534	upp_E
+.
+"*/MOVIE_M1_t03.lab"
+0	123	upp_M
+123	148	lig_E3S2
+148	207	upp_O
+207	221	lig_E6S1
+221	277	upp_V
+277	292	lig_E7S2
+292	323	upp_I
+323	354	lig_E2S1
+354	503	upp_E
+.
+"*/MOVIE_M1_t04.lab"
+0	113	upp_M
+113	137	lig_E3S2
+137	200	upp_O
+200	212	lig_E6S1
+212	266	upp_V
+266	287	lig_E7S2
+287	315	upp_I
+315	347	lig_E2S1
+347	491	upp_E
+.
+"*/MOVIE_M1_t05.lab"
+0	117	upp_M
+117	143	lig_E3S2
+143	204	upp_O
+204	217	lig_E6S1
+217	270	upp_V
+270	290	lig_E7S2
+290	321	upp_I
+321	350	lig_E2S1
+350	492	upp_E
+.
+"*/MSG_M1_t01.lab"
+0	123	upp_M
+123	143	lig_E3S3
+143	236	upp_S
+236	261	lig_E1S3
+261	401	upp_G
+.
+"*/MSG_M1_t02.lab"
+0	105	upp_M
+105	125	lig_E3S3
+125	196	upp_S
+196	220	lig_E1S3
+220	334	upp_G
+.
+"*/MSG_M1_t03.lab"
+0	103	upp_M
+103	120	lig_E3S3
+120	194	upp_S
+194	218	lig_E1S3
+218	340	upp_G
+.
+"*/MSG_M1_t04.lab"
+0	108	upp_M
+108	126	lig_E3S3
+126	203	upp_S
+203	225	lig_E1S3
+225	375	upp_G
+.
+"*/MSG_M1_t05.lab"
+0	95	upp_M
+95	111	lig_E3S3
+111	183	upp_S
+183	203	lig_E1S3
+203	322	upp_G
+.
+"*/MUSIC_M1_t01.lab"
+0	125	upp_M
+125	154	lig_E3S1
+154	220	upp_U
+220	223	lig_E7S3
+223	294	upp_S
+294	320	lig_E1S2
+320	350	upp_I
+350	374	lig_E2S3
+374	439	upp_C
+.
+"*/MUSIC_M1_t02.lab"
+0	128	upp_M
+128	159	lig_E3S1
+159	224	upp_U
+224	229	lig_E7S3
+229	315	upp_S
+315	343	lig_E1S2
+343	379	upp_I
+379	406	lig_E2S3
+406	479	upp_C
+.
+"*/MUSIC_M1_t03.lab"
+0	128	upp_M
+128	160	lig_E3S1
+160	225	upp_U
+225	230	lig_E7S3
+230	321	upp_S
+321	344	lig_E1S2
+344	381	upp_I
+381	408	lig_E2S3
+408	481	upp_C
+.
+"*/MUSIC_M1_t04.lab"
+0	118	upp_M
+118	149	lig_E3S1
+149	209	upp_U
+209	214	lig_E7S3
+214	292	upp_S
+292	317	lig_E1S2
+317	352	upp_I
+352	375	lig_E2S3
+375	429	upp_C
+.
+"*/MUSIC_M1_t05.lab"
+0	126	upp_M
+126	155	lig_E3S1
+155	222	upp_U
+222	226	lig_E7S3
+226	305	upp_S
+305	333	lig_E1S2
+333	368	upp_I
+368	393	lig_E2S3
+393	456	upp_C
+.
+"*/NBC_M1_t01.lab"
+0	106	upp_N
+106	124	lig_E7S1
+124	247	upp_B
+247	269	lig_E1S3
+269	336	upp_C
+.
+"*/NBC_M1_t02.lab"
+0	91	upp_N
+91	112	lig_E7S1
+112	241	upp_B
+241	270	lig_E1S3
+270	332	upp_C
+.
+"*/NBC_M1_t03.lab"
+0	89	upp_N
+89	110	lig_E7S1
+110	229	upp_B
+229	256	lig_E1S3
+256	310	upp_C
+.
+"*/NBC_M1_t04.lab"
+0	94	upp_N
+94	112	lig_E7S1
+112	223	upp_B
+223	246	lig_E1S3
+246	298	upp_C
+.
+"*/NBC_M1_t05.lab"
+0	94	upp_N
+94	116	lig_E7S1
+116	243	upp_B
+243	271	lig_E1S3
+271	331	upp_C
+.
+"*/NEWS_M1_t01.lab"
+0	101	upp_N
+101	125	lig_E7S1
+125	278	upp_E
+278	308	lig_E3S1
+308	413	upp_W
+413	418	lig_E7S3
+418	499	upp_S
+.
+"*/NEWS_M1_t02.lab"
+0	96	upp_N
+96	120	lig_E7S1
+120	261	upp_E
+261	288	lig_E3S1
+288	386	upp_W
+386	389	lig_E7S3
+389	467	upp_S
+.
+"*/NEWS_M1_t03.lab"
+0	94	upp_N
+94	118	lig_E7S1
+118	264	upp_E
+264	292	lig_E3S1
+292	385	upp_W
+385	388	lig_E7S3
+388	468	upp_S
+.
+"*/NEWS_M1_t04.lab"
+0	94	upp_N
+94	118	lig_E7S1
+118	259	upp_E
+259	289	lig_E3S1
+289	375	upp_W
+375	377	lig_E7S3
+377	457	upp_S
+.
+"*/NEWS_M1_t05.lab"
+0	93	upp_N
+93	117	lig_E7S1
+117	270	upp_E
+270	298	lig_E3S1
+298	390	upp_W
+390	393	lig_E7S3
+393	480	upp_S
+.
+"*/NFL_M1_t01.lab"
+0	90	upp_N
+90	111	lig_E7S1
+111	217	upp_F
+217	239	lig_E5S1
+239	297	upp_L
+.
+"*/NFL_M1_t02.lab"
+0	94	upp_N
+94	120	lig_E7S1
+120	243	upp_F
+243	270	lig_E5S1
+270	323	upp_L
+.
+"*/NFL_M1_t03.lab"
+0	101	upp_N
+101	131	lig_E7S1
+131	250	upp_F
+250	278	lig_E5S1
+278	336	upp_L
+.
+"*/NFL_M1_t04.lab"
+0	99	upp_N
+99	126	lig_E7S1
+126	247	upp_F
+247	275	lig_E5S1
+275	327	upp_L
+.
+"*/NFL_M1_t05.lab"
+0	92	upp_N
+92	112	lig_E7S1
+112	226	upp_F
+226	254	lig_E5S1
+254	308	upp_L
+.
+"*/PAC_M1_t01.lab"
+0	83	upp_P
+83	104	lig_E4S2
+104	220	upp_A
+220	236	lig_E5S3
+236	295	upp_C
+.
+"*/PAG_M1_t01.lab"
+0	96	upp_P
+96	123	lig_E4S2
+123	256	upp_A
+256	272	lig_E5S3
+272	409	upp_G
+.
+"*/PAS_M1_t01.lab"
+0	87	upp_P
+87	107	lig_E4S2
+107	227	upp_A
+227	241	lig_E5S3
+241	320	upp_S
+.
+"*/PC_M1_t01.lab"
+0	83	upp_P
+83	104	lig_E4S3
+104	167	upp_C
+.
+"*/PC_M1_t02.lab"
+0	90	upp_P
+90	115	lig_E4S3
+115	170	upp_C
+.
+"*/PC_M1_t03.lab"
+0	93	upp_P
+93	120	lig_E4S3
+120	173	upp_C
+.
+"*/PC_M1_t04.lab"
+0	89	upp_P
+89	114	lig_E4S3
+114	167	upp_C
+.
+"*/PC_M1_t05.lab"
+0	92	upp_P
+92	115	lig_E4S3
+115	168	upp_C
+.
+"*/POKER_M1_t01.lab"
+0	96	upp_P
+96	124	lig_E4S2
+124	191	upp_O
+191	203	lig_E6S1
+203	327	upp_K
+327	357	lig_E3S1
+357	499	upp_E
+499	530	lig_E3S1
+530	651	upp_R
+.
+"*/POKER_M1_t02.lab"
+0	94	upp_P
+94	120	lig_E4S2
+120	183	upp_O
+183	191	lig_E6S1
+191	307	upp_K
+307	336	lig_E3S1
+336	472	upp_E
+472	503	lig_E3S1
+503	628	upp_R
+.
+"*/POKER_M1_t03.lab"
+0	87	upp_P
+87	116	lig_E4S2
+116	177	upp_O
+177	192	lig_E6S1
+192	322	upp_K
+322	352	lig_E3S1
+352	496	upp_E
+496	525	lig_E3S1
+525	651	upp_R
+.
+"*/POKER_M1_t04.lab"
+0	97	upp_P
+97	127	lig_E4S2
+127	196	upp_O
+196	209	lig_E6S1
+209	335	upp_K
+335	364	lig_E3S1
+364	514	upp_E
+514	543	lig_E3S1
+543	669	upp_R
+.
+"*/POKER_M1_t05.lab"
+0	87	upp_P
+87	114	lig_E4S2
+114	167	upp_O
+167	177	lig_E6S1
+177	293	upp_K
+293	324	lig_E3S1
+324	459	upp_E
+459	487	lig_E3S1
+487	606	upp_R
+.
+"*/PST_M1_t01.lab"
+0	83	upp_P
+83	109	lig_E4S3
+109	169	upp_S
+169	188	lig_E1S1
+188	258	upp_T
+.
+"*/PST_M1_t02.lab"
+0	82	upp_P
+82	104	lig_E4S3
+104	165	upp_S
+165	186	lig_E1S1
+186	262	upp_T
+.
+"*/PST_M1_t03.lab"
+0	94	upp_P
+94	120	lig_E4S3
+120	182	upp_S
+182	200	lig_E1S1
+200	272	upp_T
+.
+"*/PST_M1_t04.lab"
+0	86	upp_P
+86	106	lig_E4S3
+106	167	upp_S
+167	187	lig_E1S1
+187	263	upp_T
+.
+"*/PST_M1_t05.lab"
+0	89	upp_P
+89	113	lig_E4S3
+113	175	upp_S
+175	193	lig_E1S1
+193	266	upp_T
+.
+"*/QUIZ_M1_t01.lab"
+0	114	upp_Q
+114	148	lig_E3S1
+148	214	upp_U
+214	231	lig_E7S2
+231	262	upp_I
+262	292	lig_E2S1
+292	377	upp_Z
+.
+"*/QUIZ_M1_t02.lab"
+0	111	upp_Q
+111	140	lig_E3S1
+140	210	upp_U
+210	229	lig_E7S2
+229	262	upp_I
+262	293	lig_E2S1
+293	376	upp_Z
+.
+"*/QUIZ_M1_t03.lab"
+0	121	upp_Q
+121	153	lig_E3S1
+153	215	upp_U
+215	233	lig_E7S2
+233	264	upp_I
+264	290	lig_E2S1
+290	378	upp_Z
+.
+"*/QUIZ_M1_t04.lab"
+0	116	upp_Q
+116	150	lig_E3S1
+150	211	upp_U
+211	228	lig_E7S2
+228	258	upp_I
+258	283	lig_E2S1
+283	370	upp_Z
+.
+"*/QUIZ_M1_t05.lab"
+0	109	upp_Q
+109	141	lig_E3S1
+141	207	upp_U
+207	222	lig_E7S2
+222	254	upp_I
+254	282	lig_E2S1
+282	366	upp_Z
+.
+"*/RAC_M1_t01.lab"
+0	96	upp_R
+96	120	lig_E3S2
+120	228	upp_A
+228	243	lig_E5S3
+243	295	upp_C
+.
+"*/ROCK_M1_t01.lab"
+0	136	upp_R
+136	160	lig_E3S2
+160	238	upp_O
+238	267	lig_E6S3
+267	336	upp_C
+336	366	lig_E3S1
+366	514	upp_K
+.
+"*/ROCK_M1_t02.lab"
+0	134	upp_R
+134	161	lig_E3S2
+161	239	upp_O
+239	239	lig_E6S3
+239	299	upp_C
+299	328	lig_E3S1
+328	481	upp_K
+.
+"*/ROCK_M1_t03.lab"
+0	148	upp_R
+148	178	lig_E3S2
+178	255	upp_O
+255	255	lig_E6S3
+255	317	upp_C
+317	346	lig_E3S1
+346	494	upp_K
+.
+"*/ROCK_M1_t04.lab"
+0	123	upp_R
+123	147	lig_E3S2
+147	218	upp_O
+218	218	lig_E6S3
+218	265	upp_C
+265	291	lig_E3S1
+291	440	upp_K
+.
+"*/ROCK_M1_t05.lab"
+0	125	upp_R
+125	154	lig_E3S2
+154	222	upp_O
+222	222	lig_E6S3
+222	276	upp_C
+276	300	lig_E3S1
+300	433	upp_K
+.
+"*/SKYPE_M1_t01.lab"
+0	65	upp_S
+65	85	lig_E1S1
+85	188	upp_K
+188	214	lig_E3S1
+214	306	upp_Y
+306	334	lig_E2S1
+334	417	upp_P
+417	434	lig_E4S1
+434	591	upp_E
+.
+"*/SKYPE_M1_t02.lab"
+0	68	upp_S
+68	88	lig_E1S1
+88	200	upp_K
+200	226	lig_E3S1
+226	314	upp_Y
+314	338	lig_E2S1
+338	417	upp_P
+417	436	lig_E4S1
+436	585	upp_E
+.
+"*/SKYPE_M1_t03.lab"
+0	61	upp_S
+61	79	lig_E1S1
+79	195	upp_K
+195	222	lig_E3S1
+222	308	upp_Y
+308	333	lig_E2S1
+333	413	upp_P
+413	430	lig_E4S1
+430	585	upp_E
+.
+"*/SKYPE_M1_t04.lab"
+0	70	upp_S
+70	91	lig_E1S1
+91	209	upp_K
+209	236	lig_E3S1
+236	325	upp_Y
+325	352	lig_E2S1
+352	431	upp_P
+431	450	lig_E4S1
+450	597	upp_E
+.
+"*/SKYPE_M1_t05.lab"
+0	64	upp_S
+64	81	lig_E1S1
+81	189	upp_K
+189	216	lig_E3S1
+216	306	upp_Y
+306	331	lig_E2S1
+331	413	upp_P
+413	432	lig_E4S1
+432	578	upp_E
+.
+"*/SPORT_M1_t01.lab"
+0	75	upp_S
+75	96	lig_E1S1
+96	188	upp_P
+188	220	lig_E4S2
+220	293	upp_O
+293	306	lig_E6S1
+306	423	upp_R
+423	452	lig_E3S1
+452	524	upp_T
+.
+"*/SPORT_M1_t02.lab"
+0	72	upp_S
+72	95	lig_E1S1
+95	182	upp_P
+182	214	lig_E4S2
+214	280	upp_O
+280	289	lig_E6S1
+289	400	upp_R
+400	433	lig_E3S1
+433	506	upp_T
+.
+"*/SPORT_M1_t03.lab"
+0	77	upp_S
+77	97	lig_E1S1
+97	186	upp_P
+186	215	lig_E4S2
+215	277	upp_O
+277	289	lig_E6S1
+289	407	upp_R
+407	437	lig_E3S1
+437	519	upp_T
+.
+"*/SPORT_M1_t04.lab"
+0	64	upp_S
+64	83	lig_E1S1
+83	163	upp_P
+163	192	lig_E4S2
+192	251	upp_O
+251	263	lig_E6S1
+263	371	upp_R
+371	402	lig_E3S1
+402	470	upp_T
+.
+"*/SPORT_M1_t05.lab"
+0	71	upp_S
+71	89	lig_E1S1
+89	164	upp_P
+164	191	lig_E4S2
+191	245	upp_O
+245	255	lig_E6S1
+255	360	upp_R
+360	388	lig_E3S1
+388	462	upp_T
+.
+"*/TAS_M1_t01.lab"
+0	59	upp_T
+59	77	lig_E2S2
+77	187	upp_A
+187	198	lig_E5S3
+198	263	upp_S
+.
+"*/TBS_M1_t01.lab"
+0	70	upp_T
+70	95	lig_E2S1
+95	220	upp_B
+220	248	lig_E1S3
+248	321	upp_S
+.
+"*/TBS_M1_t02.lab"
+0	69	upp_T
+69	94	lig_E2S1
+94	221	upp_B
+221	245	lig_E1S3
+245	327	upp_S
+.
+"*/TBS_M1_t03.lab"
+0	65	upp_T
+65	91	lig_E2S1
+91	205	upp_B
+205	230	lig_E1S3
+230	299	upp_S
+.
+"*/TBS_M1_t04.lab"
+0	63	upp_T
+63	88	lig_E2S1
+88	204	upp_B
+204	227	lig_E1S3
+227	301	upp_S
+.
+"*/TBS_M1_t05.lab"
+0	68	upp_T
+68	93	lig_E2S1
+93	207	upp_B
+207	232	lig_E1S3
+232	297	upp_S
+.
+"*/TNT_M1_t01.lab"
+0	81	upp_T
+81	110	lig_E2S1
+110	216	upp_N
+216	247	lig_E7S1
+247	329	upp_T
+.
+"*/TNT_M1_t02.lab"
+0	79	upp_T
+79	106	lig_E2S1
+106	198	upp_N
+198	227	lig_E7S1
+227	311	upp_T
+.
+"*/TNT_M1_t03.lab"
+0	79	upp_T
+79	109	lig_E2S1
+109	207	upp_N
+207	232	lig_E7S1
+232	313	upp_T
+.
+"*/TNT_M1_t04.lab"
+0	79	upp_T
+79	108	lig_E2S1
+108	209	upp_N
+209	239	lig_E7S1
+239	325	upp_T
+.
+"*/TNT_M1_t05.lab"
+0	79	upp_T
+79	105	lig_E2S1
+105	205	upp_N
+205	230	lig_E7S1
+230	313	upp_T
+.
+"*/TRAVEL_M1_t01.lab"
+0	71	upp_T
+71	94	lig_E2S1
+94	206	upp_R
+206	230	lig_E3S2
+230	346	upp_A
+346	371	lig_E5S1
+371	425	upp_V
+425	451	lig_E7S1
+451	585	upp_E
+585	613	lig_E3S1
+613	664	upp_L
+.
+"*/TRAVEL_M1_t02.lab"
+0	60	upp_T
+60	80	lig_E2S1
+80	170	upp_R
+170	194	lig_E3S2
+194	301	upp_A
+301	326	lig_E5S1
+326	377	upp_V
+377	400	lig_E7S1
+400	531	upp_E
+531	561	lig_E3S1
+561	612	upp_L
+.
+"*/TRAVEL_M1_t03.lab"
+0	76	upp_T
+76	102	lig_E2S1
+102	204	upp_R
+204	229	lig_E3S2
+229	341	upp_A
+341	367	lig_E5S1
+367	421	upp_V
+421	445	lig_E7S1
+445	592	upp_E
+592	620	lig_E3S1
+620	678	upp_L
+.
+"*/TRAVEL_M1_t04.lab"
+0	63	upp_T
+63	85	lig_E2S1
+85	189	upp_R
+189	216	lig_E3S2
+216	334	upp_A
+334	362	lig_E5S1
+362	421	upp_V
+421	449	lig_E7S1
+449	603	upp_E
+603	636	lig_E3S1
+636	703	upp_L
+.
+"*/TRAVEL_M1_t05.lab"
+0	74	upp_T
+74	99	lig_E2S1
+99	210	upp_R
+210	235	lig_E3S2
+235	365	upp_A
+365	390	lig_E5S1
+390	447	upp_V
+447	473	lig_E7S1
+473	620	upp_E
+620	648	lig_E3S1
+648	708	upp_L
+.
+"*/TV_M1_t01.lab"
+0	71	upp_T
+71	96	lig_E2S1
+96	143	upp_V
+.
+"*/TV_M1_t02.lab"
+0	70	upp_T
+70	93	lig_E2S1
+93	142	upp_V
+.
+"*/TV_M1_t03.lab"
+0	70	upp_T
+70	97	lig_E2S1
+97	146	upp_V
+.
+"*/TV_M1_t04.lab"
+0	68	upp_T
+68	92	lig_E2S1
+92	134	upp_V
+.
+"*/TV_M1_t05.lab"
+0	70	upp_T
+70	95	lig_E2S1
+95	140	upp_V
+.
+"*/UPG_M1_t01.lab"
+0	61	upp_U
+61	80	lig_E7S1
+80	161	upp_P
+161	188	lig_E4S3
+188	312	upp_G
+.
+"*/UPG_M1_t02.lab"
+0	65	upp_U
+65	82	lig_E7S1
+82	159	upp_P
+159	182	lig_E4S3
+182	299	upp_G
+.
+"*/UPG_M1_t03.lab"
+0	58	upp_U
+58	75	lig_E7S1
+75	158	upp_P
+158	182	lig_E4S3
+182	300	upp_G
+.
+"*/UPG_M1_t04.lab"
+0	60	upp_U
+60	77	lig_E7S1
+77	160	upp_P
+160	184	lig_E4S3
+184	299	upp_G
+.
+"*/UPG_M1_t05.lab"
+0	69	upp_U
+69	90	lig_E7S1
+90	175	upp_P
+175	199	lig_E4S3
+199	313	upp_G
+.
+"*/VAC_M1_t01.lab"
+0	47	upp_V
+47	67	lig_E7S2
+67	176	upp_A
+176	191	lig_E5S3
+191	239	upp_C
+.
+"*/VOICE_M1_t01.lab"
+0	62	upp_V
+62	72	lig_E7S2
+72	143	upp_O
+143	143	lig_E6S2
+143	175	upp_I
+175	196	lig_E2S3
+196	255	upp_C
+255	282	lig_E3S1
+282	437	upp_E
+.
+"*/VOICE_M1_t02.lab"
+0	61	upp_V
+61	74	lig_E7S2
+74	143	upp_O
+143	143	lig_E6S2
+143	177	upp_I
+177	199	lig_E2S3
+199	258	upp_C
+258	288	lig_E3S1
+288	451	upp_E
+.
+"*/VOICE_M1_t03.lab"
+0	58	upp_V
+58	68	lig_E7S2
+68	138	upp_O
+138	138	lig_E6S2
+138	171	upp_I
+171	194	lig_E2S3
+194	257	upp_C
+257	287	lig_E3S1
+287	435	upp_E
+.
+"*/VOICE_M1_t04.lab"
+0	58	upp_V
+58	70	lig_E7S2
+70	140	upp_O
+140	140	lig_E6S2
+140	173	upp_I
+173	198	lig_E2S3
+198	261	upp_C
+261	290	lig_E3S1
+290	442	upp_E
+.
+"*/VOICE_M1_t05.lab"
+0	68	upp_V
+68	83	lig_E7S2
+83	169	upp_O
+169	181	lig_E6S2
+181	213	upp_I
+213	235	lig_E2S3
+235	300	upp_C
+300	336	lig_E3S1
+336	495	upp_E
+.
+"*/WAS_M1_t01.lab"
+0	98	upp_W
+98	120	lig_E7S2
+120	253	upp_A
+253	273	lig_E5S3
+273	357	upp_S
+.
+"*/WEATHER_M1_t01.lab"
+0	87	upp_W
+87	113	lig_E7S1
+113	247	upp_E
+247	268	lig_E3S2
+268	380	upp_A
+380	405	lig_E5S1
+405	460	upp_T
+460	483	lig_E2S1
+483	577	upp_H
+577	605	lig_E3S1
+605	728	upp_E
+728	756	lig_E3S1
+756	873	upp_R
+.
+"*/WEATHER_M1_t02.lab"
+0	88	upp_W
+88	114	lig_E7S1
+114	241	upp_E
+241	270	lig_E3S2
+270	389	upp_A
+389	419	lig_E5S1
+419	492	upp_T
+492	520	lig_E2S1
+520	645	upp_H
+645	680	lig_E3S1
+680	837	upp_E
+837	869	lig_E3S1
+869	1000	upp_R
+.
+"*/WEATHER_M1_t03.lab"
+0	108	upp_W
+108	138	lig_E7S1
+138	286	upp_E
+286	313	lig_E3S2
+313	442	upp_A
+442	472	lig_E5S1
+472	538	upp_T
+538	567	lig_E2S1
+567	690	upp_H
+690	723	lig_E3S1
+723	870	upp_E
+870	900	lig_E3S1
+900	1026	upp_R
+.
+"*/WEATHER_M1_t04.lab"
+0	97	upp_W
+97	122	lig_E7S1
+122	278	upp_E
+278	309	lig_E3S2
+309	439	upp_A
+439	465	lig_E5S1
+465	538	upp_T
+538	562	lig_E2S1
+562	681	upp_H
+681	710	lig_E3S1
+710	861	upp_E
+861	893	lig_E3S1
+893	1017	upp_R
+.
+"*/WEATHER_M1_t05.lab"
+0	92	upp_W
+92	116	lig_E7S1
+116	243	upp_E
+243	270	lig_E3S2
+270	393	upp_A
+393	419	lig_E5S1
+419	494	upp_T
+494	519	lig_E2S1
+519	631	upp_H
+631	662	lig_E3S1
+662	808	upp_E
+808	841	lig_E3S1
+841	974	upp_R
+.
+"*/YOU_M1_t01.lab"
+0	96	upp_Y
+96	121	lig_E2S2
+121	190	upp_O
+190	202	lig_E6S1
+202	284	upp_U
+.
+"*/YOU_M1_t02.lab"
+0	91	upp_Y
+91	119	lig_E2S2
+119	176	upp_O
+176	187	lig_E6S1
+187	256	upp_U
+.
+"*/YOU_M1_t03.lab"
+0	96	upp_Y
+96	121	lig_E2S2
+121	174	upp_O
+174	182	lig_E6S1
+182	243	upp_U
+.
+"*/YOU_M1_t04.lab"
+0	85	upp_Y
+85	108	lig_E2S2
+108	167	upp_O
+167	180	lig_E6S1
+180	249	upp_U
+.
+"*/YOU_M1_t05.lab"
+0	77	upp_Y
+77	100	lig_E2S2
+100	158	upp_O
+158	170	lig_E6S1
+170	242	upp_U
+.

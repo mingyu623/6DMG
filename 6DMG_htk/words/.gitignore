@@ -1,0 +1,4 @@
+# Filter the intermediate and output files from our scripts / HTK
+iso_char
+iso_lig
+res.txt
