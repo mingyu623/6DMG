@@ -98,17 +98,29 @@
   Output:
    - res_leaveOneOut_iso.txt
 
+4.0. 4_0_train_lig_single.pl [data_dir] [datatype] [lig model]
+  This script requries the results from Step 1 & 2, and performs embedded
+  re-estimation of A-Z + multi-lig HMMs.  The training set consists of the
+  40-word dictionary by 22 users.  The testing data is the extension 1k-word
+  set by M1.
+  Example:
+  > perl 4_0_train_lig_single.pl ~/Development/6DMG/data_htk/words NPNV iso
+  Output:
+   - char_lig/NPNV/Extension/iso/
+   - char_lig/NPNV/Extension/log_iso.txt
+   - char_lig/NPNV/Extension/err_iso.txt  (only exists when something goes wrong)
 
+4.1. 4_1_batch.pl [data_dir]
+  This script launches all single runs of Step 4.0. with different datatype(s) and
+  ligature model(s) specified in it.
+  Example:
+  > perl 4_1_batch.pl ~/Development/6DMG/data_htk/words
 
-
-
-
-
-2. 2_stats.pl
-  This script collects the results from Step 1.2 and generates the stats of
-  character error rate (CER) for each datatype, each leave-one-out case, and
+4.2. 4_2_stats.pl
+  This script collects the results from Step 4.1 and generates the stats of
+  word error rate (WER) for each datatype, each ligature model, and the
   overall results.
   Example:
-  > perl 2_stats.pl
+  > perl 4_2_stats.pl
   Ouput:
-   - res.txt
+   - res_extension.txt

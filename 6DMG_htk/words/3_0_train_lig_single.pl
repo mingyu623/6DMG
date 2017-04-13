@@ -19,9 +19,10 @@ my $ligModel;
 if ($#ARGV !=3)
 {
     print "usage: train_lig [data_dir] [datatype] [test usr] [lig model]\n";
-    print "[lig model]= flat : use the HCompV flat start initial for lig models\n";
-    print "             iso  : use the manually segmented iso lig from M1's data\n";
-    print "             tie  : use tie-state lig models\n";
+    print " [data_dir]: the base path to the \$datatype folder(s)\n";
+    print " [lig model]= flat : use the HCompV flat start initial for lig models\n";
+    print "              iso  : use the manually segmented iso lig from M1's data\n";
+    print "              tie  : use tie-state lig models\n";
     exit;
 }
 else
