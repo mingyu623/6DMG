@@ -89,8 +89,14 @@
   Example:
   > perl 3_1_batch.pl ~/Development/6DMG/data_htk/words
 
-3.2.
-
+3.2. 3_2_stats.pl
+  This script collects the results from Step 3.1 and generates the stats of
+  word error rate (WER) for each datatype, each leave-one-out case, and the
+  overall results.
+  Example:
+  > perl 3_2_stats.pl
+  Output:
+   - res_leaveOneOut_iso.txt
 
 
 

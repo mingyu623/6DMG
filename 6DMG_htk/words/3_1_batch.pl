@@ -17,8 +17,7 @@ else
 
 ## [Mingyu]: Uncomment to use the full sets of data types (need to export them from
 ##           6DMG_loader first!!)
-#my @dTypes = ("NP", "NV", "NA", "NO", "NW", "NPNVNONANW", "NPNV", "NANWNO",
-#	      "NP2D", "NV2D", "NP2DNV2D", "NP2DNV2DNONANW");
+#my @dTypes = ("NPNV", "NP2DNV2D", "NANWNO", "NPNVNONANW", "NP2DNV2DNONANW");
 my @dTypes = ("NPNV");
 
 ## [Mingyu]: iso ligModel performs the best
