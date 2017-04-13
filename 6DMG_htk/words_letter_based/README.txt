@@ -33,6 +33,39 @@
   Output:
    - share/wdnet_bigram_100k
 
+1.0. 1_0_prep_trn_scp_mlf_hmmdefs.pl [data_dir] [datatype] [test usr]
+  This script prepares the training/testing scripts for leave-one-out cross validation,
+  generates the HMM definitions for tri-ligs and chars, and performs embedded re-estimation.
+  See the script for more details.
+  Extra requirement:
+  ../words_word_based/char_lig/$dtype/Extension/iso/hmm3/hmmdefs_iso
+  This file has to be generated first by running words_word_based experiment.
+  Example:
+  > perl 1_0_prep_trn_scp_mlf_hmmdefs.pl ~/Development/6DMG/data_htk/words NPNV C1
+  Output:
+   - NPNV/C1/fulllist
+   - NPNV/C1/mono_char_tri_lig.mlf
+   - NPNV/C1/test.scp
+   - NPNV/C1/train.scp
+   - NPNV/C1/trihmm0/
+   - NPNV/C1/trihmm1/
+   - NPNV/C1/trihmm2/  (the tri-state HMMs will be used in the following training/testing)
+   - NPNV/C1/triligHmmlist
+   - NPNV/C1/trilig_stats.txt
+
+1.1. 1_1_batch.pl [data_dir]
+  This script automates the Step 1.0 for all leave-one-out combinations for each specified
+  datatype and test users.
+  Example:
+  > perl 1_1_batch.pl ~/Development/6DMG/data_htk/words
+
+
+
+
+
+
+
+
 
 
 
