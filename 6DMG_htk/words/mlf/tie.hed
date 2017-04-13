@@ -1,0 +1,10 @@
+TI S1 {(lig_E*S1).state[4]}
+TI S2 {(lig_E*S2).state[4]}
+TI S3 {(lig_E*S3).state[4]}
+TI E1 {(lig_E1S*).state[2]}
+TI E2 {(lig_E2S*).state[2]}
+TI E3 {(lig_E3S*).state[2]}
+TI E4 {(lig_E4S*).state[2]}
+TI E5 {(lig_E5S*).state[2]}
+TI E6 {(lig_E6S*).state[2]}
+TI E7 {(lig_E7S*).state[2]}

@@ -439,7 +439,7 @@ system("HParse $gram_exp $wnet_exp");
 my $cmdFile = "mlf/mk_char_lig.led";
 my $wordMlf = "mlf/word.mlf";
 my $charMlf = "mlf/char_lig.mlf";
-system("HLEd -d $dict_exp -i $charMlf $cmdFile $wordMlf");
+system("HLEd -l '*' -d $dict_exp -i $charMlf $cmdFile $wordMlf");
 
 #-------------------------------------------------------------------------
 # Get the stats of the multi-ligs in each set
