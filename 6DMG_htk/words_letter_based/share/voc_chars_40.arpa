@@ -1,0 +1,217 @@
+#############################################################################
+## Copyright (c) 1996, Carnegie Mellon University, Cambridge University,
+## Ronald Rosenfeld and Philip Clarkson
+#############################################################################
+=============================================================================
+===============  This file was produced by the CMU-Cambridge  ===============
+===============     Statistical Language Modeling Toolkit     ===============
+=============================================================================
+This is a 2-gram language model, based on a vocabulary of 27 words,
+  which begins "<s>", "A", "B"...
+This is a CLOSED-vocabulary model
+  (OOVs eliminated from training data and are forbidden in test data)
+Good-Turing discounting was applied.
+1-gram frequency of frequency : 2 
+2-gram frequency of frequency : 102 25 7 4 1 1 0 
+1-gram discounting ratios : 0.67 
+2-gram discounting ratios : 0.46 0.39 0.75 0.28 
+This file is in the ARPA-standard format introduced by Doug Paul.
+
+p(wd3|wd1,wd2)= if(trigram exists)           p_3(wd1,wd2,wd3)
+                else if(bigram w1,w2 exists) bo_wt_2(w1,w2)*p(wd3|wd2)
+                else                         p(wd3|w2)
+
+p(wd2|wd1)= if(bigram exists) p_2(wd1,wd2)
+            else              bo_wt_1(wd1)*p_1(wd2)
+
+All probs and back-off weights (bo_wt) are given in log10 form.
+
+Data formats:
+
+Beginning of data mark: \data\
+ngram 1=nr            # number of 1-grams
+ngram 2=nr            # number of 2-grams
+
+\1-grams:
+p_1     wd_1 bo_wt_1
+\2-grams:
+p_2     wd_1 wd_2 
+
+end of data mark: \end\
+
+\data\
+ngram 1=27
+ngram 2=140
+
+\1-grams:
+-98.9982 <s>	0.2545
+-1.2023 A	-0.0833
+-1.2481 B	-0.1917
+-1.2023 C	-0.0218
+-1.5033 D	-0.1824
+-1.0884 E	-0.4493
+-1.5033 F	-0.1501
+-1.6002 G	-0.1768
+-1.7252 H	-0.1901
+-1.2992 I	-0.0823
+-2.3784 J	-0.2426
+-1.6002 K	-0.1966
+-1.2992 L	-0.0933
+-1.2992 M	-0.1667
+-1.2992 N	-0.1090
+-1.0884 O	-0.0342
+-1.5033 P	-0.1432
+-2.3784 Q	-0.2569
+-1.3572 R	-0.1336
+-1.2023 S	-0.2105
+-1.3572 T	-0.1566
+-1.5033 U	-0.1701
+-1.5033 V	-0.1432
+-1.9013 W	-0.2031
+-1.9013 X	-0.2147
+-1.6002 Y	-0.1898
+-1.7252 Z	-0.2244
+
+\2-grams:
+-1.9356 <s> A 
+-1.9356 <s> B 
+-1.2501 <s> C 
+-1.2501 <s> D 
+-1.9356 <s> E 
+-1.5574 <s> F 
+-1.7099 <s> G 
+-1.7099 <s> H 
+-1.9356 <s> J 
+-1.9356 <s> K 
+-0.8239 <s> M 
+-1.2501 <s> N 
+-1.9356 <s> P 
+-1.9356 <s> Q 
+-1.9356 <s> R 
+-1.7099 <s> S 
+-1.5574 <s> T 
+-1.9356 <s> V 
+-1.9356 <s> W 
+-1.9356 <s> Y 
+-1.3336 A <s> 
+-1.3336 A B 
+-1.3336 A I 
+-1.3336 A L 
+-1.1078 A M 
+-1.3336 A P 
+-1.3336 A T 
+-1.3336 A V 
+-1.3336 A Z 
+-1.0620 B <s> 
+-1.2878 B B 
+-0.6023 B C 
+-1.2878 B O 
+-1.0620 B S 
+-0.9554 C <s> 
+-1.3336 C A 
+-1.3336 C B 
+-1.3336 C E 
+-1.3336 C K 
+-1.3336 C N 
+-1.3336 C O 
+-0.8068 D <s> 
+-0.8068 D I 
+-1.0325 D R 
+-0.4150 E <s> 
+-1.4475 E A 
+-1.4475 E L 
+-0.7620 E R 
+-1.4475 E S 
+-1.4475 E W 
+-1.4475 E Y 
+-1.0325 F B 
+-1.0325 F L 
+-0.8068 F O 
+-1.0325 F X 
+-0.9356 G <s> 
+-0.9356 G A 
+-0.9356 G L 
+-0.9356 G O 
+-0.8107 H B 
+-0.8107 H E 
+-0.8107 H U 
+-1.0109 I C 
+-1.2366 I D 
+-1.2366 I E 
+-1.2366 I L 
+-1.0109 I S 
+-1.2366 I Z 
+-0.3336 J A 
+-0.9356 K <s> 
+-0.9356 K E 
+-0.9356 K I 
+-0.9356 K Y 
+-0.8585 L <s> 
+-1.2366 L B 
+-1.2366 L E 
+-1.2366 L L 
+-1.2366 L U 
+-0.5511 M A 
+-1.2366 M E 
+-1.2366 M L 
+-1.2366 M O 
+-1.2366 M S 
+-1.2366 M U 
+-1.0109 N <s> 
+-1.2366 N B 
+-1.0109 N E 
+-1.2366 N F 
+-1.2366 N N 
+-1.2366 N T 
+-1.4475 O <s> 
+-1.4475 O C 
+-1.4475 O D 
+-1.4475 O G 
+-1.4475 O I 
+-1.4475 O K 
+-1.2217 O O 
+-1.4475 O R 
+-1.4475 O U 
+-1.2217 O V 
+-1.4475 O X 
+-1.0325 P <s> 
+-1.0325 P E 
+-1.0325 P N 
+-0.8068 P O 
+-0.3336 Q U 
+-0.9529 R <s> 
+-0.9529 R A 
+-1.1787 R O 
+-1.1787 R T 
+-1.1787 R Y 
+-0.6480 S <s> 
+-1.3336 S C 
+-1.3336 S G 
+-1.3336 S I 
+-1.3336 S K 
+-1.3336 S N 
+-1.1078 S P 
+-0.9529 T <s> 
+-1.1787 T B 
+-1.1787 T H 
+-1.1787 T N 
+-1.1787 T R 
+-1.1787 T V 
+-0.8068 U <s> 
+-1.0325 U I 
+-1.0325 U L 
+-1.0325 U S 
+-1.0325 V <s> 
+-0.8068 V E 
+-1.0325 V I 
+-1.0325 V O 
+-0.6346 W E 
+-0.6346 W S 
+-0.4088 X <s> 
+-0.7099 Y <s> 
+-0.9356 Y O 
+-0.9356 Y P 
+-0.5849 Z <s> 
+-0.8107 Z Z 
+
+\end\

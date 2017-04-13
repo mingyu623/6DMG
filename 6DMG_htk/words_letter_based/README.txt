@@ -12,16 +12,26 @@
   Need the 2-gram language model (share/voc_chars_100k.arpa) produced by the CMU-Cambridge
   Statistical Language Modeling Toolkit.
   Example:
-  perl 0_0_generate_share.pl
+  > perl 0_0_generate_share.pl
   Output:
-   -
+   - share/wdnet
+   - share/wdnet_bigram
+   - share/word_ref.mlf
 
 
-0.1. 0_1_generate_wdnet_bigram.pl
-
-
-
-
+0.1. 0_1_generate_wdnet_bigram.pl [voc] [backoff]
+  This script generates the wdnet with bigram estimated from the given vocabulary with or
+  without backoff.
+  [NOTE] If choose 100k voc without backoff, the generated wdnet_bigram_100k will be identical
+         to the wdnet_bigram generated in Step 0.0
+  Extra requirement:
+  Need the 2-gram language model estimated from the specified vocabulary (40, 1k, or 100k,
+  share/voc_chars_40.arpa, share/voc_chars_1k, share/voc_chars_100k) produced by the
+  CMU-Cambridge Statistical Language Modeling Toolkit.
+  Example:
+  > perl 0_1_generate_wdnet_bigram.pl 100k 0
+  Output:
+   - share/wdnet_bigram_100k
 
 
 
