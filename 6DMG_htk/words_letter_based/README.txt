@@ -1,7 +1,31 @@
-# Mingyu @ Apr 12 2017
+# Mingyu @ Apr 13 2017
 # 
-# Here, we perform the training/testing of word-based motion words recognition
+# Here, we perform the training/testing of letter-based motion words recognition
 #
+
+# TODO(mingyu):
+# Provide the script to generate the n-gram language model .arpa files
+
+0.0. 0_0_generate_share.pl
+  This script generates the datatype invariant shared files for all following experiments.
+  Extra requirement:
+  Need the 2-gram language model (share/voc_chars_100k.arpa) produced by the CMU-Cambridge
+  Statistical Language Modeling Toolkit.
+  Example:
+  perl 0_0_generate_share.pl
+  Output:
+   -
+
+
+0.1. 0_1_generate_wdnet_bigram.pl
+
+
+
+
+
+
+
+
 
 0. 0_gen_single_proto.pl [datatype] [# states]
   This script generates one proto file for HTK with specified data type and states number.
