@@ -22,9 +22,9 @@
    - iso_char/NPNV/all/gestGram
    - iso_char/NPNV/all/gestList
    - iso_char/NPNV/all/gestNet
-   - iso_char/NPNV/all/hmm0
-   - iso_char/NPNV/all/hmm1
-   - iso_char/NPNV/all/hmm2  (final iso char HMMs)
+   - iso_char/NPNV/all/hmm0/
+   - iso_char/NPNV/all/hmm1/
+   - iso_char/NPNV/all/hmm2/ (final iso char HMMs)
    - iso_char/NPNV/all/train.scp
    - iso_char/NPNV/all/test.scp
    - iso_char/NPNV/all/trn.mlf
@@ -45,9 +45,9 @@
    - iso_lig/NPNV/gestGram
    - iso_lig/NPNV/gestList
    - iso_lig/NPNV/gestNet
-   - iso_lig/NPNV/hmm0
-   - iso_lig/NPNV/hmm1
-   - iso_lig/NPNV/hmm2  (final iso lig HMMs)
+   - iso_lig/NPNV/hmm0/
+   - iso_lig/NPNV/hmm1/
+   - iso_lig/NPNV/hmm2/  (final iso lig HMMs)
    - iso_lig/NPNV/train.scp
    - iso_lig/NPNV/test.scp
    - iso_lig/NPNV/log.txt
@@ -72,10 +72,18 @@
    - char_lig/wdnet_rn
    - char_lig/wdnet_exp
 
+3.0. 3_0_train_lig_single.pl [data_dir] [datatype] [test usr] [lig model]
+  This script requires the results from Step 1 & 2, and performs embedded
+  re-estimation of A-Z + multi-lig HMMs.  This script is performed in a
+  leave-one-out manner with specified testing user (test with 40-word vocab)
+  Example:
+  > perl 3_0_train_lig_single.pl ~/Developement/6DMG/data_htk/words NPNV C1 iso
+  Output:
+   - char_lig/NPNV/LeaveOneOut/C1/
+   - char_lig/NPNV/LeaveOneOut/log_C1.txt
+   - char_lig/NPNV/LeaveOneOut/err_C1.txt  (only exists when something goes wrong)
 
-
-
-
+3.
 
 
 
