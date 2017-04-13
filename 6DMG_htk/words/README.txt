@@ -53,19 +53,40 @@
    - iso_lig/NPNV/log.txt
    - iso_lig/NPNV/err.txt  (only exists when something goes wrong)
 
-
-
-
-
-
-
-
-
-
-1.2. 1_batch.pl [data_dir]
-  This script runs a top level leave-one-out validation using 1_build_iso_char_hmm_single.pl
+2. 2_dict_wdnet_prepare.pl
+  Using the iso char and lig HMMs generated from Step 1, this script will generate
+  the required wdnet and dict for motion word recognition tasks and convert the word
+  level mlf (word.mlf) to char level mlf (char_lig.mlf)
   Example:
-  > perl 1_batch.pl ~/Development/6DMG/data_htk/chars
+  > perl 2_dict_wdnet_prepare.pl
+  Output:
+   - mlf/char_lig.mlf
+   - char_lig/dict
+   - char_lig/dict_exp  (exp means expansion, the 1k word set)
+   - char_lig/dict_trn
+   - char_lig/gram
+   - char_lig/gram_exp
+   - char_lig/gram_trn
+   - char_lig/hmmList
+   - char_lig/wdnet
+   - char_lig/wdnet_rn
+   - char_lig/wdnet_exp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 2. 2_stats.pl
   This script collects the results from Step 1.2 and generates the stats of
