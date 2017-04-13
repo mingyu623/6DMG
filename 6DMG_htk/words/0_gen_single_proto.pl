@@ -27,11 +27,11 @@ my $vecSize = 0;
 my $i = 0;
 while($i < length($dtype))
 {
-    my $D = substr($dtype,$i,2);    
+    my $D = substr($dtype,$i,2);
     if ($D eq 'NA' or $D eq 'NW' or $D eq 'NV' or $D eq 'NP')
-    {	
+    {
 	if (substr($dtype,$i+2,2) eq '2D')
-	{	 	    
+	{
 	    $vecSize = $vecSize + 2;
 	    if (substr($dtype,$i+4,2) eq 'uv'){
 		$i += 6;
@@ -108,7 +108,7 @@ foreach my $row (1..$statesHTK)
     }
     elsif ($row eq $statesHTK)
     {
-	foreach (1..$statesHTK){ print HMM "$s0   "; }	
+	foreach (1..$statesHTK){ print HMM "$s0   "; }
     }
     else
     {

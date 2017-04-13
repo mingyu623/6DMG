@@ -83,11 +83,13 @@
    - char_lig/NPNV/LeaveOneOut/log_C1.txt
    - char_lig/NPNV/LeaveOneOut/err_C1.txt  (only exists when something goes wrong)
 
-3.
+3.1. 3_1_batch.pl [data_dir]
+  This script launches all single runs of leave-one-out training/testing. The user
+  can modify the datatype(s) and ligature model(s) in use in the script.
+  Example:
+  > perl 3_1_batch.pl ~/Development/6DMG/data_htk/words
 
-
-
-
+3.2.
 
 
 
