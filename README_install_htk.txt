@@ -26,6 +26,6 @@ case "$host" in
 4. Through the training/testing process, we need extra perl packages.  Make sure
    to install them first. (May need sudo)
   1) Parallel::ForkManager module
-   > cpan Parallel::ForkManager
+   > sudo cpan Parallel::ForkManager
   2) Math::NumberCruncher
-   > cpan Math::NumberCruncher
+   > sudo cpan Math::NumberCruncher

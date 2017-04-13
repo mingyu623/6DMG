@@ -42,3 +42,12 @@
   This script runs a top level leave-one-out validation using 1_build_iso_char_hmm_single.pl
   Example:
   > perl 1_batch.pl ~/Development/6DMG/data_htk/chars
+
+2. 2_stats.pl
+  This script collects the results from Step 1.2 and generates the stats of
+  character error rate (CER) for each datatype, each leave-one-out case, and
+  overall results.
+  Example:
+  > perl 2_stats.pl
+  Ouput:
+   - res.txt
