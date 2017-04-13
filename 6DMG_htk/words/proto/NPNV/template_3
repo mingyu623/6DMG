@@ -1,0 +1,31 @@
+~o <VecSize> 6 <nullD><USER> <StreamInfo> 1 6
+<BeginHMM>
+  <NumStates> 5
+  <State> 2 <NumMixes> 1
+  <Stream> 1
+  <Mixture> 1 1.0
+    <Mean> 6
+      0.0 0.0 0.0 0.0 0.0 0.0 
+    <Variance> 6
+      1.0 1.0 1.0 1.0 1.0 1.0 
+  <State> 3 <NumMixes> 1
+  <Stream> 1
+  <Mixture> 1 1.0
+    <Mean> 6
+      0.0 0.0 0.0 0.0 0.0 0.0 
+    <Variance> 6
+      1.0 1.0 1.0 1.0 1.0 1.0 
+  <State> 4 <NumMixes> 1
+  <Stream> 1
+  <Mixture> 1 1.0
+    <Mean> 6
+      0.0 0.0 0.0 0.0 0.0 0.0 
+    <Variance> 6
+      1.0 1.0 1.0 1.0 1.0 1.0 
+  <TransP> 5
+   0.000e+0   1.000e+0   0.000e+0   0.000e+0   0.000e+0   
+   0.000e+0   6.000e-1   4.000e-1   0.000e+0   0.000e+0   
+   0.000e+0   0.000e+0   6.000e-1   4.000e-1   0.000e+0   
+   0.000e+0   0.000e+0   0.000e+0   6.000e-1   4.000e-1   
+   0.000e+0   0.000e+0   0.000e+0   0.000e+0   0.000e+0   
+<EndHMM>
