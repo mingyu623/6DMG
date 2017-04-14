@@ -16,7 +16,7 @@ my $dtype;
 my $treeNum;
 my $usr;
 my $voc;
-my $nbest = 5;  # set 1, 2, 3, or 5
+my $nbest = 5;  # set to 1, 2, 3, or 5
 if ($#ARGV != 3)
 {
     print "usage: viterbi [datatype] [tree#] [tst usr] [voc]\n";
