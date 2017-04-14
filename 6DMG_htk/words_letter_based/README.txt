@@ -136,3 +136,10 @@
    - products/NPNV/M1/tree0/log_dec_ext_bigram_1k_nbest.log
    - products/NPNV/M1/tree0/err_dec_ext_bigram_1k_nbest.log (exists when something goes wrong)
    - products/NPNV/M1/tree0/dec_bigram_1k_nbest.mlf
+
+5.1. 5_1_batch.pl [data_dir]
+  This script launches Step 5.0 for test user M1, each speicified datatype, both decision tree 0
+  and decision tree 1, and three different language models: 1k-word voc w/ backoff,
+  1k-word voc w/o backoff, 100k-word voc.
+  Example:
+  > perl 5_1_batch.pl ~/Development/6DMG/data_htk/words
