@@ -74,8 +74,7 @@ if ($nbest <= 1) {
     system("HVite -A -T 1 -n $nbest $nbest -s 15.0 -H $hmmdefs -S $tstScp -i $dec -w $wdnet $dict $hmmlist");
 }
 
-system("HResults -A -I $refMlf $hmmlist $dec");
-foreach my $n (2, 3, 5) {
+foreach my $n (1, 2, 3, 5) {
     if ($n <= $nbest) {
         system("HResults -A -d $n -I $refMlf $hmmlist $dec");
     }

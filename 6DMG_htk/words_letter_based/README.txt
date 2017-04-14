@@ -118,6 +118,15 @@
   Example:
   > perl 3_1_batch.pl
 
+4. 4_stats_bigram_nbest.pl
+  This script collects the results from Step 3.1. and generates the stats of
+  character error rate (CER) and word error rate (WER) for each leave-one-out test user
+  and the overall average / standard deviations.
+  Example:
+  > perl 4_stats_bigram_nbest.pl
+  Output:
+   - results/results_bigram_[voc]_[n]best.txt
+
 
 
 
