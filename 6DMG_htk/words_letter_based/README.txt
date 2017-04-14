@@ -1,5 +1,5 @@
 # Mingyu @ Apr 13 2017
-# 
+#
 # Here, we perform the training/testing of letter-based motion words recognition
 #
 
@@ -43,15 +43,15 @@
   Example:
   > perl 1_0_prep_trn_scp_mlf_hmmdefs.pl ~/Development/6DMG/data_htk/words NPNV C1
   Output:
-   - NPNV/C1/fulllist
-   - NPNV/C1/mono_char_tri_lig.mlf
-   - NPNV/C1/test.scp
-   - NPNV/C1/train.scp
-   - NPNV/C1/trihmm0/
-   - NPNV/C1/trihmm1/
-   - NPNV/C1/trihmm2/  (the tri-state HMMs will be used in the following training/testing)
-   - NPNV/C1/triligHmmlist
-   - NPNV/C1/trilig_stats.txt
+   - products/NPNV/C1/fulllist
+   - products/NPNV/C1/mono_char_tri_lig.mlf
+   - products/NPNV/C1/test.scp
+   - products/NPNV/C1/train.scp
+   - products/NPNV/C1/trihmm0/
+   - products/NPNV/C1/trihmm1/
+   - products/NPNV/C1/trihmm2/  (the tri-state HMMs will be used in the following training/testing)
+   - products/NPNV/C1/triligHmmlist
+   - products/NPNV/C1/trilig_stats.txt
 
 1.1. 1_1_batch.pl [data_dir]
   This script automates the Step 1.0 for all leave-one-out combinations for each specified
@@ -59,11 +59,44 @@
   Example:
   > perl 1_1_batch.pl ~/Development/6DMG/data_htk/words
 
+2.0. 2_0_make_tree.pl [datatype] [test usr]
+  This script generates the hed file for HHed for the decision tree to tie the ligature models
+  and leave the char model untouched. Will output "qniqueDict": all the unique ligatures + 26 char HMM
+  Example:
+  > perl 2_0_make_tree.pl NPNV C1
+  Output:
+   - products/NPNV/C1/tree0/fullDict       (covers 26x26 ligs + 26 chars for HVite)
+   - products/NPNV/C1/tree0/uniqueDict     (all the unique ligs from decision tree + 26 chars)
+   - products/NPNV/C1/tree0/trees          (the generated decision tree)
+   - products/NPNV/C1/tree0/trihmm3/
+   - products/NPNV/C1/tree0/trihmm4/
+   - products/NPNV/C1/tree0/trihmm5/       (final HERest HMMs)
+   - products/NPNV/C1/tree0/log_tree.log
+   - products/NPNV/C1/tree0/err_tree.log   (only exists when something goes wrong)
 
+2.1. 2_1_make_subtree.pl [datatype] [test usr]
+  This script is very similar to 2_0_make_tree.pl, except that the decision tree is
+  constructed from tying the 1st, 2nd, and 3rd states of lig models separately.
+  Example:
+  > perl 2_1_make_subtree.pl NPNV C1
+  Output:
+   - products/NPNV/C1/tree1/fullDict       (covers 26x26 ligs + 26 chars for HVite)
+   - products/NPNV/C1/tree1/uniqueDict     (all the unique ligs from decision tree + 26 chars)
+   - products/NPNV/C1/tree1/trees          (the generated decision tree)
+   - products/NPNV/C1/tree1/subtrees1/
+   - products/NPNV/C1/tree1/subtrees2/
+   - products/NPNV/C1/tree1/subtrees3/
+   - products/NPNV/C1/tree1/trihmm3/
+   - products/NPNV/C1/tree1/trihmm4/
+   - products/NPNV/C1/tree1/trihmm5/       (final HERest HMMs)
+   - products/NPNV/C1/tree1/log_tree.log
+   - products/NPNV/C1/tree1/err_tree.log   (only exists when something goes wrong)
 
-
-
-
+2.2. 2_2_batch.pl
+  This script lauches Step 2.0 and Step 2.1 for all leave-one-out combinations for each
+  specified datatype and test users.
+  Example:
+  > perl 2_2_batch.pl
 
 
 
