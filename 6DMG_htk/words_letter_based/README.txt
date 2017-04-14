@@ -99,18 +99,17 @@
   Example:
   > perl 2_2_batch.pl
 
-
-
-
-
-3.  3_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc]
-
+3.0  3_0_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc]
+  This script performs viterbi decoding with specified datatype, decision tree, test user,
+  and vocabulary for bigram.  See the script for details of input arguments.
+  The viberbi decoding will do nbest decoding where nbest is hardcoded to 5. To speed up,
+  feel free to lower he nbest number (smallest is 1).
   Example:
-  > perl 3_viter
+  > perl 3_0_viterbi_bigram_nbest.pl NPNV 0 C1 na
   Output:
    - products/NPNV/C1/tree0/log_dec_bigram_na_nbest.log
    - products/NPNV/C1/tree0/err_dec_bigram_na_nbest.log (exists when something goes wrong)
-   - products/NPNV/C1/tree0/dec_bigram_na_5best.mlf
+   - products/NPNV/C1/tree0/dec_bigram_na_nbest.mlf
 
 
 
