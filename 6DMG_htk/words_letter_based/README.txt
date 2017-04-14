@@ -99,7 +99,7 @@
   Example:
   > perl 2_2_batch.pl
 
-3.0  3_0_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc]
+3.0. 3_0_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc]
   This script performs viterbi decoding with specified datatype, decision tree, test user,
   and vocabulary for bigram.  See the script for details of input arguments.
   The viberbi decoding will do nbest decoding where nbest is hardcoded to 5. To speed up,
@@ -111,6 +111,12 @@
    - products/NPNV/C1/tree0/err_dec_bigram_na_nbest.log (exists when something goes wrong)
    - products/NPNV/C1/tree0/dec_bigram_na_nbest.mlf
 
+3.1. 3_1_batch.pl
+  This script lauches Step 3.0 for all leave-one-out combinations for each
+  specified datatype and test users, both decision tree 0 and tree 1, and
+  three different language models: no bigram, 40-word voc w/ backoff, 40-word voc w/o backoff
+  Example:
+  > perl 3_1_batch.pl
 
 
 
