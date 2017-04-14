@@ -6,18 +6,19 @@
 # TODO(mingyu):
 # Provide the script to generate the n-gram language model .arpa files
 
-0.0. 0_0_generate_share.pl
+0.0. 0_0_generate_share.pl [data_dir]
   This script generates the datatype invariant shared files for all following experiments.
   Extra requirement:
   Need the 2-gram language model (share/voc_chars_100k.arpa) produced by the CMU-Cambridge
   Statistical Language Modeling Toolkit.
+  [NOTE] We hardcoded in the script to use datatype NPNV to generates word_ref.mlf
+         However, any datatype will work.
   Example:
-  > perl 0_0_generate_share.pl
+  > perl 0_0_generate_share.pl ~/Development/6DMG/data_htk/words
   Output:
    - share/wdnet
    - share/wdnet_bigram
    - share/word_ref.mlf
-
 
 0.1. 0_1_generate_wdnet_bigram.pl [voc] [backoff]
   This script generates the wdnet with bigram estimated from the given vocabulary with or
@@ -97,6 +98,21 @@
   specified datatype and test users.
   Example:
   > perl 2_2_batch.pl
+
+
+
+
+
+3.  3_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc]
+
+  Example:
+  > perl 3_viter
+  Output:
+   - products/NPNV/C1/tree0/log_dec_bigram_na_nbest.log
+   - products/NPNV/C1/tree0/err_dec_bigram_na_nbest.log (exists when something goes wrong)
+   - products/NPNV/C1/tree0/dec_bigram_na_5best.mlf
+
+
 
 
 

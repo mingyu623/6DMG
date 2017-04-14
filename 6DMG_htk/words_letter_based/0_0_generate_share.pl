@@ -7,6 +7,14 @@
 use strict;
 use File::Path qw(make_path);
 
+my $data_dir;
+if ($#ARGV != 0) {
+    print "usage: generate_share.pl [data_dir]";
+    print " [data_dir]: the base path to the \$datatype folder\n";
+} else {
+    $data_dir = $ARGV[0];
+}
+
 my $outDir   = "share";
 my $bi_prob  = "$outDir/voc_chars_100k.arpa"; # input file
 my $wdnet    = "$outDir/wdnet";
@@ -166,7 +174,8 @@ print "generate $wdnet_bi\n";
 # B
 # C
 #========================================================
-my $dataDir = "C:/Mingyu/6DMG_htk_word/data_NPNV";
+my $dataDir = "$data_dir/data_NPNV";
+unless (-d $dataDir) { die "$dataDir does not exist"; }
 my @files = glob($dataDir."/*.htk");
 open  REF_MLF, ">$refMlf" or die $!;
 print REF_MLF "#!MLF!#\n";
