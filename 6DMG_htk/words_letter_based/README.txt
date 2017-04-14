@@ -143,3 +143,11 @@
   1k-word voc w/o backoff, 100k-word voc.
   Example:
   > perl 5_1_batch.pl ~/Development/6DMG/data_htk/words
+
+5.2. 5_2_stats_ext_bigram_nbest.pl
+  This script is similar to Step 4.  It collects the results from Step 5.1 and generates the stats
+  of character error rate (CER) and word error rate (WER) for test user M1 of 1k-word dataset
+  Example:
+  > perl 5_2_stats_ext_bigram_nbest.pl
+  Output:
+   - results/results_bigram_[voc]_[n]best.txt
