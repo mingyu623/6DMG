@@ -44,3 +44,8 @@
    - char_lig/NP2DuvNV2D/M1/merge_char_lig_ref.mlf (for HResults)
 
 1.2. 1_2_batch.pl
+  This script lauches 1_1_prep_merge_tst_scp_single for each test users with
+  leave-one-out cross validation.
+  [NOTE] The datatype (NP2DuvNV2D) is hardcoded in the script.
+  Example:
+  > perl 1_2_batch.pl
