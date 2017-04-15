@@ -1,6 +1,6 @@
 # Mingyu @ Apr 22 2013
 # Perform word-level word recognition of airwriting.
-# [NOTE] The default datatype for airwriting is NP2DuvNV2D.
+# [NOTE] The recommended datatype for airwriting is NP2DuvNV2D.
 # Please refer to 6DMG_loader/include/Config.h for the *meaning* of NP2DuvNV2d
 #  - NP2Duv is HTK_P2D_UV: normalize p2d (x & y position) with unit variance in y
 #  - NV2D is HTK_V2D: only the 2D (x & y) velocity
