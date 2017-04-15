@@ -1,0 +1,8 @@
+T3_BETW	1 of 1: 360
+T3_KEY	1 of 1: 320
+T3_LARG	1 of 1: 400
+T3_NOTE	1 of 1: 400
+T3_RANG	1 of 1: 400
+T3_RATE	1 of 1: 370
+T3_TODA	1 of 1: 330
+T3_WEST	1 of 1: 390

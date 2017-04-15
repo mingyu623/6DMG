@@ -1,0 +1,5 @@
+D1_FEAT	1 of 3
+D1_FEAT	3 of 3
+D1_STAN	2 of 2
+D1_TOPI	1 of 2
+D1_TRAD	2 of 2

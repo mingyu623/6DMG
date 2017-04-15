@@ -1,0 +1,8 @@
+T2_BOTH	1 of 1: 400
+T2_BOX	1 of 1: 320
+T2_COST	1 of 1: 280
+T2_GIVE	1 of 1: 400
+T2_INFO	1 of 1: 360
+T2_ROCK	1 of 1: 370
+T2_SQUA	1 of 1: 360
+T2_VERS	1 of 1: 420
