@@ -2,3 +2,4 @@ share/wdnet*
 share/word_ref.mlf
 products
 results
+*adj_lm.pl
