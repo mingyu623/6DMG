@@ -6,8 +6,12 @@
 # the vocab of detected words < 1k
 
 use strict;
+use File::Path qw(make_path);
 use File::stat;
 my $data_dir = "data_NP2DuvNV2D";
+
+unless (-d $data_dir) { die "needs $data_dir to generate mlf files!\n"; }
+unless (-d mlf) { make_path("mlf"); }
 
 # Create the word level mlf for all detected words
 open (FILE, '>mlf/word.mlf') or die $!;
