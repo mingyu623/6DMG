@@ -12,4 +12,18 @@
    - proto/NP2DuvNV2D/template_1
 
 1.0. 1_0_prepare_dict_wdnet_fil.pl 
+  This script prepares all the essential MLF (.mlf), training script (scp), and
+  word network (wdnet) for the following steps.
+  Example:
+  > perl 1_0_prepare_dict_wdnet_fil.pl
+  Output:
+   - char_lig/dict    (for common 100-word voc)
+   - char_lig/gram
+   - char_lig/wdnet
+   - char_lig/dict1k  (for common 100-word + 900-unique-word = 1k-word voc)
+   - char_lig/gram1k
+   - char_lig/wdnet1k 
+   - char_lig/hmmList
+   - mlf/word.mlf
+   - mlf/char_lig.mlf
 
