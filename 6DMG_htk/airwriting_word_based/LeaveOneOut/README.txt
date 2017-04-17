@@ -59,4 +59,22 @@
    - char_lig/NP2DuvNV2D/all_det.scp
    - char_lig/NP2DuvNV2D/fil  (the filler HMM)
 
-
+3.0. 3_0_train_HMM_single.pl [datatype] [tst usr]
+  This script performs emedded restimation of A-Z + multi-lig + fil HMMs
+  using the detected motion words.
+  The initial HMMs are copied from previous experiments:
+  1) A-Z and "multi-lig": the HMMs from words_word_based with extension set.
+    e.g., words_word_based/char_lig/[datatype]/Extension/iso/hmm3/hmmdefs_iso
+  2) "fil": from Step 2.
+  Example:
+  > perl 3_0_train_HMM_single.pl NP2DuvNV2D C1
+  Output:
+   - char_lig/NP2DuvNV2D/C1/hmm0/
+   - char_lig/NP2DuvNV2D/C1/hmm1/
+   - char_lig/NP2DuvNV2D/C1/hmm2/
+   - char_lig/NP2DuvNV2D/C1/hmm3/
+   - char_lig/NP2DuvNV2D/log.txt
+   - char_lig/NP2DuvNV2D/err.txt  (only exists when something goes wrong)
+   - char_lig/NP2DuvNV2D/recog_trn.mlf
+   - char_lig/NP2DuvNV2D/trn.scp
+   - char_lig/NP2DuvNV2D/trn_align.scp
