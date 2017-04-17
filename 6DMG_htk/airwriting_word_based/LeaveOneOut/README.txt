@@ -4,8 +4,9 @@
 
 0. 0_gen_single_proto.pl
   This script generates the template of HMM for the specified datatype and state #.
-  We simply generate the extra *fil* HMM for the filler.  For the remaining HMM templates,
-  we can re-use those generated from words_word_based/
+  We simply generate the extra *fil* HMM for the filler.  For the remaining HMM
+  templates, we can re-use those generated from words_word_based/
+  [NOTE] Step 2. may call 0_gen_single_proto automatically.
   Example:
   > perl 0_gen_single_proto.pl NP2DuvNV2D 1
   Output:
@@ -49,3 +50,13 @@
   [NOTE] The datatype (NP2DuvNV2D) is hardcoded in the script.
   Example:
   > perl 1_2_batch.pl
+
+2. 2_init_fil.pl [datatype]
+  This script initialized the "fil" HMM with HCompV
+  Example:
+  > perl 2_init_fil.pl NP2DuvNV2D
+  Output:
+   - char_lig/NP2DuvNV2D/all_det.scp
+   - char_lig/NP2DuvNV2D/fil  (the filler HMM)
+
+
