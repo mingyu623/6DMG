@@ -63,6 +63,7 @@
   This script performs emedded restimation of A-Z + multi-lig + fil HMMs
   using the detected motion words.
   The initial HMMs are copied from previous experiments:
+  [NOTE] This step can be very time consuming!
   1) A-Z and "multi-lig": the HMMs from words_word_based with extension set.
     e.g., words_word_based/char_lig/[datatype]/Extension/iso/hmm3/hmmdefs_iso
   2) "fil": from Step 2.
@@ -73,8 +74,24 @@
    - char_lig/NP2DuvNV2D/C1/hmm1/
    - char_lig/NP2DuvNV2D/C1/hmm2/
    - char_lig/NP2DuvNV2D/C1/hmm3/
-   - char_lig/NP2DuvNV2D/log.txt
-   - char_lig/NP2DuvNV2D/err.txt  (only exists when something goes wrong)
-   - char_lig/NP2DuvNV2D/recog_trn.mlf
-   - char_lig/NP2DuvNV2D/trn.scp
-   - char_lig/NP2DuvNV2D/trn_align.scp
+   - char_lig/NP2DuvNV2D/C1/log.txt
+   - char_lig/NP2DuvNV2D/C1/err.txt  (only exists when something goes wrong)
+   - char_lig/NP2DuvNV2D/C1/recog_trn.mlf
+   - char_lig/NP2DuvNV2D/C1/trn.scp
+   - char_lig/NP2DuvNV2D/C1/trn_align.scp
+
+3_1. 3_1_eval_merge_det_single.pl [datatype] [tst usr]
+  Example:
+  > perl 3_1_eval_merge_det_single.pl NP2DuvNV2D C1
+  Output:
+   - char_lig/NP2DuvNV2D/C1/dec_merge_tst.mlf
+   - char_lig/NP2DuvNV2D/C1/dec_merge_tstOOV.mlf
+   - char_lig/NP2DuvNV2D/C1/dec_merge_imprecise.mlf
+   - char_lig/NP2DuvNV2D/C1/dec_merge_impreciseOOV.mlf
+   - char_lig/NP2DuvNV2D/C1/dec_merge_FA.mlf
+   - char_lig/NP2DuvNV2D/C1/log_merge_det.txt
+   - char_lig/NP2DuvNV2D/C1/err_merge_det.txt  (only exists when something is wrong)
+
+3_2. 3_2_batch.pl
+  This script performs the complete leave-one-out cross validation by using
+  Step 3.0 and Step 3.1 for each specified datatype and test users.
