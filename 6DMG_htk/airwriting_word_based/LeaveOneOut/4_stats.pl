@@ -146,7 +146,7 @@ foreach my $dtype (@dTypes)
     my $word_avg_1 = $word_err_sum[1]/$word_cnt_sum[1]*100; # precise OOV
     my $word_avg_2 = $word_err_sum[2]/$word_cnt_sum[2]*100; # precise OOV
     my $word_avg_3 = $word_err_sum[3]/$word_cnt_sum[3]*100; # imprecise OOV
-    my $word_avg_4; #x FA
+    my $word_avg_4; # FA
     eval {
         $word_avg_4 = $word_err_sum[4]/$word_cnt_sum[4]*100;
     } or do {

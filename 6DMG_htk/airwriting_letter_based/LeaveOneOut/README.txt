@@ -162,7 +162,14 @@
   Example:
   > perl 4_stats_bigram_nbest.pl
   Output:
-   - results/results_bigram_[voc]_[n]best.txt
+   - results/res_bigram_[voc]_[n]best.txt
+
+
+
+
+
+
+
 
 5.0. 5_0_ext_bigram_nbest.pl [data_dir] [datatype] [tree#] [voc]
   This script is similar to Step 3.0 except that the viterbi decoding is done with
