@@ -1,10 +1,11 @@
 #!/usr/bin/perl
-# Mingyu @ Apr 22 2013
+# Mingyu @ Jun 4 2013
 # 0.  Use A-Z + "multi-lig" + "fil" HMMs for detected motion word recognition
-# 1.1 Use the char/lig HMMs built from ../../words_word_base/char_lig
+# 1.1 Use the char/lig HMMs built from C:/Mingyu/6DMG_word_SNG1_multi_lig2/char_lig
 # 1.2 "fil" HMM is initialized by init_fil.pl
 # 2.  Read hmmList and merge A-Z + multi-lig + fil HMMs in one macro file
 # 3.  Embedded re-estimate A-Z + multi-lig + fil HMMs
+# 4.  Run one leave-one-out cross validation on (filtered) ground-truth word segments
 #
 
 use strict;
@@ -61,19 +62,21 @@ foreach my $w (@words_common){ $words_hash{$w} = 1; }
 #-------------------------------------------------------------------------
 # Prepare the training & testing script
 #-------------------------------------------------------------------------
-my $detDir = "../../../data_htk/airwriting_spot/train/data_$dtype";
+my $detDir = "../../../data_htk/airwriting_spot/truth/data_$dtype";
 $detDir = abs_path($detDir);
 unless(-d $detDir) { die "training data doesn't exist at $detDir!\n"; }
 my $trn_script = "$path/trn.scp";    # specify the training "files"
+my $tst_script = "$path/tst.scp";    # test with the 150 words (100 common + 50 unique words)
 
 open FILE_trn, ">$trn_script" or die $!;
+open FILE_tst, ">$tst_script" or die $!;
 
 my @dets = glob("$detDir/*.htk"); # glob returns the full path
 foreach my $det (@dets)
 {
     $det =~ m/([A-Z][0-9])_([A-Z]+).htk$/;
     if ($1 eq $tstUsr){
-        # do nothing
+	print FILE_tst "$det\n";
     }
     else{
 	print FILE_trn "$det\n";
@@ -81,6 +84,7 @@ foreach my $det (@dets)
 }
 
 close FILE_trn;
+close FILE_tst;
 
 
 #-------------------------------------------------------------------------
@@ -88,6 +92,7 @@ close FILE_trn;
 #-------------------------------------------------------------------------
 my $opt = "-A -T 1";
 my $trn_mlf = "$path/recog_trn.mlf"; # store the results of HVite
+my $tst_mlf = "$path/recog_tst.mlf";
 my $hmm0 = "$path/hmm0";
 my $hmm1 = "$path/hmm1";
 my $hmm2 = "$path/hmm2";
@@ -97,10 +102,8 @@ my $hmm3 = "$path/hmm3";
 my $charMlf = "mlf/char_lig.mlf";     # char level mlf (w/ lig)
 my $wordMlf = "mlf/word.mlf";         # word level mlf
 my $hmmList = "char_lig/hmmList";     # hmmList contains A-Z + ligs + fil HMMs
-my $dict     = "char_lig/dict";     # 100 common words
-my $wdnet    = "char_lig/wdnet";
-my $dict_1k  = "char_lig/dict1k";   # 100 common + 900 unique words
-my $wdnet_1k = "char_lig/wdnet1k";
+my $dict  = "char_lig/dict1k";   # 100 common + 900 unique words
+my $wdnet = "char_lig/wdnet1k";
 
 unless (-d $hmm0){ make_path "$hmm0"; }
 unless (-d $hmm1){ make_path "$hmm1"; }
@@ -152,13 +155,12 @@ system("HERest $opt -I $charMlf -S $trn_script -H $hmm2/$hmmdefs -M $hmm3 $hmmLi
 #-------------------------------------------------------------------------
 # Align the training data (for re-embedded re-estimate)
 # Output the aligned results to "trn_align.mlf"
-system("HVite $opt -H $hmm3/$hmmdefs -i $path/trn_align.mlf -m -y htk -I $wordMlf -S $trn_script $dict_1k $hmmList");
+#system("HVite $opt -H $hmm3/$hmmdefs -i $path/trn_align.mlf -m -y htk -I $wordMlf -S $trn_script $dict $hmmList");
 
-# Evaluation on the training set
-# The evaluation on the testing set will be done in 3_1_eval_merge_det_single.pl
-system("HVite $opt -H $hmm3/$hmmdefs -S $trn_script -i $trn_mlf -w $wdnet_1k $dict_1k $hmmList");
+# Evaluation on the testing set
+system("HVite $opt -H $hmm3/$hmmdefs -S $tst_script -i $tst_mlf -w $wdnet $dict $hmmList");
 
-system("HResults $opt -I $wordMlf $hmmList $trn_mlf");
+system("HResults $opt -I $wordMlf $hmmList $tst_mlf");
 
 #-------------------------------------------------------------------------
 # Finish: clean up

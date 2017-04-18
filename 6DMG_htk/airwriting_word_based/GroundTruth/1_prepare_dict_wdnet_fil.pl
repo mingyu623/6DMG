@@ -332,7 +332,7 @@ my $wordMlf = "mlf/word.mlf";
 my $charMlf = "mlf/char_lig.mlf";
 copy ($srcMlf, $wordMlf);
 unless (-e $cmdFile){ die "$cmdFile doesn't exist!"; }
-system("HLEd -l * -d $dict1k -i $charMlf $cmdFile $wordMlf");
+system("HLEd -l '*' -d $dict1k -i $charMlf $cmdFile $wordMlf");
 
 
 #-------------------------------------------------------------------------

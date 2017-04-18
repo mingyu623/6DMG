@@ -30,45 +30,10 @@
    - char_lig/NP2DuvNV2D/all_det.scp
    - char_lig/NP2DuvNV2D/fil  (the filler HMM)
 
-
-
-
-
-
-
-
-1.1. 1_1_prep_merge_tst_scp_single.pl [datatype] [tst usr]
-  This script generates the merge_test.scp and merge_testOOV.scp from
-  data_htk/airwriting_spot_merge for each user. Also generates the corresponding
-  merge_ref.mlf for HResult.
-  [NOTE] OOV: Out of Vocabulary
-  Example:
-  > perl 1_1_prep_merge_tst_scp_single.pl NP2DuvNV2D C1
-  Output:
-   - char_lig/NP2DuvNV2D/M1/merge_tst.scp
-   - char_lig/NP2DuvNV2D/M1/merge_tstOOV.scp
-   - char_lig/NP2DuvNV2D/M1/merge_imprecise.scp
-   - char_lig/NP2DuvNV2D/M1/merge_impreciseOOV.scp
-   - char_lig/NP2DuvNV2D/M1/merge_FA.scp
-   - char_lig/NP2DuvNV2D/M1/merge_ref.mlf (for HLEd)
-   - char_lig/NP2DuvNV2D/M1/merge_char_lig_ref.mlf (for HResults)
-
-1.2. 1_2_batch.pl
-  This script lauches 1_1_prep_merge_tst_scp_single for each test users with
-  leave-one-out cross validation.
-  [NOTE] The datatype (NP2DuvNV2D) is hardcoded in the script.
-  Example:
-  > perl 1_2_batch.pl
-
-2. 2_init_fil.pl [datatype]
-  This script initialized the "fil" HMM with HCompV
-  Example:
-  > perl 2_init_fil.pl NP2DuvNV2D
-  Output:
-   - char_lig/NP2DuvNV2D/all_det.scp
-   - char_lig/NP2DuvNV2D/fil  (the filler HMM)
-
 3.0. 3_0_train_HMM_single.pl [datatype] [tst usr]
+  This script is identical to LeaveOneOut/3_0_train_HMM_single.pl except
+  1) the source MLF comes from the ground-truth airwriting segments.
+  2) the evaluation is also done for the testing set (leave-one-out)
   This script performs emedded restimation of A-Z + multi-lig + fil HMMs
   using the detected motion words.
   The initial HMMs are copied from previous experiments:
@@ -89,21 +54,11 @@
    - char_lig/NP2DuvNV2D/C1/trn.scp
    - char_lig/NP2DuvNV2D/C1/trn_align.scp
 
-3_1. 3_1_eval_merge_det_single.pl [datatype] [tst usr]
-  Example:
-  > perl 3_1_eval_merge_det_single.pl NP2DuvNV2D C1
-  Output:
-   - char_lig/NP2DuvNV2D/C1/dec_merge_tst.mlf
-   - char_lig/NP2DuvNV2D/C1/dec_merge_tstOOV.mlf
-   - char_lig/NP2DuvNV2D/C1/dec_merge_imprecise.mlf
-   - char_lig/NP2DuvNV2D/C1/dec_merge_impreciseOOV.mlf
-   - char_lig/NP2DuvNV2D/C1/dec_merge_FA.mlf
-   - char_lig/NP2DuvNV2D/C1/log_merge_det.txt
-   - char_lig/NP2DuvNV2D/C1/err_merge_det.txt  (only exists when something is wrong)
-
-3_2. 3_2_batch.pl
+3_1. 3_1_batch.pl
   This script performs the complete leave-one-out cross validation by using
-  Step 3.0 and Step 3.1 for each specified datatype and test users.
+  Step 3.0 for each specified datatype and test users.
+  Example:
+  > perl 3_1_batch.pl
 
 4. 4_stats.pl
   Example
