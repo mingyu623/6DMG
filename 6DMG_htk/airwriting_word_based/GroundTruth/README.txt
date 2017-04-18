@@ -20,43 +20,22 @@
    - mlf/word.mlf
    - mlf/char_lig.mlf
 
-
-  
-
-
-
-
-
-
-
-
-
-
-0. 0_gen_single_proto.pl
-  This script generates the template of HMM for the specified datatype and state #.
-  We simply generate the extra *fil* HMM for the filler.  For the remaining HMM
-  templates, we can re-use those generated from words_word_based/
-  [NOTE] Step 2. may call 0_gen_single_proto automatically.
+2. 2_init_fil.pl [datatype]
+  This script is identical to LeaveOneOut/2_init_fil.pl except that
+  the detected segments are from the ground-truth labels.
+  This script initialized the "fil" HMM with HCompV.
   Example:
-  > perl 0_gen_single_proto.pl NP2DuvNV2D 1
+  > perl 2_init_fil.pl NP2DuvNV2D
   Output:
-   - proto/NP2DuvNV2D/template_1
+   - char_lig/NP2DuvNV2D/all_det.scp
+   - char_lig/NP2DuvNV2D/fil  (the filler HMM)
 
-1.0. 1_0_prepare_dict_wdnet_fil.pl 
-  This script prepares all the essential MLF (.mlf) and word network (wdnet)
-  for the following steps.
-  Example:
-  > perl 1_0_prepare_dict_wdnet_fil.pl
-  Output:
-   - char_lig/dict    (for common 100-word voc)
-   - char_lig/gram
-   - char_lig/wdnet
-   - char_lig/dict1k  (for common 100-word + 900-unique-word = 1k-word voc)
-   - char_lig/gram1k
-   - char_lig/wdnet1k 
-   - char_lig/hmmList
-   - mlf/word.mlf
-   - mlf/char_lig.mlf
+
+
+
+
+
+
 
 1.1. 1_1_prep_merge_tst_scp_single.pl [datatype] [tst usr]
   This script generates the merge_test.scp and merge_testOOV.scp from
