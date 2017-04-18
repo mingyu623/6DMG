@@ -1,0 +1,5 @@
+Z2_BATT	1 of 2
+Z2_LARG	2 of 2
+Z2_PERF	2 of 2
+Z2_WEST	1 of 2
+Z2_WRIT	1 of 2

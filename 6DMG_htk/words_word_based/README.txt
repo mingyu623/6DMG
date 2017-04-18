@@ -5,8 +5,9 @@
 
 0. 0_gen_single_proto.pl [datatype] [# states]
   This script generates one proto file for HTK with specified data type and states number.
-  [Note] the user needs the proto templates for state numbers of 3, 10, 12, 14, 16, 18 to
-  run the following step.
+  [Note] the proto templates for state numbers of 3, 10, 12, 14, 16, 18 are required for
+  the following step.  However, Step 1.1 & Step 1.2 will call 0_gen_single_proto.pl to
+  automatically generate the essential protos.
   Example:
   > perl 0_gen_single_proto.pl NPNV 10
   Output:

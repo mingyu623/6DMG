@@ -1,0 +1,7 @@
+M3_ADVA	2 of 2
+M3_AGE	2 of 2
+M3_BETW	2 of 2
+M3_CAUS	2 of 2
+M3_COMP	2 of 2
+M3_VALU	2 of 2
+M3_VISI	1 of 2

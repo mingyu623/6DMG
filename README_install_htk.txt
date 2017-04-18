@@ -29,3 +29,5 @@ case "$host" in
    > sudo cpan Parallel::ForkManager
   2) Math::NumberCruncher
    > sudo cpan Math::NumberCruncher
+  3) Statistics::Basic
+   > sudo cpan Statistics::Basic

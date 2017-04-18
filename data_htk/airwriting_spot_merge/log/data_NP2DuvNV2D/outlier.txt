@@ -1,0 +1,20 @@
+# Mingyu @ Apr 24
+# This file stores the "outliers": segments that still contain partial words after merge
+U1_LIVI2	LIV
+Z1_SECT1	SEC
+Z1_SECT2	T
+K1_VERS1	V
+K1_VERS2	ERS
+M3_CHIL1	C
+M3_CHIL2	HIL
+M3_METH1	M
+M3_METH2	ET
+M3_METH3	H
+M3_VERS1	V
+M3_VERS2	ERS
+J4_BEFO1	BE
+J4_BEFO2	FO
+J4_DESC1	D
+J4_DESC2	ESC
+J4_RELE1	REL
+J4_RELE2	E
