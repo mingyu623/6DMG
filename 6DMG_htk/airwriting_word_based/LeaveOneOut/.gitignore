@@ -1,3 +1,5 @@
 mlf/*.mlf
 char_lig
 proto
+res_train.txt
+res_merge.txt

@@ -95,3 +95,10 @@
 3_2. 3_2_batch.pl
   This script performs the complete leave-one-out cross validation by using
   Step 3.0 and Step 3.1 for each specified datatype and test users.
+
+4. 4_stats.pl
+  Example
+  > perl 4_stats.pl
+  Output:
+   - res_train.txt  (the recognition results of the training set)
+   - res_merge.txt  (the recognition results of the merged detection testing set)
