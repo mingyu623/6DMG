@@ -28,6 +28,23 @@
    - share/wdnet_bigram_1kf
    - share/word_ref.mlf
 
+1.0. 1_0_init_fil.pl [datatype]
+  This script initialized the "fil" HMM with HCompV
+  Example:
+  > perl 1_0_init_fil.pl NP2DuvNV2D
+  Output:
+   - products/NP2DuvNV2D/all_det.scp
+   - products/NP2DuvNV2D/fil  (the filler HMM)
+
+
+
+
+
+
+
+
+
+
 
 
 
