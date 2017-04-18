@@ -82,7 +82,11 @@
    - products/NP2DuvNV2D/C1/FA.scp
    - products/NP2DuvNV2D/C1/det_ref.mlf (for HResults)
 
-
+1.4. 1_4_batch.pl
+  This script launches Step 1.0 to Step 1.3 for each test users with leave-one-out
+  cross validation and each specified datatype.
+  Example:
+  > perl 1_4_batch.pl
 
 
 
