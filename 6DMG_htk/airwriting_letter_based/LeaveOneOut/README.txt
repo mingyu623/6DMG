@@ -88,23 +88,6 @@
   Example:
   > perl 1_4_batch.pl
 
-
-
-
-
-
-
-
-
-
-1.0. 1_0_prep_trn_scp_mlf_hmmdefs.pl [data_dir] [datatype] [test usr]
-
-1.1. 1_1_batch.pl [data_dir]
-  This script automates the Step 1.0 for all leave-one-out combinations for each specified
-  datatype and test users.
-  Example:
-  > perl 1_1_batch.pl ~/Development/6DMG/data_htk/words
-
 2.0. 2_0_make_tree.pl [datatype] [test usr]
   This script generates the hed file for HHed for the decision tree to tie the ligature models
   and leave the char model untouched. Will output "qniqueDict": all the unique ligatures + 26 char HMM
@@ -143,6 +126,21 @@
   specified datatype and test users.
   Example:
   > perl 2_2_batch.pl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 3.0. 3_0_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc]
   This script performs viterbi decoding with specified datatype, decision tree, test user,
