@@ -29,9 +29,8 @@
    - mlf/char_lig.mlf
 
 1.1. 1_1_prep_merge_tst_scp_single.pl [datatype] [tst usr]
-  This script generates the merge_test.scp and merge_testOOV.scp from
-  data_htk/airwriting_spot_merge for each user. Also generates the corresponding
-  merge_ref.mlf for HResult.
+  This script generates the testing scps from data_htk/airwriting_spot_merge
+  for each user. Also generates the corresponding merge_ref.mlf for HResult.
   [NOTE] OOV: Out of Vocabulary
   Example:
   > perl 1_1_prep_merge_tst_scp_single.pl NP2DuvNV2D C1
