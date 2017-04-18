@@ -75,17 +75,17 @@ my $decIm;
 my $decImOOV;
 my $decFA;
 if ($detOption eq "det") {
-    $dec     = "$treeDir/dec_bigram_nbest_$voc.mlf";
-    $decOOV  = "$treeDir/dec_bigram_nbest_OOV_$voc.mlf";
-    $decIm   = "$treeDir/dec_imprecise_nbest_$voc.mlf";
-    $decImOOV= "$treeDir/dec_imprecise_nbest_OOV_$voc.mlf";
-    $decFA   = "$treeDir/dec_FA_nbest_$voc.mlf";
+    $dec      = "$treeDir/dec_bigram_nbest_$voc.mlf";
+    $decOOV   = "$treeDir/dec_bigram_nbest_OOV_$voc.mlf";
+    $decIm    = "$treeDir/dec_imprecise_nbest_$voc.mlf";
+    $decImOOV = "$treeDir/dec_imprecise_nbest_OOV_$voc.mlf";
+    $decFA    = "$treeDir/dec_FA_nbest_$voc.mlf";
 } else {
     $dec      = "$treeDir/dec_merge_nbest_$voc.mlf";
     $decOOV   = "$treeDir/dec_merge_nbest_OOV_$voc.mlf";
-    $decIm    = "$treeDir/dec_merge_nbest_imprecise_$voc.mlf";
-    $decImOOV = "$treeDir/dec_merge_nbest_imprecise_OOV_$voc.mlf";
-    $decFA    = "$treeDir/dec_merge_nbest_FA_$voc.mlf";
+    $decIm    = "$treeDir/dec_merge_imprecise_nbest_$voc.mlf";
+    $decImOOV = "$treeDir/dec_merge_imprecise_nbest_OOV_$voc.mlf";
+    $decFA    = "$treeDir/dec_merge_FA_nbest_$voc.mlf";
 }
 
 
