@@ -11,25 +11,24 @@ my @dTypes = ("NP2DuvNV2D");
 my @usrs = ("M1", "C1");
 
 my @vocs = ("100", "100f", "1k", "1kf");
+my @detOpts = ("det", "merge");
 
 use Parallel::ForkManager;
 my $pm = new Parallel::ForkManager( 6 ); # up to 6 processes
 
-foreach my $dType (@dTypes)
-{
-    foreach my $u (@usrs)
-    {
+foreach my $dType (@dTypes) {
+    foreach my $u (@usrs) {
         $pm->start and next;
-        foreach my $tree (0..1)
-        {
-            foreach my $voc (@vocs)
-            {
-                #========================================================
-                #------ LeaveOneOut w/ N-Best
-                # (N=5 hardcoded in 3_0_viterbi_bigram_nbest)------
-                print "pid($$)\t3_0_viterbi_bigram_nbest.pl $dType $tree $u $voc\n";
-                system("perl 3_0_viterbi_bigram_nbest.pl $dType $tree $u $voc");
-                #========================================================
+        foreach my $detOpt (@detOpts) {
+            foreach my $tree (0..1) {
+                foreach my $voc (@vocs) {
+                    #========================================================
+                    #------ LeaveOneOut w/ N-Best
+                    # (N=5 hardcoded in 3_0_viterbi_bigram_nbest)------
+                    print "pid($$)\t3_0_viterbi_bigram_nbest.pl $dType $tree $u $voc $detOpt\n";
+                    system("perl 3_0_viterbi_bigram_nbest.pl $dType $tree $u $voc $detOpt");
+                    #========================================================
+                }
             }
         }
         $pm->finish;

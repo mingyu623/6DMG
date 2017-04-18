@@ -127,14 +127,15 @@
   Example:
   > perl 2_2_batch.pl
 
-3.0. 3_0_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc]
+3.0. 3_0_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc] [detOption]
   This script uses the testing script generated from Step 1.3.
   This script performs viterbi decoding with specified datatype, decision tree,
-  test user, and vocabulary for bigram.  See the script for details of input arguments.
+  test user, vocabulary for bigram, and detection option ("det" or "merge").
+  See the script for details of input arguments.
   The viberbi decoding will do nbest decoding where nbest is hardcoded to 5.
   To speed up, feel free to lower he nbest number (smallest is 1).
   Example:
-  > perl 3_0_viterbi_bigram_nbest.pl NP2DuvNV2D 0 C1 1k
+  > perl 3_0_viterbi_bigram_nbest.pl NP2DuvNV2D 0 C1 1k det
   Output:
    - products/NP2DuvNV2D/C1/tree0/log_dec_bigram_1k_nbest.log
    - products/NP2DuvNV2D/C1/tree0/err_dec_bigram_1k_nbest.log (exists when something goes wrong)
@@ -146,12 +147,15 @@
 
 3.1. 3_1_batch.pl
   This script lauches Step 3.0 for all leave-one-out combinations for each
-  specified datatype and test users, both decision tree 0 and tree 1, and four
-  different language models:
+  specified datatype and test users, both decision tree 0 and tree 1,
+  four different language models:
     1) 100:  100-word voc w/  backoff
     2) 100f: 100-word voc w/o backoff
     3) 1k:   1k-word voc w/  backoff
     4) 1kf:  1k-word voc w/o backoff
+  two detection options:
+    1) det: the direct detected airwriting segments
+    2) merge: the merged detected airwriting segments
   Example:
   > perl 3_1_batch.pl
 
@@ -163,6 +167,9 @@
   > perl 4_stats_bigram_nbest.pl
   Output:
    - results/res_bigram_[voc]_[n]best.txt
+
+
+
 
 
 
