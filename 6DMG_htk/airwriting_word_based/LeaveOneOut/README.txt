@@ -1,6 +1,6 @@
 # Mingyu @ Apr 14 2017
-# Perform word-level word recognition of airwriting on spotted writing segments
-# with leave-one-out cross validation.
+# Perform word-level word recognition of airwriting on *merged* spotted writing
+# segments with leave-one-out cross validation.
 
 0. 0_gen_single_proto.pl
   This script generates the template of HMM for the specified datatype and state #.
