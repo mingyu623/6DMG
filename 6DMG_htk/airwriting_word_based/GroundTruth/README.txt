@@ -1,6 +1,8 @@
 # Mingyu @ Apr 14 2017
 # Perform word-level word recognition of airwriting on spotted writing segments
 # with leave-one-out cross validation.
+# The training/testing are carried out with the ground-truth airwriting segments to
+# study the recognition performance as if the *detection* is perfect.
 
 1. 1_prepare_dict_wdnet_fil.pl [datatype] [tst usr]
   This script is identical to LeaveOneOut/1_0_prepare_dit_wdnet_fil.pl except
@@ -64,5 +66,5 @@
   Example
   > perl 4_stats.pl
   Output:
-   - res_train.txt  (the recognition results of the training set)
-   - res_merge.txt  (the recognition results of the merged detection testing set)
+   - res_truth.txt  (the recognition results of the testing set of ground-truth
+                     airwriting segments)
