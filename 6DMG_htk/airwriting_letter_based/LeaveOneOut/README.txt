@@ -166,39 +166,26 @@
   Example:
   > perl 4_stats_bigram_nbest.pl
   Output:
-   - results/res_bigram_[voc]_[n]best.txt
+   - results/res_[bigram/merge]_[voc]_[n]best.txt
 
-
-
-
-
-
-
-
-
-
-
-5.0. 5_0_ext_bigram_nbest.pl [data_dir] [datatype] [tree#] [voc]
-  This script is similar to Step 3.0 except that the viterbi decoding is done with
-  the extension voc-1k of M1's data.  See the script for details of input arguments.
+5.0. 5_0_word_err_adjust.pl [datatype] [tree#] [voc] [verbose]
+  This script adjusts the detected event error rate to word error rate properly.
+  This script only applies to the testing scp of Step 1.3. (direct detected airwriting segments)
+  [verbose] can be 0, 1, 2 to specify the verbose level for output.
+  For instance, C1_MUCH is detected as C1_MUCH1 (label MU, decoded as MU) and
+  C1_MUCH2 (label CH, decoded as CH).  Thus, we adjust two segments into one word with both
+  zero event error and zero word error.  Another example, C1_EMPL is detected as C1_EMPL1
+  (label EMP, decoded as EMP).  The event is decoded correctly.  However, the word is NOT
+  detected completely (the L event is NOT detected), so it counts as one word error.
   Example:
-  > perl 5_0_ext_bigram_nbest.pl ~/Development/6DMG/data_htk/words NP2DuvNV2D 0 1k
+  > perl 5_word_err_adjust.pl NP2DuvNV2D 0 1k 2
   Output:
-   - products/NP2DuvNV2D/M1/tree0/log_dec_ext_bigram_1k_nbest.log
-   - products/NP2DuvNV2D/M1/tree0/err_dec_ext_bigram_1k_nbest.log (exists when something goes wrong)
-   - products/NP2DuvNV2D/M1/tree0/dec_bigram_1k_nbest.mlf
+   - Information printed on terminal (stdout)
 
-5.1. 5_1_batch.pl [data_dir]
-  This script launches Step 5.0 for test user M1, each speicified datatype, both decision tree 0
-  and decision tree 1, and three different language models: 1k-word voc w/ backoff,
-  1k-word voc w/o backoff, 100k-word voc.
+5.1. 5_1_batch.pl
+  This script runs Step 5.0 for all combinations of datatypes and vocs, and pipe the stdout
+  to one result file per vocabulary.
   Example:
-  > perl 5_1_batch.pl ~/Development/6DMG/data_htk/words
-
-5.2. 5_2_stats_ext_bigram_nbest.pl
-  This script is similar to Step 4.  It collects the results from Step 5.1 and generates the stats
-  of character error rate (CER) and word error rate (WER) for test user M1 of 1k-word dataset
-  Example:
-  > perl 5_2_stats_ext_bigram_nbest.pl
+  > perl 5_1_batch.pl
   Output:
-   - results/results_bigram_[voc]_[n]best.txt
+   - results/adj_bigram_[voc].txt
