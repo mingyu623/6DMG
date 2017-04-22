@@ -20,7 +20,7 @@ if ($#ARGV != 4) {
     print "          1: use the hmmdefs from decision tree 1 (3 subtrees)\n";
     print " [tst usr] : the leave-one-out test user\n";
     print " [voc] : 100, 100f, 1k, 1kf\n";
-    print " [detOption] : det, merge\n";
+    print " [detOption] : det, merge, gt\n";
     exit;
 } else {
     $dtype   = $ARGV[0];
@@ -34,7 +34,7 @@ if ($#ARGV != 4) {
     if ($voc ne "100" and $voc ne "100f" and $voc ne "1k" and $voc ne "1kf") {
 	die "incorrect wdnet with voc $voc\n";
     }
-    if ($detOption ne "det" and $detOption ne "merge") {
+    if ($detOption ne "det" and $detOption ne "merge" and $detOption ne "gt") {
         die "incorrect det option: $detOption\n";
     }
 }
@@ -59,13 +59,22 @@ if ($detOption eq "det") {
     $tstOovScp2= "$path/impreciseOOV.scp";     # imprecise detection OOV
     $tstFaScp  = "$path/FA.scp";               # false alarm
     $refMlf    = "$path/det_ref.mlf";  # tailoered ref.mlf for *all* detection
-} else {
+} elsif ($detOption eq "merge") {
     $tstScp    = "$path/merge_tst.scp";          # precise   detection 
     $tstOovScp = "$path/merge_tstOOV.scp";       # precise   detection OOV
     $tstScp2   = "$path/merge_imprecise.scp";    # imprecise detection
     $tstOovScp2= "$path/merge_impreciseOOV.scp"; # imprecise detection OOV
     $tstFaScp  = "$path/merge_FA.scp";           # false alarm
     $refMlf    = "$path/merge_ref.mlf";    # tailored ref.mlf for the merge case
+} elsif ($detOption eq "gt") {
+    $tstScp    = "$path/gt_test.scp";
+    $tstOovScp = "$path/gt_testOOV.scp";
+    $tstScp2   = "n/a";
+    $tstOovScp2= "n/a";
+    $tstFaScp  = "n/a";
+    $refMlf    = "$path/gt_ref.mlf";
+} else {
+    die "incorrect det option: $detOption\n";
 }
 
 #output
@@ -80,12 +89,18 @@ if ($detOption eq "det") {
     $decIm    = "$treeDir/dec_imprecise_nbest_$voc.mlf";
     $decImOOV = "$treeDir/dec_imprecise_nbest_OOV_$voc.mlf";
     $decFA    = "$treeDir/dec_FA_nbest_$voc.mlf";
-} else {
+} elsif ($detOption eq "merge") {
     $dec      = "$treeDir/dec_merge_nbest_$voc.mlf";
     $decOOV   = "$treeDir/dec_merge_nbest_OOV_$voc.mlf";
     $decIm    = "$treeDir/dec_merge_imprecise_nbest_$voc.mlf";
     $decImOOV = "$treeDir/dec_merge_imprecise_nbest_OOV_$voc.mlf";
     $decFA    = "$treeDir/dec_merge_FA_nbest_$voc.mlf";
+} elsif ($detOption eq "gt") {
+    $dec      = "$treeDir/dec_gt_nbest_$voc.mlf";
+    $decOOV   = "$treeDir/dec_gt_nbest_OOV_$voc.mlf";
+    $decIm    = "n/a";
+    $decImOOV = "n/a";
+    $decFA    = "n/a";
 }
 
 
@@ -100,9 +115,12 @@ open (REGOUT, ">&STDOUT")    or die "Can't open REGOUT: $!\n";
 if ($detOption eq "det") {
     open (STDOUT, ">$treeDir/log_dec_bigram_$voc\_nbest.log") or die $!;
     open (STDERR, ">$treeDir/err_dec_bigram_$voc\_nbest.log") or die $!;
-} else {
+} elsif ($detOption eq "merge") {
     open (STDOUT, ">$treeDir/log_dec_merge_$voc\_nbest.log") or die $!;
     open (STDERR, ">$treeDir/err_dec_merge_$voc\_nbest.log") or die $!;
+} elsif ($detOption eq "gt") {
+    open (STDOUT, ">$treeDir/log_dec_gt_$voc\_nbest.log") or die $!;
+    open (STDERR, ">$treeDir/err_dec_gt_$voc\_nbest.log") or die $!;
 }
 
 my $hviteOpt = "-A -T 1 -n $nbest $nbest -s 15.0";
@@ -155,8 +173,12 @@ if ($detOption eq "det") {
     if (stat("$treeDir/err_dec_bigram_$voc"."_nbest.log")->size == 0) { # no stderr
         unlink("$treeDir/err_dec_bigram_$voc"."_nbest.log");
     }
-} else {
+} elsif ($detOption eq "merge") {
     if (stat("$treeDir/err_dec_merge_$voc\_nbest.log")->size == 0) { # no stderr
         unlink("$treeDir/err_dec_merge_$voc\_nbest.log");
+    }
+} elsif ($detOption eq "gt") {
+    if (stat("$treeDir/err_dec_gt_$voc\_nbest.log")->size == 0) { # no stderr
+        unlink("$treeDir/err_dec_gt_$voc\_nbest.log");
     }
 }
