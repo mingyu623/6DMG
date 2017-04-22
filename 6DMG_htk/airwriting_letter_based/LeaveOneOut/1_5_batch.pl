@@ -36,7 +36,11 @@ foreach my $dType (@dTypes)
 
 	#--- LeaveOneOut on all detection results (w/o merge) ---
 	print "pid($$)\t1_3_prep_det_tst_scp_single.pl $dType $u\n";
-	system("perl 1_3_prep_det_tst_scp_single.pl $dType $u\n");
+	system("perl 1_3_prep_det_tst_scp_single.pl $dType $u");
+
+        #--- LeaveOneOut on ground-truth segments -----
+        print "pid($$)\t1_4_prep_groundtruth_tst_scp_single.pl $dType $u\n";
+        system("perl 1_4_prep_groundtruth_tst_scp_single.pl $dType $u");
 	#========================================================
 	$pm->finish;
     }

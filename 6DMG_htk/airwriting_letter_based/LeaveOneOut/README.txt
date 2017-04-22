@@ -82,11 +82,22 @@
    - products/NP2DuvNV2D/C1/FA.scp
    - products/NP2DuvNV2D/C1/det_ref.mlf (for HResults)
 
-1.4. 1_4_batch.pl
-  This script launches Step 1.0 to Step 1.3 for each test users with leave-one-out
+1.4. 1_4_prep_groundtruth_tst_scp_single.pl [datatype] [tst usr]
+  This script generates the testing scps from data_htk/airwriting_spot for the
+  test user using the groundtruth segments.
+  Also generates the corresponding gt_ref.mlf for HResult.
+  Example:
+  > perl 1_4_prep_groundtruth_tst_scp_single.pl NP2DuvNV2D C1
+  Output:
+   - products/NP2DuvNV2D/C1/gt_test.scp
+   - products/NP2DuvNV2D/C1/gt_testOOV.scp
+   - products/NP2DuvNV2D/C1/gt_ref.mlf (for HResults)
+
+1.5. 1_5_batch.pl
+  This script launches Step 1.0 to Step 1.4 for each test users with leave-one-out
   cross validation and each specified datatype.
   Example:
-  > perl 1_4_batch.pl
+  > perl 1_5_batch.pl
 
 2.0. 2_0_make_tree.pl [datatype] [test usr]
   This script generates the hed file for HHed for the decision tree to tie the ligature models
