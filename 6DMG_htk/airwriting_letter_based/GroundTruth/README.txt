@@ -3,7 +3,7 @@
 # segments with leave-one-out cross validation.
 
 0. 0_generate_share.pl
-  This script is identical to LeaveOneOu/0_1_generate_share.pl (internally
+  This script is identical to LeaveOneOut/0_1_generate_share.pl (internally
   uses LeaveOneOut/0_0_generate_wdnet_bigram.pl
   Example:
   > perl 0_1_generate_share.pl
@@ -13,6 +13,28 @@
    - share/wdnet_bigram_1k
    - share/wdnet_bigram_1kf
    - share/word_ref.mlf
+
+1.2. 1_2_prep_tst_scp_single.pl [datatype] [tst usr]
+  This script is similar to LeaveOneOut/1_3_prep_det_tst_scp_single.pl
+  except that we now generate the test .scp from ground-truth segments.
+  Example:
+  perl 1_2_prep_tst_scp_single.pl NP2DuvNV2D M1
+  Output:
+   - products/NP2DuvNV2D/C1/test.scp
+   - products/NP2DuvNV2D/C1/testOOV.scp
+   - products/NP2DuvNV2D/C1/det_ref.mlf (for HResults)
+  
+1.3. 1_3_batch.pl
+  This script launches Step 1.0 to Step 1.3 for each test users with leave-one-out
+  cross validation and each specified datatype.
+  [NOTE] We re-use the LeaveOneOut/1_0 & 1_1 scripts.
+  Example:
+  > perl 1_4_batch.pl
+
+
+
+
+
 
 
 

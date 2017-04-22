@@ -130,7 +130,7 @@ foreach my $det (@dets)
     }
 }
 close trnSCP;
-print "Create\t$trnSCP";
+print "Create\t$trnSCP\n";
 
 
 #=======================================================
