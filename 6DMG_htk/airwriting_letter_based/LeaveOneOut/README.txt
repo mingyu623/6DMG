@@ -141,7 +141,7 @@
 3.0. 3_0_viterbi_bigram_nbest.pl [datatype] [tree#] [tst usr] [voc] [detOption]
   This script uses the testing script generated from Step 1.3.
   This script performs viterbi decoding with specified datatype, decision tree,
-  test user, vocabulary for bigram, and detection option ("det" or "merge").
+  test user, vocabulary for bigram, and detection option ("det" or "merge" or "gt").
   See the script for details of input arguments.
   The viberbi decoding will do nbest decoding where nbest is hardcoded to 5.
   To speed up, feel free to lower he nbest number (smallest is 1).
@@ -167,6 +167,7 @@
   two detection options:
     1) det: the direct detected airwriting segments
     2) merge: the merged detected airwriting segments
+    3) gt: the ground-truth airwriting segments
   Example:
   > perl 3_1_batch.pl
 

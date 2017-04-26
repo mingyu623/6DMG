@@ -11,7 +11,7 @@ my @dTypes = ("NP2DuvNV2D");
 my @usrs = ("M1", "C1");
 
 my @vocs = ("100", "100f", "1k", "1kf");
-my @detOpts = ("det", "merge");
+my @detOpts = ("det", "merge", "gt");
 
 use Parallel::ForkManager;
 my $pm = new Parallel::ForkManager( 6 ); # up to 6 processes

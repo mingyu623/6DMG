@@ -20,7 +20,8 @@ my @nbests = (1, 2, 3, 5);
 # The log file names generated from different detOption:
 # "det"   -> bigram
 # "merge" -> merge
-my @logNames = ("bigram", "merge");
+# "gt"    -> gt
+my @logNames = ("bigram", "merge", "gt");
 
 unless (-d "results") { make_path("results"); }
 foreach my $logName (@logNames) {
@@ -107,9 +108,19 @@ foreach my $logName (@logNames) {
                         }
                     }
                     my $word_avg_0 = $word_err_sum[0]/$word_cnt_sum[0]*100; # precise
-                    my $word_avg_1 = $word_err_sum[1]/$word_cnt_sum[1]*100; # imprecise
-                    my $word_avg_2 = $word_err_sum[2]/$word_cnt_sum[2]*100; # precise OOV
-                    my $word_avg_3 = $word_err_sum[3]/$word_cnt_sum[3]*100; # imprecise OOV
+                    my $word_avg_1 = $word_err_sum[1]/$word_cnt_sum[1]*100; # precise OOV
+                    my $word_avg_2; # imprecise
+                    eval {
+                        $word_avg_2= $word_err_sum[2]/$word_cnt_sum[2]*100;
+                    } or do {
+                        $word_avg_2 = 0;
+                    };
+                    my $word_avg_3; # imprecise OOV
+                    eval {
+                        $word_avg_3 = $word_err_sum[3]/$word_cnt_sum[3]*100;
+                    } or do {
+                        $word_avg_3 = 0;
+                    };
                     my $word_avg_4; # FA
                     eval {
                         $word_avg_4 = $word_err_sum[4]/$word_cnt_sum[4]*100;
@@ -118,9 +129,19 @@ foreach my $logName (@logNames) {
                     };
 
                     my $char_avg_0 = $char_err_sum[0]/$char_cnt_sum[0]*100; # precise
-                    my $char_avg_1 = $char_err_sum[1]/$char_cnt_sum[1]*100; # imprecise
-                    my $char_avg_2 = $char_err_sum[2]/$char_cnt_sum[2]*100; # precise OOV
-                    my $char_avg_3 = $char_err_sum[3]/$char_cnt_sum[3]*100; # imprecise OOV
+                    my $char_avg_1 = $char_err_sum[1]/$char_cnt_sum[1]*100; # precise OOV
+                    my $char_avg_2;
+                    eval {
+                        $char_avg_2 = $char_err_sum[2]/$char_cnt_sum[2]*100; # imprecise
+                    } or do {
+                        $char_avg_2 = 0;
+                    };
+                    my $char_avg_3;
+                    eval {
+                        $char_avg_3 = $char_err_sum[3]/$char_cnt_sum[3]*100; # imprecise OOV
+                    } or do {
+                        $char_avg_3 = 0;
+                    };
                     my $char_avg_4; # FA
                     eval {
                         $char_avg_4 = $char_err_sum[4]/$char_cnt_sum[4]*100; # FA
@@ -129,10 +150,20 @@ foreach my $logName (@logNames) {
                     };
 
                     my $precise_word_avg   = ($word_err_sum[0]+$word_err_sum[1])/($word_cnt_sum[0]+$word_cnt_sum[1])*100;
-                    my $imprecise_word_avg = ($word_err_sum[2]+$word_err_sum[3])/($word_cnt_sum[2]+$word_cnt_sum[3])*100;
+                    my $imprecise_word_avg;
+                    eval {
+                        $imprecise_word_avg = ($word_err_sum[2]+$word_err_sum[3])/($word_cnt_sum[2]+$word_cnt_sum[3])*100;
+                    } or do {
+                        $imprecise_word_avg = 0;
+                    };
 
-                    my $precise_char_avg   = ($char_err_sum[0]+$char_err_sum[1])/($char_cnt_sum[0]+$char_cnt_sum[1])*100;
-                    my $imprecise_char_avg = ($char_err_sum[2]+$char_err_sum[3])/($char_cnt_sum[2]+$char_cnt_sum[3])*100;
+                    my $precise_char_avg = ($char_err_sum[0]+$char_err_sum[1])/($char_cnt_sum[0]+$char_cnt_sum[1])*100;
+                    my $imprecise_char_avg;
+                    eval {
+                        $imprecise_char_avg = ($char_err_sum[2]+$char_err_sum[3])/($char_cnt_sum[2]+$char_cnt_sum[3])*100;
+                    } or do {
+                        $imprecise_char_avg = 0;
+                    };
 
                     my $precise_word_cnt   = $word_cnt_sum[0]+$word_cnt_sum[1];
                     my $imprecise_word_cnt = $word_cnt_sum[2]+$word_cnt_sum[3];
